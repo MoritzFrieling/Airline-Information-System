@@ -19,4 +19,7 @@
 | Journey | The jounrey includes every flight from the first Origin to the last Destination |
 | Customer | An individual on whose name a ticket is booked |
 | Journey | A collection of flights combining routes in a booking for a customer in order to reach a specific target |
+| Sales-Employee | Airline staff responsible for selling tickets and handling customer contact |
+| Sales-Officer | supervising middle management |
+| Sales-Manager | upper management responsible for the sales department |
 
