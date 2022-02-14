@@ -61,7 +61,7 @@
 | | 4. System checks whether the flight information is valid |
 | | 5. System puts flight into database and makes flight available for booking |
 | Results: | Actor has successfully registered a flight |
-| Exceptions: | 4. Flight information is not valid and system informs the user that the flight is not valid |
+| Exceptions: | 4. Flight information is not valid and system informs the actor that the flight is not valid |
 | | 4.1 Return to Step 3 |
 
 
