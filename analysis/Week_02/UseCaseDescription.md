@@ -26,7 +26,7 @@
 | Results: | Actor loses access to platform |
 | Exceptions: | None |
 
-## Register emp
+## Register sales officer or sales employee
 | Name: | _Register sales officer or sales employee_ |
 |----|----|
 | Actor: | Sales Manager | 
