@@ -25,4 +25,5 @@
 #### As a sales manager... 
 
 - *I want to inspect the management board to view the KPI’s (Key Performance Indicators) for specific routes*
-- *I want to be able to register a new route*
+- *I want to be able to register a new route so flights can be created*
+- *I want to create accounts for the employees, that they can work with the system*
