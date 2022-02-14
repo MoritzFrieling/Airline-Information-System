@@ -64,23 +64,7 @@
 | Exceptions: | 4. Flight information is not valid and system informs the user that the flight is not valid |
 | | 4.1 Return to Step 3 |
 
-repeating flights???
 
-## Promote sales officer
-| Name: | _Promote sales officer_ |
-|----|----|
-| Actor: | Sales Manager | 
-| Description: | The Sales Officer gets promoted |
-| Pre-condition: | Sales Officer has been registered and Sales Manager has logged in |
-| | 1. Actor indicates that they want to promote a sales officer |
-| | 2. System offers opportunity to change status of his professional position  |
-| Scenario: | 3. Actor enters id of the sales officer |
-| | 4. System checks whether the id of the sales officer exists |
-| | 5. System changes professional position from Sales officer to Sales manager in database |
-| Results: | Sales officer has been successfully promoted to a Sales manager |
-| Exceptions: | 4. Id of the sales officer does not exist |
-| | 4.1 System informs the sales manager that the id doesn´t exit |
-| | 4.2 Use case ends here |
 
 ## Price reduction
 | Name: | _Enable temporary price reductions_ |
