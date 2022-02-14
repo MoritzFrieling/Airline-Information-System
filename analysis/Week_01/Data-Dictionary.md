@@ -17,3 +17,6 @@
 | Flight price | The amount which the customer pays for the ticket |
 | Booking | A booking is created by a sales employee for a customer, it can have Extra services and can have multiple tickets |
 | Journey | The jounrey includes every flight from the first Origin to the last Destination |
+| Customer | An individual on whose name a ticket is booked |
+| Journey | A collection of flights combining routes in a booking for a customer in order to reach a specific target |
+
