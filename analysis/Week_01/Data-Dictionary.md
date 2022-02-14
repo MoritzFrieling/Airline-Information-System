@@ -3,9 +3,9 @@
 | Airline |  A company that offers flights for certain routes  for a monetary compensation | 
 | Customer | An individual on whose name a ticket is booked |
 | Sales-Employee | Airline staff responsible for selling tickets and handling customer contact |
-| Sales-Officer | supervising middle management |
-| Sales-Manager | upper management responsible for the sales department |
-| Key Performance Indicator(s) | A performance indicator or key performance indicator is a type of performance measurement. KPIs evaluate the success of an organization or of a particular activity in which it engages |
+| Sales-Officer | Supervising middle management |
+| Sales-Manager | Upper management responsible for the sales department |
+| Key Performance Indicator(s) | A key performance indicator is a type of performance measurement. KPIs evaluate the success of an organization or of a particular activity in which it engages |
 | Management Board | Tool to manage and supervise the sales department as well as inspect the Key performance Indicators |
 | Flight |    Flight has a origin and a destiantion. Flight ends with a arrival |
 | Route | A regularly flown flight, with a fixed start and end point |
