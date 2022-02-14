@@ -45,7 +45,7 @@
 | | 6.b Password is insufficient |
 | | 6.b.1 System indicates that the passwort does not fullfill the requirements |
 | | 6.b.2 Return to step 3|
-| Extension: 3.a | Actor indicates that they want to register a new Sales Employee  |
+| Extension: | 3.a Actor indicates that they want to register a new Sales Employee  |
 | | 3.a.1 Go to step 4 |
 
 
