@@ -3,7 +3,7 @@
 | Airline |  A company that offers flights for certain routes  for a monetary compensation | 
 | Flight |    Flight has a origin and a destiantion. Flight ends with a landing   |
 | Route | a regularly flown flight, with a fixed start and end point |
-| Airplane | Transporting people or goods through the air |
+| Airplane | A vehicle transporting people or goods through the air |
 | Origin | The starting point of a route |
 | Destination | The final point of a route |
 | Flight duration | The estimated time it takes for the flight to arrive at the destination |
