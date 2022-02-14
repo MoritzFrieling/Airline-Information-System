@@ -3,7 +3,7 @@
 ## Log in
 | Name: | _Log in_ |
 |----|----|
-| Actor: | Sales Officer, Sales Manager |
+| Actor: | Staff Member |
 | Description: | The Actor logs into the platform |
 | Pre-condition: | Actor has registered |
 | Scenario: |1. System displays log in page |
@@ -12,13 +12,13 @@
 |  | 4. System validates username and password |
 |  | 5. System allows access to platform |
 | Results: | Actor gets access to platform |
-| Exceptions: | 4. System informs the user that the username/password is invalid |
+| Exceptions: | 4. System informs the user that the combination of username/password is invalid |
 |  | 4.1 Return to step 2.  |
 
 ## Log out
 | Name: | _Log out_ |
 |----|----|
-| Actor: | Sales Officer, Sales Manager |
+| Actor: | Staff Member |
 | Description: | The Actor logs out of the platform |
 | Pre-condition: | Actor has logged in |
 | Scenario: | 1. Actor indicates they wants to log out |
@@ -27,22 +27,27 @@
 | Exceptions: | None |
 
 ## Register emp
-| Name: | _Register sales officer_ |
+| Name: | _Register sales officer or sales employee_ |
 |----|----|
 | Actor: | Sales Manager | 
-| Description: | A new Sales Officer gets registered on the platform |
+| Description: | A new Sales Officer/ Employee gets registered on the platform |
 | Pre-condition: | Sales Manager has logged in |
-| Scenario: | 1. Actor indicates that they want to register a new Sales Officer |
-| | 2. System offers opportunity to enter personal information (name, password, company mail address)  |
-| | 3. Actor enters personal information |
-| | 4. If the officer doesn't exist yet and the password is sufficient, the system inputs the personal information of the sales officer into the database.  Use Case ends here.|
+| Scenario: | 1. Actor indicates he wants to create a new account for a staff member |
+| | 2. System asks actor what kind of account he wants to create
+| | 3. Actor indicates that they want to register a new Sales Officer |
+| | 4. System offers opportunity to enter personal information (name, password, company mail address)  |
+| | 5. Actor enters personal information |
+| | 6. If the account doesn't exist yet and the password is sufficient, the system inputs the personal information of the account into the database.  Use Case ends here.|
 | Results: | Sales Officer has been successfully registered |
-| Exceptions: | 4.a Sales Officer has already been registered |
-| | 4.a.1 System informs the manager that the officer already exists in the database |
-| | 4.a.2 Use case ends here |
-| | 4.b Password is insufficient |
-| | 4.b.1 System indicates that the passwort does not fullfill the requirements |
-| | 4.b.2 Return to step 3|
+| Exceptions: | 6.a Sales Officer has already been registered |
+| | 6.a.1 System informs the manager that the officer already exists in the database |
+| | 6.a.2 Use case ends here |
+| | 6.b Password is insufficient |
+| | 6.b.1 System indicates that the passwort does not fullfill the requirements |
+| | 6.b.2 Return to step 3|
+| Extension: 3.a Actor indicates that they want to register a new Sales Employee  |
+| | 3.a.1 Go to step 4 |
+
 
 ## Register flight
 | Name: | _Register upcoming flights_ |
@@ -50,9 +55,9 @@
 | Actor: | Sales Officer |
 | Description: | The Sales Officer registers an upcoming flight |
 | Pre-condition: | Sales Officer has logged in |
-| | 1. Actor indicates that they want to register a new flight |
+| Scenario: | 1. Actor indicates that they want to register a new flight |
 | | 2. System offers opportunity to enter flight information(Arrival, Departure, Locations, Plane, Price?) |
-| Scenario: | 3. Actor enters all flight information |
+| | 3. Actor enters all flight information |
 | | 4. System checks whether the flight information is valid |
 | | 5. System puts flight into database and makes flight available for booking |
 | Results: | Actor has successfully registered a flight |
