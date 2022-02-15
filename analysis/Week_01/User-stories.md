@@ -1,14 +1,10 @@
-[click on this link](#my-multi-word-header)
-
-### My Multi Word Header
-
 
 
 ## User groups
 
-- [sales employee](#sales employee)
-- [sales officer](#sales officer)
-- sales manager
+- [sales employee](#sales-employee)
+- [sales officer](#sales-officer)
+- [sales manager](#sales-manager)
 
 
 ## User stories
