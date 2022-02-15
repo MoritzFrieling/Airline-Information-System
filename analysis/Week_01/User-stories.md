@@ -3,7 +3,7 @@
 ## User groups
 
 - [sales employee](#sales-employee)
-- [sales officer](#sales-officer)
+- [sales officer](#-sales-officer)
 - [sales manager](#sales-manager)
 
 
