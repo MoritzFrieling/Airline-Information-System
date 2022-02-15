@@ -2,13 +2,14 @@
 
 ## User groups
 
-[sales employee](#sales-employee)
+- [sales employee](#sales-employee)
 - [sales officer](#sales-officer)
 - [sales manager](#sales-manager)
 
 
 ## User stories
 
+#sales employee
 #### As a sales employee ... 
 
 - *I want to look up flights to check whether a certain route is available* 
