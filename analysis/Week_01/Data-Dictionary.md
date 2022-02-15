@@ -11,8 +11,8 @@
 | Route | A regularly flown flight, with a fixed start and end point |
 | Journey | The jounrey includes every flight from the first Origin to the last Destination |
 | Airplane | A vehicle transporting people or goods through the air |
-| Origin | The initial point of a route |
-| Destination | The final point of a route |
+| Origin | The initial point of a flight |
+| Destination | The final point of a flight |
 | Departure | Time the Airplane begins a Flight |
 | Arrival | Time the Airplane ends a Flight |
 | Flight price | The amount which the customer pays for the ticket |
