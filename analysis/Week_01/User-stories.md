@@ -6,7 +6,7 @@
 
 ## User groups
 
-- sales employee
+- [sales employee](#sales-employee)
 - sales officer
 - sales manager
 
