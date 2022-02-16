@@ -15,7 +15,6 @@
 
 
 
-#### sales employee
 
 #### As a sales employee ... 
 
