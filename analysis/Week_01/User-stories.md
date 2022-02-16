@@ -16,7 +16,7 @@
 
 
 
-#### As a [sales employee] (#sales-manager) ... 
+#### As a [sales employee] (#sales-employee) ... 
 
 - *I want to look up flights to check whether a certain route is available* 
 
