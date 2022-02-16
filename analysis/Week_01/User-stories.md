@@ -2,7 +2,7 @@
 
 ## User groups
 
-- [sales employee](####-as-a-sales-employee-...)
+- [sales employee](#as-a-sales-employee-...)
 - [sales officer](#sales-officer)
 - [sales manager](#sales-manager)
 
@@ -13,7 +13,7 @@
 ## User stories
 
 
-
+# As a sales employee ...
 
 
 #### As a sales employee ... 
