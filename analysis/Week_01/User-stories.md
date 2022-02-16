@@ -2,9 +2,9 @@
 
 ## User groups
 
-- [sales employee](#as-a-sales-employee)
-- [sales officer](#sales-officer)
-- [sales manager](#sales-manager)
+- [sales employee](#as-a-sales-employee-)
+- [sales officer](#as-a-sales-officer-)
+- [sales manager](#as-a-sales-manager-)
 
 
 
