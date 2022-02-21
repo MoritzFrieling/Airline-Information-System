@@ -58,10 +58,28 @@
 | Scenario: | 1. Actor indicates that they want to register a new flight |
 | | 2. System offers opportunity to enter flight information(Arrival, Departure, Locations, Plane, Price?) |
 | | 3. Actor enters all flight information |
-| | 4. System checks whether the flight information is valid |
+| | 4. System checks whether the flight information are valid |
 | | 5. System puts flight into database and makes flight available for booking |
 | Results: | Actor has successfully registered a flight |
-| Exceptions: | 4. Flight information is not valid and system informs the actor that the flight is not valid |
+| Exceptions: | 4. Flight information are not valid and system informs the actor that the flight is not valid |
+| | 4.1 Return to Step 3 |
+
+## Update/ delete flight
+| Name: | _Update or delete an upcoming flights_ |
+|----|----|
+| Actor: | Sales Officer |
+| Description: | The information regarding an upcoming flight need to be altered or the flight should be delete for whatever reason |
+| Pre-condition: | Sales Officer has logged in and  a flight has been found |
+| Scenario: | 1. Actor indicates that they want to update a  flight by pressing on a certain button |
+| | 2. System offers opportunity to update flight information(Arrival, Departure, Locations, Plane, Price?, Delete) |
+| | 3. Actor enters all flight information |
+| | 4. System checks whether the flight information are valid |
+| | 5. System puts updated flight into database and makes flight available for booking |
+| Results: | Actor has successfully updated the  flight |
+| Extensions: | 3a. If Actor wants to delete a flight, he presses on the avaiable button |
+| | > 1. System asks actor if he is sure |
+| | > 2. Actor confirms. Go back to step 5|
+| Exceptions: | 4. Flight information are not valid and system informs the actor that the flight is not valid |
 | | 4.1 Return to Step 3 |
 
 ## Create booking
