@@ -68,12 +68,12 @@
 | **Name:** | _Create booking_ |
 | --- | --- |
 | **Actor:** | Sales officer |
-| **Description:** | Sales officer books a trip for a customer. |
-| **Pre-condition:** | Sales officer is logged in |
+| **Description:** | Sales Employee books a trip for a customer. |
+| **Pre-condition:** | Sales Employee is logged in |
 | **Scenario:** | 1. Actor chooses to create a new booking for a customer. |
-|| 2. Actor [chooses a customer] for whom to make the booking |
+|| 2. Actor for whom to make the booking |
 || 3. System offers change to add more flights. |
-|| 4. If Actor wants to look up additional flights to add they [looks up an upcoming flight](#look-up-upcoming-flight) |
+|| 4. If Actor wants to look up additional flights to add they |
 || 5. System lists all flights, matching the actor's request.|
 || 6. System offers opportunity to add tickets to the flight.|
 || 7. If Actor wants to add (more) tickets they select a flight and choose to add tickets.|
