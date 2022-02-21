@@ -5,7 +5,7 @@
 |----|----|
 | Actor: | Staff Member |
 | Description: | The Actor logs into the platform |
-| Pre-condition: | Actor has registered |
+| Pre-condition: | Actor is already registered  |
 | Scenario: |1. System displays log in page |
 |  | 2. System asks for username and password |
 |  | 3. Actor enters username and password |
@@ -38,9 +38,9 @@
 | | 4. System offers opportunity to enter personal information (name, password, company mail address)  |
 | | 5. Actor enters personal information |
 | | 6. If the account doesn't exist yet and the password is sufficient, the system inputs the personal information of the account into the database.  Use Case ends here.|
-| Results: | Sales Officer has been successfully registered |
-| Exceptions: | 6.a Sales Officer has already been registered |
-| | 6.a.1 System informs the manager that the officer already exists in the database |
+| Results: | Staff Member has been successfully registered |
+| Exceptions: | 6.a Staff Member has already been registered |
+| | 6.a.1 System informs the manager that the Staff Member already exists in the database |
 | | 6.a.2 Use case ends here |
 | | 6.b Password is insufficient |
 | | 6.b.1 System indicates that the passwort does not fullfill the requirements |
@@ -70,7 +70,7 @@
 | Name: | _Enable temporary price reductions_ |
 |----|----|
 | Actor: | Sales Officer |
-| Description: | The Sales Officer reduces the price of a booking / ticket |
+| Description: | The Sales Officer reduces the price of a flight |
 | Pre-condition: | Sales Officer has logged in |
 | | 1. Actor indicates that they want to enable a price reduction |
 | | 2. System offers opportunity to enable a discount |
@@ -89,10 +89,10 @@
 ## Look up upcoming flights
 | Name: | _Look up upcoming flights_ |
 |----|----|
-| Actor: | Sales Officer |
-| Description: | Sales officer looks up an upcoming flight |
-| Pre-condition: | Sales officer is already logged in |
-| Scenario: | 1. System displays the main sales officer dashboard |
+| Actor: | Sales Emplyee |
+| Description: | Sales Employee looks up an upcoming flight |
+| Pre-condition: | Sales Employee is already logged in |
+| Scenario: | 1. System displays the main Sales Employee dashboard |
 || 2. Actor selects the option to search for a specific flight |
 || 3. System allows the user to input flight details (Arrival airport, Departure airport, Departure date, Number of seats) |
 || 4. Actor searches for a specific flight by delivering at least one of the mentioned flight details |
