@@ -72,11 +72,11 @@
 | Actor: | Sales Officer |
 | Description: | The Sales Officer reduces the price of a flight |
 | Pre-condition: | Sales Officer has logged in |
-| | 1. Actor indicates that they want to enable a price reduction |
+| Scenario: | 1. Actor indicates that they want to enable a price reduction |
 | | 2. System offers opportunity to enable a discount |
 | | 3. System gives Actor option to choose between a static and a dynamic price reduction |
 | | 4. Actor indicates what type discount they want to enable |
-| Scenario: | 5. System offers an opportunity to choose the flights the discount should be applied to |
+| | 5. System offers an opportunity to choose the flights the discount should be applied to |
 | | 6. If Actor wants to enable a dynamic discount the System offers an opportunity to choose a messure the discount is calculated by |
 | | 7. System enables the discount |
 | Results: | Actor has successfully reduced price of a ticket / booking |
