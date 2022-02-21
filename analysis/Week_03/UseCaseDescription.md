@@ -64,7 +64,35 @@
 | Exceptions: | 4. Flight information is not valid and system informs the actor that the flight is not valid |
 | | 4.1 Return to Step 3 |
 
-
+## Create booking
+| **Name:** | _Create booking_ |
+| --- | --- |
+| **Actor:** | Sales officer |
+| **Description:** | Sales officer books a trip for a customer. |
+| **Pre-condition:** | Sales officer is logged in |
+| **Scenario:** | 1. Actor chooses to create a new booking for a customer. |
+|| 2. Actor [chooses a customer] for whom to make the booking |
+|| 3. System offers change to add more flights. |
+|| 4. If Actor wants to look up additional flights to add they [looks up an upcoming flight](#look-up-upcoming-flight) |
+|| 5. System lists all flights, matching the actor's request.|
+|| 6. System offers opportunity to add tickets to the flight.|
+|| 7. If Actor wants to add (more) tickets they select a flight and choose to add tickets.|
+|| 8. System creates and lists all tickets matching the actor's request or the currently selected flight.|
+|| 9. Actor chooses a ticket.|
+|| 10. System offers the option to add paid options (food, luggage, seats chosen) as well as the opportunity to enter a name.|
+|| 11. If the Actor wants to add options they select the options desired by the customer.|
+|| 12. The Actor enters the name that is to be on the ticket given by the customer.|
+|| 13. System displays option to save ticket information.|
+|| 14. When the Actor needs to save ticket information they select that option.|
+|| 15. System adds the information to the booking.|
+|| 16. System shows booking information, a calculated price for the booking and displays opportunity to proceed with processing the booking.|
+|| 17. Actor decides to proceed. | 
+|| 18. System asks for confirmation. |
+|| 19. Actor indicates that everything is fine and allows to proceed. |
+|| 20. System processes booking request.|
+| **Result:** | The desired trip has been booked.|
+| **Exceptions:**||
+|||
 
 ## Price reduction
 | Name: | _Enable temporary price reductions_ |
