@@ -12,8 +12,8 @@
 |  | 4. System validates username and password |
 |  | 5. System allows access to platform |
 | Results: | Actor gets access to platform |
-| Exceptions: | 4.a System informs the user that the combination of username/password is invalid |
-|  | 4.a.1 Return to step 2.  |
+| Exceptions: | 4.a. System informs the user that the combination of username/password is invalid |
+|  | 4.a.1. Return to step 2.  |
 
 ## Log out
 | Name: | _Log out_ |
@@ -40,13 +40,13 @@
 | | 6. If the account doesn't exist yet and the password is sufficient, the system inputs the personal information of the account into the database.  Use Case ends here.|
 | Results: | Staff Member has been successfully registered |
 | Exceptions: | 6.a Staff Member has already been registered |
-| | 6.a.1 System informs the manager that the Staff Member already exists in the database |
-| | 6.a.2 Use case ends here |
-| | 6.b Password is insufficient |
-| | 6.b.1 System indicates that the passwort does not fullfill the requirements |
-| | 6.b.2 Return to step 3|
-| Extension: | 3.a Actor indicates that they want to register a new Sales Employee  |
-| | 3.a.1 Go to step 4 |
+| | 6.a.1. System informs the manager that the Staff Member already exists in the database |
+| | 6.a.2. Use case ends here |
+| | 6.b. Password is insufficient |
+| | 6.b.1. System indicates that the passwort does not fullfill the requirements |
+| | 6.b.2. Return to step 3|
+| Extension: | 3.a. Actor indicates that they want to register a new Sales Employee  |
+| | 3.a.1. Go to step 4 |
 
 
 ## Register flight
@@ -61,8 +61,8 @@
 | | 4. System checks whether the flight information are valid |
 | | 5. System puts flight into database and makes flight available for booking |
 | Results: | Actor has successfully registered a flight |
-| Exceptions: | 4.a Flight information are not valid and system informs the actor that the flight is not valid |
-| | 4.a.1 Return to Step 3 |
+| Exceptions: | 4.a. Flight information are not valid and system informs the actor that the flight is not valid |
+| | 4.a.1. Return to Step 3 |
 
 ## Update/ delete flight
 | Name: | _Update or delete an upcoming flights_ |
@@ -77,10 +77,10 @@
 | | 5. System puts updated flight into database and makes flight available for booking |
 | Results: | Actor has successfully updated the  flight |
 | Extensions: | 3a. If Actor wants to delete a flight, he presses on the avaiable button |
-| | 3.a.1 System asks actor if he is sure |
-| | 3.a.2 Actor confirms. Go back to step 5|
-| Exceptions: | 4.a Flight information are not valid and system informs the actor that the flight is not valid |
-| | 4.a.1 Return to Step 3 |
+| | 3.a.1. System asks actor if he is sure |
+| | 3.a.2. Actor confirms. Go back to step 5|
+| Exceptions: | 4.a. Flight information are not valid and system informs the actor that the flight is not valid |
+| | 4.a.1. Return to Step 3 |
 
 ## Create booking
 | **Name:** | _Create booking_ |
@@ -127,8 +127,8 @@
 | | 7. System enables the discount |
 | Results: | Actor has successfully reduced price of a ticket / booking |
 | Extensions: | 6a. If Actor wants to enable a static discount the System offers an opportunity to enter the discount percentage |
-| | 6.a.1 If Actor has chosen a static discount the Actor enters the discount amount |
-| | 6.a.2 return to step 7 |
+| | 6.a.1. If Actor has chosen a static discount the Actor enters the discount amount |
+| | 6.a.2. return to step 7 |
 | Exceptions: | If a selected flight already has a discount, the System can not apply another discount |
 
 
@@ -145,7 +145,7 @@
 || 5. System returns a list of matching flights |
 || 6. Actor selects the desired flight |
 | Results: | System delivers flight to booking |
-| Exceptions: | 5.a If no matching flight is found, the system indicates that this is the case and returns to step 4 |
+| Exceptions: | 5.a. If no matching flight is found, the system indicates that this is the case and returns to step 4 |
 
 ## Check key performance indicators
 | Name: | _Check key performance indicators_ |
