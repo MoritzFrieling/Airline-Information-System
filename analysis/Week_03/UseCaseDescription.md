@@ -56,7 +56,7 @@
 | Description: | The Sales Officer registers an upcoming flight |
 | Pre-condition: | Sales Officer has logged in |
 | Scenario: | 1. Actor indicates that they want to register a new flight |
-| | 2. System offers opportunity to enter flight information(Arrival, Departure, Locations, Plane, Price?) |
+| | 2. System offers opportunity to enter flight information(Arrival, Departure, Locations, Plane, Price) |
 | | 3. Actor enters all flight information |
 | | 4. System checks whether the flight information are valid |
 | | 5. System puts flight into database and makes flight available for booking |
@@ -71,7 +71,7 @@
 | Description: | The information regarding an upcoming flight need to be altered or the flight should be delete for whatever reason |
 | Pre-condition: | Sales Officer has logged in and  a flight has been found |
 | Scenario: | 1. Actor indicates that they want to update a  flight by pressing on a certain button |
-| | 2. System offers opportunity to update flight information(Arrival, Departure, Locations, Plane, Price?, Delete) |
+| | 2. System offers opportunity to update flight information(Arrival, Departure, Locations, Plane, Price, Delete) |
 | | 3. Actor enters all flight information |
 | | 4. System checks whether the flight information are valid |
 | | 5. System puts updated flight into database and makes flight available for booking |
