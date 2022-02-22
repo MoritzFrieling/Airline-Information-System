@@ -2,6 +2,7 @@
 
 
 | User group | Use case |
+|----|----|
 | All | Log in |
 | | Log out |
 | Sales Employee | Create booking |
