@@ -64,20 +64,6 @@
 | Exceptions: | 4.a. Flight information are not valid and system informs the actor that the flight is not valid |
 | | 4.a.1. Return to Step 3 |
 
-## Register journey
-| Name: | _Register upcoming journeys |
-|----|----|
-| Actor: | Sales Manager |
-| Description: | The Sales Manager registers an upcoming flight |
-| Pre-condition: | Sales Manager has logged in |
-| Scenario: | 1. Actor indicates that they want to register a new route |
-| | 2. System offers opportunity to enter flight information(Arrival, Departure, Locations, Plane, Price) |
-| | 3. Actor enters all flight information |
-| | 4. System checks whether the flight information are valid |
-| | 5. System puts flight into database and makes flight available for booking |
-| Results: | Actor has successfully registered a flight |
-| Exceptions: | 4.a. Flight information are not valid and system informs the actor that the flight is not valid |
-| | 4.a.1. Return to Step 3 |
 
 ## Update/ delete flight
 | Name: | _Update or delete an upcoming flights_ |
