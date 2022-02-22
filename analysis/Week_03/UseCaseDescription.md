@@ -37,7 +37,7 @@
 | | 3. Actor indicates that they want to register a new Sales Officer |
 | | 4. System offers opportunity to enter personal information (name, password, company mail address)  |
 | | 5. Actor enters personal information |
-| | 6. If the account doesn't exist yet and the password is sufficient, the system inputs the personal information of the account into the database.  Use Case ends here.|
+| | 6. If the account doesn't exist yet and the password is sufficient, the system inputs the personal information of the account into the database.|
 | Results: | Staff Member has been successfully registered |
 | Exceptions: | 6.a Staff Member has already been registered |
 | | 6.a.1. System informs the manager that the Staff Member already exists in the database |
@@ -56,6 +56,21 @@
 | Description: | The Sales Officer registers an upcoming flight |
 | Pre-condition: | Sales Officer has logged in |
 | Scenario: | 1. Actor indicates that they want to register a new flight |
+| | 2. System offers opportunity to enter flight information(Arrival, Departure, Locations, Plane, Price) |
+| | 3. Actor enters all flight information |
+| | 4. System checks whether the flight information are valid |
+| | 5. System puts flight into database and makes flight available for booking |
+| Results: | Actor has successfully registered a flight |
+| Exceptions: | 4.a. Flight information are not valid and system informs the actor that the flight is not valid |
+| | 4.a.1. Return to Step 3 |
+
+## Register journey
+| Name: | _Register upcoming journeys |
+|----|----|
+| Actor: | Sales Manager |
+| Description: | The Sales Manager registers an upcoming flight |
+| Pre-condition: | Sales Manager has logged in |
+| Scenario: | 1. Actor indicates that they want to register a new route |
 | | 2. System offers opportunity to enter flight information(Arrival, Departure, Locations, Plane, Price) |
 | | 3. Actor enters all flight information |
 | | 4. System checks whether the flight information are valid |
@@ -85,7 +100,7 @@
 ## Create booking
 | **Name:** | _Create booking_ |
 | --- | --- |
-| **Actor:** | Sales officer |
+| **Actor:** | Sales Employee |
 | **Description:** | Sales Employee books a trip for a customer. |
 | **Pre-condition:** | Sales Employee is logged in |
 | **Scenario:** | 1. Actor chooses to create a new booking for a customer. |
@@ -112,7 +127,7 @@
 | **Exceptions:**||
 |||
 
-## Price reduction
+## Create Price reduction
 | Name: | _Enable temporary price reductions_ |
 |----|----|
 | Actor: | Sales Officer |
@@ -135,7 +150,7 @@
 ## Look up upcoming flights
 | Name: | _Look up upcoming flights_ |
 |----|----|
-| Actor: | Sales Emplyee |
+| Actor: | Sales Employee |
 | Description: | Sales Employee looks up an upcoming flight |
 | Pre-condition: | Sales Employee is already logged in |
 | Scenario: | 1. System displays the main Sales Employee dashboard |
@@ -146,6 +161,7 @@
 || 6. Actor selects the desired flight |
 | Results: | System delivers flight to booking |
 | Exceptions: | 5.a. If no matching flight is found, the system indicates that this is the case and returns to step 4 |
+
 
 ## Check key performance indicators
 | Name: | _Check key performance indicators_ |
@@ -159,3 +175,5 @@
 || 4. Actor selects the route they want to examine |
 || 5. System displays the key performance indicators for that route |
 | Results: | The sales manager gained access to various statistics, such as total revenue numbers, numbers of tickets sold in each class, and statistics on all options sold for a specific route |
+
+
