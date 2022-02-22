@@ -34,3 +34,7 @@
 | Price reduction | The original price of the flight ticket is lowered. It can be static or dynamic |
 | Discount | A reduction in price depending on varying factors |
 | Luggage | The bags or suitcase that belong to the customer |
+
+|  Words related to employee  |      Definition     |
+|----------|:-------------:|
+| SSN | The social security number which helps to identify an individual |
