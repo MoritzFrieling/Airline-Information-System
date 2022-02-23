@@ -86,14 +86,26 @@
 ## Create booking
 | **Name:** | _Create booking_ |
 | --- | --- |
-| **Actor:** | Sales Employee |
-| **Description:** | A Sales Employee books a trip for a customer. |
-| **Pre-condition:** | Sales Employee is logged in. |
-| **Scenario:** | 1. The actor chooses to create a new booking for a customer. |
-|| 2. The actor for whom to make the booking. |
-|| 3. The system offers change to add more flights. |
-|| 4. The system lists all flights, matching the actor's request. |
-|| 5. The system offers the opportunity to add tickets to the flight. |
+| Actor: | Sales Employee |
+| Description: | A Sales Employee books a trip for a customer. |
+| Pre-condition: | Sales Employee is logged in. |
+| Scenario: | 1. The actor chooses to create a new booking for a customer. |
+|| 2. System requests destination and origin of the journey. |
+|| 3. Actor choose destination and origin of the journey 
+|| 4. System displays aviable flights. |
+|| 5. Actor choose a flight. |
+|| 6. System displays input fields for personal information and extra options |
+|| 7. Actor enters information of the customer and confirms. |
+|| 8. System displays all information regarding the booking. |
+|| 9. Actor confirms booking. |
+|| 10. System creates booking. |
+| Extensions: | 7.a Actor choose to add another ticket |
+| | 7.a.1 return to step 6. |
+| Result: | The desired trip has been booked. |
+| Exceptions: | |
+|||
+
+|| 2. The system offers to add tickets of the flight to the booking. |
 || 6. If the Actor wants to add (more) tickets, they select a flight and decide to add tickets. |
 || 7. The system creates and lists all tickets matching the actor's request or the currently selected flight. |
 || 8. The actor selects a ticket. |
@@ -108,9 +120,6 @@
 || 17. The system asks for confirmation. |
 || 18. Actor indicates that everything is fine and allows proceeding. |
 || 19. The system processes the booking request. |
-| **Result:** | The desired trip has been booked. |
-| **Exceptions:**||
-|||
 
 ## Create Price reduction
 | Name: | _Enable temporary price reductions_ |
@@ -139,7 +148,7 @@
 | Description: | Sales Employee looks up an upcoming flight. |
 | Pre-condition: | Sales Employee is already logged in. |
 | Scenario: | 1. The system displays the main Sales Employee dashboard. |
-|| 2. The actor selects the option to search for a specific flight. |
+|| 2. The actor selects the option to search for a upcoming flights. |
 || 3. The system allows the user to input flight details (Arrival airport, Departure airport, Departure date, Number of seats). |
 || 4. The actor searches for a specific flight by delivering at least one of the mentioned flight details. |
 || 5. The system returns a list of matching flights. |
