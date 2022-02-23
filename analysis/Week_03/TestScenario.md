@@ -37,6 +37,26 @@
 |  | 3. Actor enter -300.00 for the flight price. |
 | Results: | System indicates that the flight price is invalid. |
 
+
+## Lookup upcoming flights
+
+| Name: | Actor enters valid information for looking up flights |
+|----|----|
+| Scenario: |1. Actor chooses look up upcoming flights. |
+|  | 2. System asks the Actor to enter the details . |
+|  | 3. Actor enter ABC for arrival airport, BCE for departure airport, 02/03/2022 for departure date, 2 for number of seats. |
+| Results: | System displays the list of matching flights for the Actor. |
+
+
+
+| Name: | Actor enters invalid information for looking up flights |
+|----|----|
+| Scenario: |1. Actor chooses look up upcoming flights. |
+|  | 2. System asks the Actor to enter the details . |
+|  | 3. Actor enter ABC for arrival airport, BCE for departure airport, 02/03/2021 for departure date, 2 for number of seats. |
+| Results: | System informs that the departure date is invalid. |
+
+
 ## Search flight (new use case: searching the flight by its name)
 
 
@@ -54,3 +74,4 @@
 |  | 2. System asks the Actor to enter the flight name . |
 |  | 3. Actor enters AH19 for the flight name. |
 | Results: | System informs that the flight name is invalid. |
+
