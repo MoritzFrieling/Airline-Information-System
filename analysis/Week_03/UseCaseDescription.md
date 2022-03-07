@@ -91,15 +91,15 @@
 | Pre-condition: | Sales Employee is logged in. |
 | Scenario: | 1. The actor chooses to create a new booking for a customer. |
 || 2. System requests destination and origin of the journey. |
-|| 3. Actor choose destination and origin of the journey 
-|| 4. System displays aviable flights. |
-|| 5. Actor choose a flight. |
+|| 3. Actor chooses destination and origin of the journey 
+|| 4. System displays available flights. |
+|| 5. Actor chooses a flight. |
 || 6. System displays input fields for personal information and extra options |
 || 7. Actor enters information of the customer and confirms. |
 || 8. System displays all information regarding the booking. |
 || 9. Actor confirms booking. |
 || 10. System creates booking. |
-| Extensions: | 7.a Actor choose to add another ticket |
+| Extensions: | 7.a Actor chooses to add another ticket |
 | | 7.a.1 return to step 6. |
 | Result: | The desired trip has been booked. |
 | Exceptions: | |
@@ -148,7 +148,7 @@
 | Description: | Sales Employee looks up an upcoming flight. |
 | Pre-condition: | Sales Employee is already logged in. |
 | Scenario: | 1. The system displays the main Sales Employee dashboard. |
-|| 2. The actor selects the option to search for a upcoming flights. |
+|| 2. The actor selects the option to search for upcoming flights. |
 || 3. The system allows the user to input flight details (Arrival airport, Departure airport, Departure date, Number of seats). |
 || 4. The actor searches for a specific flight by delivering at least one of the mentioned flight details. |
 || 5. The system returns a list of matching flights. |
