@@ -65,23 +65,39 @@
 | | 4.a.1. Return to Step 3. |
 
 
-## Update/ delete flight
-| Name: | _Update or delete upcoming flights_ |
+## Update flight
+| Name: | _Update  upcoming flights_ |
 |----|----|
 | Actor: | Sales Officer |
 | Description: | The information regarding an upcoming flight need to be altered or the flight should be deleted for whatever reason. |
 | Pre-condition: | The Sales Officer has logged in and  a flight has been found. |
-| Scenario: | 1. The Actor indicates that they want to update a flight by pressing on a certain button. |
-| | 2. The System offers opportunity to update flight information(Arrival, Departure, Locations, Plane, Price, Delete). |
-| | 3. The Actor enters all flight information. |
-| | 4. The System checks whether the flight information are valid. |
-| | 5. The System puts an updated flight into the database and makes the flight available for booking. |
+| Scenario: | 1. The system displays options to update and delete a flight. |
+| | 2. The Actor selects to update the flight Information(Arrival, Departure, Locations, Plane, Price, Delete). |
+| | 3. The System displays form with all flight information. |
+| | 4. The Actor edits and confirms all desired information. |
+| | 5. The System shows succes message. |
+| | 6. The Actor confirms the message. |
 | Results: | The Actor has successfully updated the  flight. |
-| Extensions: | 3a. If the Actor wants to delete a flight, he presses on the available button. |
-| | 3.a.1. The system asks the Actor if he is sure. |
-| | 3.a.2. The Actor confirms. Go back to step 5. |
-| Exceptions: | 4.a. The flight information is not valid and the system informs the actor that the flight is not valid. |
+| Extensions: |  |
+| Exceptions: | 5.a. The flight information is not valid and the system informs the actor that the flight is not valid. |
 | | 4.a.1. Return to Step 3. |
+
+## Delete flight
+| Name: | Delete  upcoming flights_ |
+|----|----|
+| Actor: | Sales Officer |
+| Description: | The information regarding an upcoming flight need to be altered or the flight should be deleted for whatever reason. |
+| Pre-condition: | The Sales Officer has logged in and  a flight has been found. |
+| Scenario: | 1. The system displays options to update and delete a flight. |
+| | 2. The Actor selects to delete the flight . |
+| | 3. The System displays confirmation window |
+| | 4. The Actor selects to delete the flight. |
+| | 5. The System shows succes message. |
+| | 6. The Actor confirms the message. |
+| Results: | The Actor has successfully deleted the  flight. |
+| Extensions: |  |
+| Exceptions: | 4.a. The Actor selects cancel. |
+| | 4.a.1. Return to Step 1. |
 
 ## Create booking
 | **Name:** | _Create booking_ |
