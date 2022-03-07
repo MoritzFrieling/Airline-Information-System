@@ -69,9 +69,9 @@
 | Name: | _Update  upcoming flights_ |
 |----|----|
 | Actor: | Sales Officer |
-| Description: | The information regarding an upcoming flight need to be altered or the flight should be deleted for whatever reason. |
+| Description: | The information regarding an upcoming flight need to be altered. |
 | Pre-condition: | The Sales Officer has logged in and  a flight has been found. |
-| Scenario: | 1. The system displays options to update and delete a flight. |
+| Scenario: | 1. The system displays options to update the flight. |
 | | 2. The Actor selects to update the flight Information(Arrival, Departure, Locations, Plane, Price, Delete). |
 | | 3. The System displays form with all flight information. |
 | | 4. The Actor edits and confirms all desired information. |
@@ -86,9 +86,9 @@
 | Name: | Delete  upcoming flights_ |
 |----|----|
 | Actor: | Sales Officer |
-| Description: | The information regarding an upcoming flight need to be altered or the flight should be deleted for whatever reason. |
+| Description: | The flight should be deleted . |
 | Pre-condition: | The Sales Officer has logged in and  a flight has been found. |
-| Scenario: | 1. The system displays options to update and delete a flight. |
+| Scenario: | 1. The system displays options to delete the flight. |
 | | 2. The Actor selects to delete the flight . |
 | | 3. The System displays confirmation window |
 | | 4. The Actor selects to delete the flight. |
