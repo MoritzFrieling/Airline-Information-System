@@ -97,7 +97,7 @@
 | Results: | The Actor has successfully deleted the  flight. |
 | Extensions: |  |
 | Exceptions: | 4.a. The Actor selects cancel. |
-| | 4.a.1. Return to Step 1. |
+| | 4.a.1. The use case ends here. |
 
 ## Create booking
 | **Name:** | _Create booking_ |
