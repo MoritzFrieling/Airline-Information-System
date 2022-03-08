@@ -176,10 +176,25 @@
 | Actor: | Sales Manager |
 | Description: | Sales Manager checks the key performance indicators. |
 | Pre-condition: | Sales Manager is already logged in. |
-| Scenario:  | 1. The system displays the main sales manager dashboard. |
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
 || 2. The Actor selects the option to check key performance indicators. |
 || 3. The System allows the Actor to select a specific route. |
 || 4. The Actor selects the route they want to examine. |
 || 5. The System displays the key performance indicators for that route. |
 | Results: | The Sales Manager gained access to various statistics, such as total revenue numbers, numbers of tickets sold in each class, and statistics on all options sold for a specific route. |
 
+## Register route
+| Name: | _Register route_ |
+|----|----|
+| Actor: | Sales Manager |
+| Description: | Sales Manager registers a route. |
+| Pre-condition: | Sales Manager is already logged in. |
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
+|| 2. The Actor selects the option to register a route. |
+|| 3. The System allows the Actor to select specific route details (lenght in km, lenght in h/m destination, origin). |
+|| 4. The Actor selects their route details. |
+|| 5. The System checks wether the flight information are valid. |
+|| 6. The System saves the route. |
+| Results: | The Sales Manager created a route. |
+| Exceptions: | 5.a. The flight information are not valid and the system informs the actor that the route is not valid. |
+| | 5.a.1. Return to Step 3. |
