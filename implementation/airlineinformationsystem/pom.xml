@@ -18,6 +18,7 @@
     <module>GUIlayer</module>
     <module>Assembler</module>
     <module>DataRecords</module>
+      <module>Persistence</module>
   </modules>
       
   <properties>

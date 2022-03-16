@@ -5,6 +5,9 @@
  */
 package f.datarecords;
 
+import f.businessLogicLayer.Plane;
+import f.businessLogicLayer.Route;
+
 import java.time.LocalDate;
 
 /**
@@ -14,12 +17,15 @@ import java.time.LocalDate;
 public class FlightData {
     private final int flightID;
     private final String name;
-    private final RouteData route;
+    private final Route route;
     private final LocalDate departureDate;
-    private final PlaneData plane;
-    
-    
-    public FlightData(int flightID,String name){
-        
+    private final Plane plane;
+
+    public FlightData(int flightID, String name, Route route, LocalDate departureDate, Plane plane) {
+        this.flightID = flightID;
+        this.name = name;
+        this.route = route;
+        this.departureDate = departureDate;
+        this.plane = plane;
     }
 }

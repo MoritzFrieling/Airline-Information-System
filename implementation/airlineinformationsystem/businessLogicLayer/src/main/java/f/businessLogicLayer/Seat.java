@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package f.businesslogiclayer;
+package f.businessLogicLayer;
+
+import f.datarecords.SeatData;
 
 /**
  *
  * @author phuong
  */
-public class BusinessLogicAPI {
+public class Seat {
+    private SeatData seatData;
     
+    public Seat(SeatData seatData){
+        this.seatData = seatData;
+    }
 }

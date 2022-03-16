@@ -10,5 +10,19 @@ package f.datarecords;
  * @author phuong
  */
 public class RouteData {
-   
+    String airportA;
+    String airportB;
+
+    public RouteData(String airportA, String airportB) {
+        this.airportA = airportA;
+        this.airportB = airportB;
+    }
+
+    public String getAirportA() {
+        return airportA;
+    }
+
+    public String getAirportB() {
+        return airportB;
+    }
 }

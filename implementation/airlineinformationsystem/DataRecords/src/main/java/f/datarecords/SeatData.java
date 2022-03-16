@@ -5,23 +5,26 @@
  */
 package f.datarecords;
 
+import f.businessLogicLayer.Seat;
+import f.businessLogicLayer.SeatNumber;
+
 /**
  *
  * @author phuong
  */
 public class SeatData {
 
-    private final String seatNumber;
+    private final SeatNumber seatNumber;
     private final String classType;
     private boolean isAvailable;
 
-    public SeatData(String seatNumber, String classType) {
+    public SeatData(SeatNumber seatNumber, String classType) {
         this.seatNumber = seatNumber;
         this.classType = classType;
         this.isAvailable = true;
     }
 
-    public String getSeatNumber() {
+    public SeatNumber getSeatNumber() {
         return seatNumber;
     }
 

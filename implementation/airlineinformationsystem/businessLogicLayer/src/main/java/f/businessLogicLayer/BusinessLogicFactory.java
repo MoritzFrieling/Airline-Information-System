@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package f.businesslogiclayer;
+package f.businessLogicLayer;
+
+import f.persistencelayer.PersistenceAPI;
 
 /**
  *
  * @author phuong
  */
 public interface BusinessLogicFactory {
-    static BusinessLogicAPI getImplementation(){
-        return new BusinessLogicAPI();
+    static BusinessLogicAPIImplementation getImplementation(PersistenceAPI persistenceAPI){
+        return new BusinessLogicAPIImplementation(persistenceAPI);
     };
 }

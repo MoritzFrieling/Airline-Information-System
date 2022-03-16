@@ -5,7 +5,10 @@
  */
 package f.datarecords;
 
-import f.businesslogiclayer.Seat;
+import f.businessLogicLayer.PlaneModel;
+import f.businessLogicLayer.Seat;
+import f.businessLogicLayer.SeatNumber;
+
 import java.util.HashMap;
 
 /**
@@ -14,8 +17,12 @@ import java.util.HashMap;
  */
 public class PlaneData {
     private final String planeNumber;
-    private final String model;
-    private final HashMap<String,Seat> seats;
-    
-    
+    private final PlaneModel planeModel;
+
+
+    public PlaneData(String planeNumber, PlaneModel planeModel) {
+        this.planeNumber = planeNumber;
+        this.planeModel = planeModel;
+    }
+
 }
