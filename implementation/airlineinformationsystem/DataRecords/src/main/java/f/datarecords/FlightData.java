@@ -17,11 +17,11 @@ import java.time.LocalDate;
 public class FlightData {
     private final int flightID;
     private final String name;
-    private final Route route;
+    private final RouteData route;
     private final LocalDate departureDate;
-    private final Plane plane;
+    private final PlaneData plane;
 
-    public FlightData(int flightID, String name, Route route, LocalDate departureDate, Plane plane) {
+    public FlightData(int flightID, String name, RouteData route, LocalDate departureDate, PlaneData plane) {
         this.flightID = flightID;
         this.name = name;
         this.route = route;
