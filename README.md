@@ -34,9 +34,13 @@ Examples of these diagrams can be found in the [design](/design) directory.
 
 ## Table of content
 
-- [Analysis](/analysis)
-- [Design](/design)
-- [Activity Diagram](/analysis/ActivityDiagram)
-- [Domain Model](/analysis/DomainModel)
-- [Use Case Diagram](/analysis/UsecaseDiagram)
-- [Class Diagram](/design/classDiagram.vpp)
+- [1 Analysis](/analysis)
+  - [1.1 Activity Diagram](/analysis/ActivityDiagram)
+  - [1.1.1 Activity Diagram All Together](/analysis/ActivityDiagram/Activity%20diagram%20all%20together.vpp)
+  - [1.1.2 Activity Diagram Sale Employee](/analysis/ActivityDiagram/ActivityDiagramSaleEmployee.vpp)
+  - [1.1.3 Activity Diagram Sale Officer](/analysis/ActivityDiagram/ActivityDiagramSaleOfficer.vpp)
+  - [1.2 Domain Model](/analysis/DomainModel)
+  - [1.2.1 Domain Model G14 PRJ2](/analysis/DomainModel/Domain%20model%20g14%20prj2.svg)
+  - [1.3 Use Case Diagram](/analysis/UsecaseDiagram)
+- [2 Design](/design)
+  - [2.1 Class Diagram](/design/classDiagram.vpp)
