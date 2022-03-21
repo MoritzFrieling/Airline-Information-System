@@ -31,3 +31,12 @@ Examples of these diagrams can be found in the [design](/design) directory.
 - [Analysis](/analysis) - For all analysis artefacts
 - [Design](/design) - For all design artefacts
 - [Implementation](/implementation) - For the implementation of the Airline Information System
+
+## Table of content
+
+- [Analysis](/analysis)
+- [Design](/design)
+- [Activity Diagram](/analysis/ActivityDiagram)
+- [Domain Model](/analysis/DomainModel)
+- [Use Case Diagram](/analysis/UsecaseDiagram)
+- [Class Diagram](/design/classDiagram.vpp)
