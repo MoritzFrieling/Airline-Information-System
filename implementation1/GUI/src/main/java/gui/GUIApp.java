@@ -31,7 +31,7 @@ public class GUIApp extends Application {
 
         switch (c.getName()) {
             case "gui.CustomerController":
-                return new CustomerController(this::getSceneManager, businessLogicAPI.getCustomerManager());
+                return new AirportController(this::getSceneManager, businessLogicAPI.getAirportManager());
             case "gui.PrimaryController":
                 return new SecondaryController(this::getSceneManager);
             case "gui.SecondaryController":

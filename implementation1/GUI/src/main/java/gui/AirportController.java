@@ -7,8 +7,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import businesslogic.CustomerManager;
-import datarecords.CustomerData;
+import businesslogic.AirportManager;
+import datarecords.AirportData;
+import datarecords.AirportData;
 import java.time.LocalDate;
 import java.util.function.Consumer;
 import javafx.scene.control.Label;
@@ -22,14 +23,14 @@ import javafx.scene.control.Label;
  *
  * @author Informatics Fontys Venlo
  */
-class CustomerController implements Initializable {
+class AirportController implements Initializable {
 
     @FXML
-    private TextField firstName;
+    private TextField airportName;
     @FXML
-    private TextField lastName;
+    private TextField abbreviationName;
     @FXML
-    private TextField dob;
+    private TextField cityName;
     @FXML
     private Button saveButton;
     @FXML
@@ -38,9 +39,9 @@ class CustomerController implements Initializable {
     private Label result;
 
     private final Supplier<SceneManager> sceneManagerSupplier;
-    private final CustomerManager customerManager;
+    private final AirportManager customerManager;
 
-    public CustomerController(Supplier<SceneManager> sceneManagerSupplier, CustomerManager customerManager) {
+    public AirportController(Supplier<SceneManager> sceneManagerSupplier, AirportManager customerManager) {
         this.sceneManagerSupplier = sceneManagerSupplier;
         this.customerManager = customerManager;
     }
@@ -53,13 +54,13 @@ class CustomerController implements Initializable {
     }
 
     @FXML
-    private void storeCustomer() {
+    private void storeAirport() {
 
-        CustomerData customerData = new CustomerData(0, firstName.getText(), lastName.getText(), LocalDate.parse(dob.getText()));
+        AirportData airportData = new AirportData(0, airportName.getText(), abbreviationName.getText(), cityName.getText());
 
-        CustomerData addedCustomer = customerManager.add(customerData);
+        AirportData addedAirport = customerManager.add(airportData);
      
-        result.setText("Customer added: " + addedCustomer.toString() );
+        result.setText("Airport added: " + addedAirport.toString() );
     }
 
     /**

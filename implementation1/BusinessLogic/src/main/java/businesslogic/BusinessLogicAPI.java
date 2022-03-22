@@ -7,6 +7,6 @@ package businesslogic;
  */
 public interface BusinessLogicAPI {
     
-    CustomerManager getCustomerManager();
+    AirportManager getAirportManager();
     
 }

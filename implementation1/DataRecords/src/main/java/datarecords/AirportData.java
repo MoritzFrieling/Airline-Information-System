@@ -13,39 +13,41 @@ import java.time.LocalDate;
  * 
  * @author Informatics Fontys Venlo
  */
-public class CustomerData {
+public class AirportData {
     
     private final int id;
-    private final String firstName;
-    private final String lastName;
-    private final LocalDate dob;
+    private final String airportName;
+    private final String abbreviation;
+    private final String cityName;
 
-    public CustomerData(int id, String firstName, String lastName, LocalDate dob) {
+    public AirportData(int id, String airportName, String abbreviation, String cityName) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dob = dob;
+        this.airportName = airportName;
+        this.abbreviation = abbreviation;
+        this.cityName = cityName;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getAirportName() {
+        return airportName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getAbbreviation() {
+        return abbreviation;
     }
 
-    public LocalDate getDob() {
-        return dob;
+    public String getCityName() {
+        return cityName;
     }
+
+   
 
     @Override
     public String toString() {
-        return "CustomerData{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", dob=" + dob + '}';
+        return "AirportData{" + "id=" + id + ", airportName=" + airportName + ", Abbreviation=" + abbreviation + ", city=" + cityName + '}';
     }
     
 }

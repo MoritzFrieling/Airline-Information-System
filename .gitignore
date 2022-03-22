@@ -40,3 +40,9 @@ Thumbs.db
 .idea
 .metadata
 analysis/Week_02/.Prj2 g14 domain model.vpp.lck
+/implementation1/target/
+/implementation1/DataRecords/target/
+/implementation1/Persistence/target/
+/implementation1/BusinessLogic/target/
+/implementation1/GUI/target/
+/implementation1/Assembler/target/

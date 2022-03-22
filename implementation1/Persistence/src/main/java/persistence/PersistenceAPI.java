@@ -12,10 +12,10 @@ public interface PersistenceAPI {
      * creation of customized PersistenceFacade implementations with limited
      * services, for test purposes.
      *
-     * @return CustomerStorageService object that knows how to store and
-     * retrieve customers.
+     * @return AirportStorageService object that knows how to store and
+ retrieve customers.
      */
-    default CustomerStorageService getCustomerStorageService() {
+    default AirportStorageService getCustomerStorageService() {
         return null;
     }
 
