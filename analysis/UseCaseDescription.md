@@ -9,8 +9,7 @@
 | Scenario: |1. The System displays a login page. |
 |  | 2. The System asks for username and password. |
 |  | 3. The Actor enters a username and password. |
-|  | 4. The System validates username and password. |
-|  | 5. The System allows access to platform. |
+|  | 4. The System allows access to platform. |
 | Results: | The Actor gets access to platform. |
 | Exceptions: | 4.a. The System informs the user that the combination of username/password is invalid. |
 |  | 4.a.1. Return to step 2.  |
