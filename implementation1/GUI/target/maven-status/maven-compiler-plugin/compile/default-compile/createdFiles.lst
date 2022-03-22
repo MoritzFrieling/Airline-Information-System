@@ -1,0 +1,7 @@
+gui\SceneManager.class
+module-info.class
+gui\CustomerController.class
+gui\ErrorController.class
+gui\PrimaryController.class
+gui\GUIApp.class
+gui\SecondaryController.class

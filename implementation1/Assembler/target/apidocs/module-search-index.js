@@ -1,0 +1,1 @@
+moduleSearchIndex = [{"l":"assembler_module"}]

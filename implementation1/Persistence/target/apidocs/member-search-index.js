@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"persistence","c":"CustomerStorageService","l":"add(CustomerData)","url":"add(datarecords.CustomerData)"},{"p":"persistence","c":"CustomerStorageService","l":"getAll()"},{"p":"persistence","c":"PersistenceAPI","l":"getCustomerStorageService()"},{"p":"persistence","c":"PersistenceFactory","l":"getImplementation()"}]

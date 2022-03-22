@@ -1,0 +1,61 @@
+@options
+@argfile
+--class-path
+'C:/Users/phuong/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13.jar;C:/Users/phuong/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13.jar;C:/Users/phuong/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13.jar;C:/Users/phuong/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13.jar'
+--module-path
+'C:/Users/phuong/.m2/repository/org/openjfx/javafx-base/13/javafx-base-13-win.jar;C:/Users/phuong/.m2/repository/org/openjfx/javafx-graphics/13/javafx-graphics-13-win.jar;C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/Assembler/target/Assembler-1.0-SNAPSHOT.jar;C:/Users/phuong/.m2/repository/org/openjfx/javafx-controls/13/javafx-controls-13-win.jar;C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/GUI/target/GUI-1.0-SNAPSHOT.jar;C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/BusinessLogic/target/BusinessLogic-1.0-SNAPSHOT.jar;C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/DataRecords/target/DataRecords-1.0-SNAPSHOT.jar;C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/Persistence/target/Persistence-1.0-SNAPSHOT.jar;C:/Users/phuong/.m2/repository/org/openjfx/javafx-fxml/13/javafx-fxml-13-win.jar'
+--patch-module
+assembler_module='C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/Assembler/src/main/java;C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/Assembler/target/generated-sources/annotations'
+-encoding
+'UTF-8'
+-protected
+--release
+11
+--module-source-path
+'C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/Assembler/target/apidocs/src'
+--allow-script-in-comments
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/Assembler/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Assembler 1.0-SNAPSHOT API'
+-footer
+'<script type="text/javascript">                                SyntaxHighlighter.defaults["auto-links"] = false;                                SyntaxHighlighter.defaults["tab-size"] = 2;                                SyntaxHighlighter.all();                             </script>'
+-header
+'<script src="{@docRoot}/syntaxhighlighter/syntaxhighlighter.js" type="text/javascript"></script>                             <link href="{@docRoot}/syntaxhighlighter/theme.css" rel="stylesheet" type="text/css" title="Style">'
+-linkoffline
+'https://sebivenlo.github.io/testeasypom/airlineinformationsystem/BusinessLogic/apidocs' 'C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/BusinessLogic/target/apidocs'
+-linkoffline
+'https://sebivenlo.github.io/testeasypom/airlineinformationsystem/GUI/apidocs' 'C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/GUI/target/apidocs'
+-use
+-version
+-windowtitle
+'Assembler 1.0-SNAPSHOT API'
+'C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/Assembler/src/main/java/assembler/Assembler.java'
+'C:/Users/phuong/Documents/GitHub/prj2-airline-information-system/implementation/Assembler/src/main/java/module-info.java'
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\allclasses-index.html = 1647956782617
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\allpackages-index.html = 1647956782631
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\constant-values.html = 1647956782551
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\deprecated-list.html = 1647956782587
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\element-list = 1647956782520
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\help-doc.html = 1647956782631
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\index-all.html = 1647956782617
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\index.html = 1647956782631
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\member-search-index.js = 1647956782607
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\member-search-index.zip = 1647956782607
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\module-search-index.js = 1647956782597
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\module-search-index.zip = 1647956782597
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\overview-tree.html = 1647956782571
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\package-search-index.js = 1647956782597
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\package-search-index.zip = 1647956782597
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\script.js = 1647956782647
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\search.js = 1647956782662
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\stylesheet.css = 1647956782647
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\type-search-index.js = 1647956782607
+C:\Users\phuong\Documents\GitHub\prj2-airline-information-system\implementation\Assembler\target\apidocs\type-search-index.zip = 1647956782607
