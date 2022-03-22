@@ -49,7 +49,7 @@ Examples of these diagrams can be found in the [design](/design) directory.
   - [1.9 Read Me](/analysis/readme.md)
 - [2 Design](/design)
   - [2.1 Class Diagram](/design/classDiagram.vpp)
-  - [2.2 Class Diagram (png)](/design/Class%20Diagram.png)
+  - [2.2 Class Diagram Picture](/design/Class%20Diagram.png)
   - [2.3 Read Me](/design/readme.md)
 - [3 Implementation - Airlineinformationsystem](/implementation/airlineinformationsystem)
   - [3.1 Assembler](/implementation/airlineinformationsystem/Assembler)
