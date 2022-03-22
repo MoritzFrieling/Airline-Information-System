@@ -36,9 +36,7 @@ Examples of these diagrams can be found in the [design](/design) directory.
 
 - [1 Analysis](/analysis)
   - [1.1 Activity Diagram](/analysis/ActivityDiagram)
-  - [1.1.1 Activity Diagram Sales Manager](/analysis/ActivityDiagram/ActivityDiagramSaleManager.vpp)
-  - [1.1.2 Activity Diagram Sales Employee](/analysis/ActivityDiagram/ActivityDiagramSaleEmployee.vpp)
-  - [1.1.3 Activity Diagram Sales Officer](/analysis/ActivityDiagram/ActivityDiagramSaleOfficer.vpp)
+  - [1.1.1 Activity Diagram File](/analysis/ActivityDiagram/ActivityDiagramSaleManager.vpp)
   - [1.2 Domain Model](/analysis/DomainModel/Domain%20Model%20g14%20prj2.svg)
   - [1.3 Use Case Diagram](/analysis/UseCaseDiagram)
   - [1.4 Data Dictionary](/analysis/Data-Dictionary.md)
