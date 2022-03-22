@@ -39,11 +39,11 @@ class AirportController implements Initializable {
     private Label result;
 
     private final Supplier<SceneManager> sceneManagerSupplier;
-    private final AirportManager customerManager;
+    private final AirportManager airportManager;
 
-    public AirportController(Supplier<SceneManager> sceneManagerSupplier, AirportManager customerManager) {
+    public AirportController(Supplier<SceneManager> sceneManagerSupplier, AirportManager airportManager) {
         this.sceneManagerSupplier = sceneManagerSupplier;
-        this.customerManager = customerManager;
+        this.airportManager = airportManager;
     }
 
     @FXML
@@ -58,7 +58,7 @@ class AirportController implements Initializable {
 
         AirportData airportData = new AirportData(0, airportName.getText(), abbreviationName.getText(), cityName.getText());
 
-        AirportData addedAirport = customerManager.add(airportData);
+        AirportData addedAirport = airportManager.add(airportData);
      
         result.setText("Airport added: " + addedAirport.toString() );
     }

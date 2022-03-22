@@ -24,7 +24,7 @@ public class GUIApp extends Application {
 
     private BusinessLogicAPI businessLogicAPI;
     private SceneManager sceneManager;
-    private static final String INITIAL_VIEW = "customerView";
+    private static final String INITIAL_VIEW = "AirportView";
 
     private final Callback<Class<?>, Object> controllerFactory = (Class<?> c)
             -> {
