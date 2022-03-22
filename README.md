@@ -53,7 +53,6 @@ Examples of these diagrams can be found in the [design](/design) directory.
   - [2.3 Read Me](/design/readme.md)
 - [3 Implementation - Airlineinformationsystem](/implementation/airlineinformationsystem)
   - [3.1 Assembler](/implementation/airlineinformationsystem/Assembler)
-  - [3.1.1]
   - [3.2 GUI Layer](/implementation/airlineinformationsystem/GUIlayer)
   - [3.3 Persistence](/implementation/airlineinformationsystem/Persistence)
   - [3.4 Business Logic Layer](/implementation/airlineinformationsystem/businessLogicLayer)
