@@ -1,2 +1,8 @@
-gui/AirportController.class
+gui\SceneManager.class
 module-info.class
+gui\ErrorController.class
+gui\AirportController.class
+gui\PrimaryController.class
+gui\GUIApp.class
+gui\SecondaryController.class
+gui\RouteController.class

@@ -24,13 +24,13 @@ public class GUIApp extends Application {
 
     private BusinessLogicAPI businessLogicAPI;
     private SceneManager sceneManager;
-    private static final String INITIAL_VIEW = "AirportView";
+    private static final String INITIAL_VIEW = "airportView";
 
     private final Callback<Class<?>, Object> controllerFactory = (Class<?> c)
             -> {
 
         switch (c.getName()) {
-            case "gui.CustomerController":
+            case "gui.AirportController":
                 return new AirportController(this::getSceneManager, businessLogicAPI.getAirportManager());
             case "gui.PrimaryController":
                 return new SecondaryController(this::getSceneManager);

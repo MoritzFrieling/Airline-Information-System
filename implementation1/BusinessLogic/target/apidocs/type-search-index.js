@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"businesslogic","l":"BusinessLogicAPI"},{"p":"businesslogic","l":"BusinessLogicFactory"},{"p":"businesslogic","l":"Customer"},{"p":"businesslogic","l":"CustomerManager"}]
+typeSearchIndex = [{"p":"businesslogic","l":"Airport"},{"p":"businesslogic","l":"AirportManager"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"businesslogic","l":"BusinessLogicAPI"},{"p":"businesslogic","l":"BusinessLogicFactory"},{"p":"businesslogic","l":"Route"},{"p":"businesslogic","l":"RouteManager"}]
