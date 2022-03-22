@@ -36,7 +36,7 @@ Examples of these diagrams can be found in the [design](/design) directory.
 
 - [1 Analysis](/analysis)
   - [1.1 Activity Diagram](/analysis/ActivityDiagram)
-  - [1.1.1 Activity Diagram File](/analysis/ActivityDiagram/ActivityDiagramSaleManager.vpp)
+  - [1.1.1 Activity Diagram File](/analysis/ActivityDiagram/Activity%20diagram.vpp)
   - [1.2 Domain Model](/analysis/DomainModel)
   - [1.2.1 Domain Model File](/analysis/DomainModel/Domain%20Model%20g14%20prj2.svg)
   - [1.3 Use Case Diagram](/analysis/UseCaseDiagram)
