@@ -32,6 +32,9 @@ class SecondaryController {
     private void goAddAirport() {
         sceneManagerSupplier.get().changeScene("airportView");
     }
+
+    @FXML
+    private void goAddPlane(){ sceneManagerSupplier.get().changeScene("addPlaneView"); }
     
        
 }

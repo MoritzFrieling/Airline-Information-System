@@ -19,5 +19,10 @@ class BusinessLogicAPIImpl implements BusinessLogicAPI {
     public AirportManager getAirportManager() {
         return new AirportManager(persistenceAPI.getAirportStorageService());
     }
-    
+
+    @Override
+    public PlaneManager getPlaneManager() {
+        return new PlaneManager(persistenceAPI.getPlaneStorageService());
+    }
+
 }

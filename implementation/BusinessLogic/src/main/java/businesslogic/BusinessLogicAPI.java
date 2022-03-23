@@ -8,5 +8,7 @@ package businesslogic;
 public interface BusinessLogicAPI {
     
     AirportManager getAirportManager();
+
+    PlaneManager getPlaneManager();
     
 }

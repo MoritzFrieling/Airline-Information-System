@@ -1,0 +1,89 @@
+package gui;
+
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
+import java.util.function.Supplier;
+
+import businesslogic.PlaneManager;
+import datarecords.PlaneData;
+import datarecords.PlaneModelData;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import businesslogic.AirportManager;
+import datarecords.AirportData;
+import javafx.scene.control.Label;
+
+/**
+ * FXML Customer Controller class.
+ * The controller class contains GUI-logic (no business logic!). It reacts on
+ * GUI events like button clicks. It triggers the BusinessLogic layer
+ * to do the real work. Furthermore the controller will trigger navigation
+ * and update the GUI.
+ *
+ * @author Informatics Fontys Venlo
+ */
+class AddPlaneController implements Initializable {
+
+    @FXML
+    private TextField planeNumber;
+    @FXML
+    private ComboBox modelDropDown;
+    @FXML
+    private Button saveButton;
+    @FXML
+    private Button homeButton;
+    @FXML
+    private Label result;
+
+    private final Supplier<SceneManager> sceneManagerSupplier;
+    private final PlaneManager planeManager;
+
+    public AddPlaneController(Supplier<SceneManager> sceneManagerSupplier, PlaneManager planeManager) {
+        this.sceneManagerSupplier = sceneManagerSupplier;
+        this.planeManager = planeManager;
+    }
+
+    @FXML
+    private void toSecondary() {
+
+        sceneManagerSupplier.get().changeScene("secondary");
+    }
+
+    @FXML
+    private void storePlane() {
+
+        PlaneData planeData = new PlaneData(planeNumber.getText(), setModel());
+
+        PlaneData addedPlane = planeManager.add(planeData);
+
+        result.setText("Airport added: " + addedPlane.toString() );
+
+    }
+
+    private PlaneModelData setModel(){
+        if (modelDropDown.getSelectionModel().isSelected(0)){
+            return new PlaneModelData("Boeing","737",230,7000,35000);
+        }else if (modelDropDown.getSelectionModel().isSelected(1)){
+            return new PlaneModelData("Boeing","747",350,8000,40000);
+        }else if (modelDropDown.getSelectionModel().isSelected(2)){
+            return new PlaneModelData("Boeing","757",230,7000,35000);
+        }else return null;
+    }
+
+    /**
+     * Initializes the controller class.
+     *
+     * @param url
+     * @param rb
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        modelDropDown.getItems().addAll("Boeing-737","Boeing-747","Boeing-757");
+        modelDropDown.getSelectionModel().select("Boeing-737");
+    }
+
+}
