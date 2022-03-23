@@ -1,6 +1,0 @@
-persistence\AirportStorageServiceImpl.class
-module-info.class
-persistence\AirportStorageService.class
-persistence\PersistenceAPI.class
-persistence\PersistenceAPIImpl.class
-persistence\PersistenceFactory.class

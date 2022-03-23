@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"persistence","c":"AirportStorageService","l":"add(AirportData)","url":"add(datarecords.AirportData)"},{"p":"persistence","c":"PersistenceAPI","l":"getAirportStorageService()"},{"p":"persistence","c":"AirportStorageService","l":"getAll()"},{"p":"persistence","c":"PersistenceFactory","l":"getImplementation()"}]

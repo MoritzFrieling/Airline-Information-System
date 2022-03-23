@@ -1,1 +1,0 @@
-moduleSearchIndex = [{"l":"businesslogic_module"}]

@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"persistence","l":"AirportStorageService"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"persistence","l":"PersistenceAPI"},{"p":"persistence","l":"PersistenceFactory"}]

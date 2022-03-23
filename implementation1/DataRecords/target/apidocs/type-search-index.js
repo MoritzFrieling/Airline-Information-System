@@ -1,1 +1,0 @@
-typeSearchIndex = [{"p":"datarecords","l":"AirportData"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"datarecords","l":"RouteData"}]
