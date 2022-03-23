@@ -129,6 +129,34 @@
 || 18. The Actor indicates that everything is fine and allows proceeding. |
 || 19. The System processes the booking request. |
 
+## Edit Booking
+| Name: | Edit  certain Booking |
+|----|----|
+| Actor: | Sales Officer |
+| Description: | The information regarding an certain Booking will be edited. |
+| Pre-condition: | The Sales Officer has logged in and  the Booking has been found. |
+| Scenario: | 1. The system displays an option to edit the booking. |
+| | 2. The Actor selects to edit the booking Information(Tickets,origin ,destination, Delete). |
+| | 3. The System displays form with all booking information. |
+| | 4. The Actor choses different options confirms all desired information. |
+| | 5. The System shows a succes message. |
+| Results: | The Actor has successfully updated the  booking. |
+| Extensions: |  |
+
+## Look up a Booking
+| Name: | _Look up upcoming flights_ |
+|----|----|
+| Actor: | Sales Manager |
+| Description: | Sales Manager looks up a Booking. |
+| Pre-condition: | Sales Manager is already logged in. |
+| Scenario: | 2. The Actor selects the option to search for upcoming flights. |
+|| 2. The System allows the user to input Booking details (origin, destination, CustomerID, BookingID, CustomerName). |
+|| 4. The Actor searches for a specific Booking by delivering at least one of the mentioned booking details. |
+|| 5. The System returns a list of matching Bookings. |
+|| 6. The Actor selects the desired Booking. |
+| Results: | The System delivers flight to booking. |
+| Exceptions: | 5.a. If no matching Booking is found, the System indicates that this is the case and returns to step 4. |
+
 ## Create ticket (in a booking)
 | **Name:** | _Create ticket |
 | --- | --- |
