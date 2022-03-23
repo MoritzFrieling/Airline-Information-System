@@ -55,13 +55,12 @@
 | Description: | The Sales Officer registers an upcoming flight. |
 | Pre-condition: | The Sales Officer has logged in. |
 | Scenario: | 1. The Actor indicates that they want to register a new flight. |
-| | 2. The system offers the opportunity to enter flight information(Arrival, Departure, Locations, Plane, Price). |
-| | 3. The actor enters all flight information. |
-| | 4. The system checks whether the flight information are valid. |
-| | 5. The system puts the flight into a database and makes the flight available for booking. |
+| | 2. The system offers offers options for a flight (Arrival, Departure, Locations, Plane, Price). |
+| | 3. The actor choses all flight information. |
+| | 4. The actor confirms the changes.
+| | 5. The system makes the flight available for booking. |
 | Results: | The Actor has successfully registered a flight. |
-| Exceptions: | 4.a. The flight information are not valid and the system informs the actor that the flight is not valid. |
-| | 4.a.1. Return to Step 3. |
+
 
 
 ## Update flight
@@ -70,16 +69,14 @@
 | Actor: | Sales Officer |
 | Description: | The information regarding an upcoming flight need to be altered. |
 | Pre-condition: | The Sales Officer has logged in and  a flight has been found. |
-| Scenario: | 1. The system displays options to update the flight. |
+| Scenario: | 1. The system displays an option to update the flight. |
 | | 2. The Actor selects to update the flight Information(Arrival, Departure, Locations, Plane, Price, Delete). |
 | | 3. The System displays form with all flight information. |
-| | 4. The Actor edits and confirms all desired information. |
-| | 5. The System shows succes message. |
-| | 6. The Actor confirms the message. |
+| | 4. The Actor choses different options confirms all desired information. |
+| | 5. The System shows a succes message. |
 | Results: | The Actor has successfully updated the  flight. |
 | Extensions: |  |
-| Exceptions: | 5.a. The flight information is not valid and the system informs the actor that the flight is not valid. |
-| | 4.a.1. Return to Step 3. |
+
 
 ## Delete flight
 | Name: | Delete  upcoming flights_ |
@@ -92,7 +89,6 @@
 | | 3. The System displays confirmation window |
 | | 4. The Actor selects to delete the flight. |
 | | 5. The System shows succes message. |
-| | 6. The Actor confirms the message. |
 | Results: | The Actor has successfully deleted the  flight. |
 | Extensions: |  |
 | Exceptions: | 4.a. The Actor selects cancel. |
@@ -133,6 +129,15 @@
 || 18. The Actor indicates that everything is fine and allows proceeding. |
 || 19. The System processes the booking request. |
 
+## Create ticket (in a booking)
+| **Name:** | _Create ticket |
+| --- | --- |
+| Actor: | Sales Employee |
+| Description: | A Sales Employee creates one ticket for a customer in a booking. |
+| Pre-condition: | The Sales Employee is logged in and a booking is currently created. |
+| Scenario: | 1. The Actor chooses to add a ticket to the already existing booking. |
+| THIS NEEDS TO BE CONTINUED!!!! |
+
 ## Create Price reduction
 | Name: | _Enable temporary price reductions_ |
 |----|----|
@@ -140,9 +145,8 @@
 | Description: | The Sales Officer reduces the price of a flight. |
 | Pre-condition: | Sales Officer has logged in. |
 | Scenario: | 1. The Actor indicates that they want to enable a price reduction. |
-| | 2. The System offers the opportunity to enable a discount. |
 | | 3. The System gives Actor option to choose between a static and a dynamic price reduction. |
-| | 4. The Actor indicates what type of discount they want to enable. |
+| | 4. The Actor indicates he wants to enable a dynamic discount. |
 | | 5. The System offers an opportunity to pick the flights the discount should be applied to. |
 | | 6. If the Actor wants to enable a dynamic discount, the System offers an opportunity to select a measure the discount is calculated by. |
 | | 7. The System enables the discount. |
@@ -159,9 +163,8 @@
 | Actor: | Sales Employee |
 | Description: | Sales Employee looks up an upcoming flight. |
 | Pre-condition: | Sales Employee is already logged in. |
-| Scenario: | 1. The System displays the main Sales Employee dashboard. |
-|| 2. The Actor selects the option to search for upcoming flights. |
-|| 3. The System allows the user to input flight details (Arrival airport, Departure airport, Departure date, Number of seats). |
+| Scenario: | 2. The Actor selects the option to search for upcoming flights. |
+|| 2. The System allows the user to input flight details (Arrival airport, Departure airport, Departure date, Number of seats). |
 || 4. The Actor searches for a specific flight by delivering at least one of the mentioned flight details. |
 || 5. The System returns a list of matching flights. |
 || 6. The Actor selects the desired flight. |
@@ -190,10 +193,8 @@
 | Pre-condition: | Sales Manager is already logged in. |
 | Scenario:  | 1. The System displays the main sales manager dashboard. |
 || 2. The Actor selects the option to register a route. |
-|| 3. The System allows the Actor to select specific route details (lenght in km, lenght in h/m destination, origin). |
+|| 3. The System allows the Actor to chose specific route details (destination, origin, length will be derived from airports) . |
 || 4. The Actor selects their route details. |
-|| 5. The System checks wether the flight information are valid. |
-|| 6. The System saves the route. |
+|| 5. The System saves the route. |
 | Results: | The Sales Manager created a route. |
-| Exceptions: | 5.a. The flight information are not valid and the system informs the actor that the route is not valid. |
-| | 5.a.1. Return to Step 3. |
+
