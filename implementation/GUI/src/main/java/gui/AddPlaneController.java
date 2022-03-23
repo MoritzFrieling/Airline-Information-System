@@ -60,7 +60,7 @@ class AddPlaneController implements Initializable {
 
         PlaneData addedPlane = planeManager.add(planeData);
 
-        result.setText("Airport added: " + addedPlane.toString() );
+        result.setText("Plane added: " + addedPlane.toString() );
 
     }
 
