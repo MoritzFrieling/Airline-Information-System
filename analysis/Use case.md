@@ -13,7 +13,7 @@
 | | 1. Register flight |
 | | 2. Update flight |
 | | 3. Delete flight
-| | 3. Create price reduction|
+| | 4. Create price reduction|
 | Sales Manager |  |
 | | 1. Register sales officer or sales employee |
 | | 2. Check key performance indicators |
