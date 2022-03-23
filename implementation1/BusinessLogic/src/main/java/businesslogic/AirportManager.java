@@ -12,14 +12,14 @@ import persistence.AirportStorageService;
  */
 public class AirportManager {
     
-    private final AirportStorageService customerStorageService;
+    private final AirportStorageService airportStorageService;
 
-    public AirportManager( AirportStorageService customerStorageService ) {
-        this.customerStorageService = customerStorageService;
+    public AirportManager( AirportStorageService airportStorageService ) {
+        this.airportStorageService = airportStorageService;
     }
     
     public AirportData add( AirportData airportData ){
-        return customerStorageService.add(airportData);
+        return airportStorageService.add(airportData);
     }
     
 }

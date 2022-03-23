@@ -24,7 +24,7 @@ public class GUIApp extends Application {
 
     private BusinessLogicAPI businessLogicAPI;
     private SceneManager sceneManager;
-    private static final String INITIAL_VIEW = "airportView";
+    private static final String INITIAL_VIEW = "primary";
 
     private final Callback<Class<?>, Object> controllerFactory = (Class<?> c)
             -> {
@@ -33,7 +33,7 @@ public class GUIApp extends Application {
             case "gui.AirportController":
                 return new AirportController(this::getSceneManager, businessLogicAPI.getAirportManager());
             case "gui.PrimaryController":
-                return new SecondaryController(this::getSceneManager);
+                return new PrimaryController(this::getSceneManager);
             case "gui.SecondaryController":
                 return new SecondaryController(this::getSceneManager);
             case "gui.ErrorController":

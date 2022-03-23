@@ -32,6 +32,8 @@ class AirportController implements Initializable {
     @FXML
     private TextField cityName;
     @FXML
+    private TextField countryName;
+    @FXML
     private Button saveButton;
     @FXML
     private Button toSecondaryButton;
@@ -48,15 +50,14 @@ class AirportController implements Initializable {
 
     @FXML
     private void toSecondary() {
-        Consumer<SecondaryController> consumer
-                = (c) -> c.setPreviousView("Customer");
-        sceneManagerSupplier.get().changeScene("secondary", consumer);
+        
+        sceneManagerSupplier.get().changeScene("secondary");
     }
 
     @FXML
     private void storeAirport() {
 
-        AirportData airportData = new AirportData(0, airportName.getText(), abbreviationName.getText(), cityName.getText());
+        AirportData airportData = new AirportData(0, airportName.getText(), abbreviationName.getText(), cityName.getText(), countryName.getText());
 
         AirportData addedAirport = airportManager.add(airportData);
      

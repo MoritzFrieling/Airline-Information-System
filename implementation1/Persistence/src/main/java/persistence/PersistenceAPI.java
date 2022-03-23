@@ -15,7 +15,7 @@ public interface PersistenceAPI {
      * @return AirportStorageService object that knows how to store and
  retrieve customers.
      */
-    default AirportStorageService getCustomerStorageService() {
+    default AirportStorageService getAirportStorageService() {
         return null;
     }
 

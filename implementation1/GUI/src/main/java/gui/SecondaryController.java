@@ -14,10 +14,9 @@ import javafx.scene.control.Label;
 class SecondaryController {
     
     @FXML
-    private Button secondaryButton;
+    private Button addRouteButton;
 
-    @FXML
-    private Label prevLabel;
+    
     
     private final Supplier<SceneManager> sceneManagerSupplier;
 
@@ -26,11 +25,9 @@ class SecondaryController {
     }
     
     @FXML
-    private void switchToPrimary() {
-        sceneManagerSupplier.get().changeScene("customerView");
+    private void goAddRoute() {
+        sceneManagerSupplier.get().changeScene("airportView");
     }
     
-    public void setPreviousView(String view){
-        prevLabel.setText(view);
-    }    
+       
 }

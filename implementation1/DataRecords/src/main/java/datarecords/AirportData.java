@@ -19,12 +19,14 @@ public class AirportData {
     private final String airportName;
     private final String abbreviation;
     private final String cityName;
+    private final String countryName;
 
-    public AirportData(int id, String airportName, String abbreviation, String cityName) {
+    public AirportData(int id, String airportName, String abbreviation, String cityName, String countryName) {
         this.id = id;
         this.airportName = airportName;
         this.abbreviation = abbreviation;
         this.cityName = cityName;
+        this.countryName = countryName;
     }
 
     public int getId() {
@@ -42,12 +44,16 @@ public class AirportData {
     public String getCityName() {
         return cityName;
     }
+    
+    public String getCountryName(){
+        return countryName;
+    }
 
    
 
     @Override
     public String toString() {
-        return "AirportData{" + "id=" + id + ", airportName=" + airportName + ", Abbreviation=" + abbreviation + ", city=" + cityName + '}';
+        return "AirportData{" + "id=" + id + ", airportName=" + airportName + ", Abbreviation=" + abbreviation + ", city=" + cityName + ", country=" + countryName + '}';
     }
     
 }

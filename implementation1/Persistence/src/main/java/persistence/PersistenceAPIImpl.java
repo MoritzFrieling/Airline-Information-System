@@ -7,7 +7,7 @@ package persistence;
 class PersistenceAPIImpl implements PersistenceAPI{
 
     @Override
-    public AirportStorageService getCustomerStorageService() {
+    public AirportStorageService getAirportStorageService() {
         return new AirportStorageServiceImpl();
     }
     

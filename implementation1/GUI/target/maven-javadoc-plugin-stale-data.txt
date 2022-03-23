@@ -40,26 +40,26 @@ gui_module='C:/Users/phuong/Documents/GitHub/prj2-2022-prj2-2022-g14/implementat
 'C:/Users/phuong/Documents/GitHub/prj2-2022-prj2-2022-g14/implementation1/GUI/src/main/java/gui/GUIApp.java'
 'C:/Users/phuong/Documents/GitHub/prj2-2022-prj2-2022-g14/implementation1/GUI/src/main/java/gui/PrimaryController.java'
 'C:/Users/phuong/Documents/GitHub/prj2-2022-prj2-2022-g14/implementation1/GUI/src/main/java/gui/RouteController.java'
+'C:/Users/phuong/Documents/GitHub/prj2-2022-prj2-2022-g14/implementation1/GUI/src/main/java/gui/SaleManagerHomeController.java'
 'C:/Users/phuong/Documents/GitHub/prj2-2022-prj2-2022-g14/implementation1/GUI/src/main/java/gui/SceneManager.java'
-'C:/Users/phuong/Documents/GitHub/prj2-2022-prj2-2022-g14/implementation1/GUI/src/main/java/gui/SecondaryController.java'
 'C:/Users/phuong/Documents/GitHub/prj2-2022-prj2-2022-g14/implementation1/GUI/src/main/java/module-info.java'
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\allclasses-index.html = 1647979518936
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\allpackages-index.html = 1647979518942
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\constant-values.html = 1647979518804
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\deprecated-list.html = 1647979518872
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\element-list = 1647979518739
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\help-doc.html = 1647979518958
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\index-all.html = 1647979518921
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\index.html = 1647979518948
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\member-search-index.js = 1647979518913
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\member-search-index.zip = 1647979518916
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\module-search-index.js = 1647979518890
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\module-search-index.zip = 1647979518897
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\overview-tree.html = 1647979518861
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\package-search-index.js = 1647979518900
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\package-search-index.zip = 1647979518905
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\script.js = 1647979518979
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\search.js = 1647979518985
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\stylesheet.css = 1647979518975
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\type-search-index.js = 1647979518908
-C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\type-search-index.zip = 1647979518911
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\allclasses-index.html = 1647982774099
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\allpackages-index.html = 1647982774107
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\constant-values.html = 1647982773943
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\deprecated-list.html = 1647982774025
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\element-list = 1647982773866
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\help-doc.html = 1647982774126
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\index-all.html = 1647982774085
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\index.html = 1647982774114
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\member-search-index.js = 1647982774078
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\member-search-index.zip = 1647982774081
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\module-search-index.js = 1647982774048
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\module-search-index.zip = 1647982774056
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\overview-tree.html = 1647982774008
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\package-search-index.js = 1647982774060
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\package-search-index.zip = 1647982774065
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\script.js = 1647982774217
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\search.js = 1647982774227
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\stylesheet.css = 1647982774209
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\type-search-index.js = 1647982774069
+C:\Users\phuong\Documents\GitHub\prj2-2022-prj2-2022-g14\implementation1\GUI\target\apidocs\type-search-index.zip = 1647982774073

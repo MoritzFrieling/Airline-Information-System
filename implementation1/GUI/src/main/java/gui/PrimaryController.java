@@ -18,7 +18,7 @@ class PrimaryController {
     }
         
     @FXML
-    private void switchToSecondary() throws IOException {
+    private void goSalesManager() throws IOException {
         sceneManagerSupplier.get().changeScene("secondary");
     }
 }
