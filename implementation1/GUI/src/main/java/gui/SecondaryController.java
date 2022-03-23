@@ -14,7 +14,11 @@ import javafx.scene.control.Label;
 class SecondaryController {
     
     @FXML
+    private Button addAirportButton;
+    private Button addPlaneButton;
     private Button addRouteButton;
+    private Button dashboardButton;
+    private Button logoutButton;
 
     
     
@@ -25,7 +29,7 @@ class SecondaryController {
     }
     
     @FXML
-    private void goAddRoute() {
+    private void goAddAirport() {
         sceneManagerSupplier.get().changeScene("airportView");
     }
     

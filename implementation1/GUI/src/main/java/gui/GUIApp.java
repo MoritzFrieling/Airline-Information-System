@@ -94,8 +94,9 @@ public class GUIApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        stage.setTitle("Demo Airline Information System");
+        stage.setTitle("Airline Information System");
         sceneManager.displayOn(stage, 640, 480);
+        
     }
 
     public SceneManager getSceneManager() {
