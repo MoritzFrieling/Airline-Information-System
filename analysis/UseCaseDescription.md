@@ -171,18 +171,17 @@
 |----|----|
 | Actor: | Sales Officer |
 | Description: | The Sales Officer reduces the price of a flight. |
-| Pre-condition: | Sales Officer has logged in. |
+| Pre-condition: | Sales Officer has logged in and a flight has been found. |
 | Scenario: | 1. The Actor indicates that they want to enable a price reduction. |
 | | 3. The System gives Actor option to choose between a static and a dynamic price reduction. |
 | | 4. The Actor indicates he wants to enable a dynamic discount. |
-| | 5. The System offers an opportunity to pick the flights the discount should be applied to. |
-| | 6. If the Actor wants to enable a dynamic discount, the System offers an opportunity to select a measure the discount is calculated by. |
+| | 6. The System offers an opportunity to select a measure the discount is calculated by (sun days at destination, duration of flight, ...). |
 | | 7. The System enables the discount. |
 | Results: | The Actor has successfully reduced price of a ticket / booking. |
-| Extensions: | 6a. If the Actor wants to enable a static discount, the System offers an opportunity to enter the discount percentage. |
-| | 6.a.1. If the Actor has decided on a static discount, the Actor enters the discount amount. |
+| Extensions: | 6a. If the Actor wants to enable a static discount, the System offers an opportunity to chose discount percentage. |
+| | 6.a.1. The Actor choses the discount percentage. |
 | | 6.a.2. Return to step 7. |
-| Exceptions: | If a selected flight already has a discount, the System can not apply another discount. |
+| Exceptions: | If a selected flight already has a discount, the new discount will be enabled and the old one falls away. |
 
 
 ## Look up upcoming flights
