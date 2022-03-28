@@ -15,10 +15,28 @@
  */
 package businesslogic;
 
+import persistence.RouteStorageService;
+import datarecords.RouteData;
+
 /**
  *
  * @author daniel
  */
 public class RouteManager {
+
+    private final RouteStorageService routeStorageService;
+
+    public RouteManager(RouteStorageService routeStorageService) {
+        this.routeStorageService = routeStorageService;
+    }
     
+    public RouteData add(RouteData routeData){
+        return routeStorageService.add(routeData);
+    }
+    
+    
+    
+    
+    
+
 }

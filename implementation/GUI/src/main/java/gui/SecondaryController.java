@@ -34,7 +34,12 @@ class SecondaryController {
     }
 
     @FXML
-    private void goAddPlane(){ sceneManagerSupplier.get().changeScene("addPlaneView"); }
+    private void goAddPlane(){ sceneManagerSupplier.get().changeScene("addPlaneView"); 
+    }
+    
+    @FXML
+    private void goAddRoute(){ sceneManagerSupplier.get().changeScene("addRouteView"); 
+    }
     
        
 }

@@ -1,6 +1,7 @@
 package gui;
 
 import businesslogic.BusinessLogicAPI;
+import businesslogic.RouteManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -34,6 +35,8 @@ public class GUIApp extends Application {
                 return new AddPlaneController(this::getSceneManager, businessLogicAPI.getPlaneManager());
             case "gui.AirportController":
                 return new AirportController(this::getSceneManager, businessLogicAPI.getAirportManager());
+            case "gui.RouteController":
+                return new RouteController(this::getSceneManager, businessLogicAPI.getRouteManager());
             case "gui.PrimaryController":
                 return new PrimaryController(this::getSceneManager);
             case "gui.SecondaryController":

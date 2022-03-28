@@ -11,4 +11,6 @@ public interface BusinessLogicAPI {
 
     PlaneManager getPlaneManager();
     
+    RouteManager getRouteManager();
+    
 }

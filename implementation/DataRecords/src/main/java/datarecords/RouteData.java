@@ -20,5 +20,35 @@ package datarecords;
  * @author daniel
  */
 public class RouteData {
+
+    private final AirportData origin;
+    private final AirportData destination;
+    
+    //calculated later sprint
+    
+    //private final int length;
+
+    public RouteData(AirportData origin, AirportData destination) {
+        this.origin = origin;
+        this.destination = destination;
+    }
+
+    public AirportData getOrigin() {
+        return origin;
+    }
+
+    public AirportData getDestination() {
+        return destination;
+    }
+
+    @Override
+    public String toString() {
+        return "origin= " + origin.getCityName() + ", destination= " + destination.getCityName();
+    }
+    
+    
+
+    
+
     
 }

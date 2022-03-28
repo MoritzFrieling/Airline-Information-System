@@ -2,9 +2,10 @@ package persistence;
 
 /**
  * Actual creator of storage services.
+ *
  * @author Informatics Fontys Venlo
  */
-class PersistenceAPIImpl implements PersistenceAPI{
+class PersistenceAPIImpl implements PersistenceAPI {
 
     @Override
     public AirportStorageService getAirportStorageService() {
@@ -14,5 +15,10 @@ class PersistenceAPIImpl implements PersistenceAPI{
     @Override
     public PlaneStorageService getPlaneStorageService() {
         return new PlaneStorageServiceImpl();
+    }
+
+    @Override
+    public RouteStorageService getRouteStorageService() {
+        return new RouteStorageServiceImpl();
     }
 }

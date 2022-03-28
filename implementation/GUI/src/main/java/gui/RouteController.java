@@ -1,24 +1,88 @@
-/*
- * Copyright 2022 daniel.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package gui;
 
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
+import java.util.function.Supplier;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
+
+import businesslogic.RouteManager;
+
+import datarecords.RouteData;
+import datarecords.AirportData;
+
+
 /**
+ * FXML Customer Controller class. The controller class contains GUI-logic (no
+ * business logic!). It reacts on GUI events like button clicks. It triggers the
+ * BusinessLogic layer to do the real work. Furthermore the controller will
+ * trigger navigation and update the GUI.
  *
- * @author daniel
+ * @author Informatics Fontys Venlo
  */
-public class RouteController {
+class RouteController implements Initializable {
+
+    @FXML
+    private ComboBox modelDropDownOrigin;
+    @FXML
+    private ComboBox modelDropDownDestination;
+    @FXML
+    private Label result;
+
+    private final Supplier<SceneManager> sceneManagerSupplier;
+    private final RouteManager routeManager;
+
+    public RouteController(Supplier<SceneManager> sceneManagerSupplier, RouteManager routeManager) {
+        this.sceneManagerSupplier = sceneManagerSupplier;
+        this.routeManager = routeManager;
+    }
+
+    @FXML
+    private void toSecondary() {
+
+        sceneManagerSupplier.get().changeScene("secondary");
+    }
     
+
+    @FXML
+    private void storeRoute() {
+
+        RouteData routeData = createRoute();
+        
+        RouteData addedRoute = routeManager.add(routeData);
+
+        result.setText("Route added: " + addedRoute.toString());
+
+    }
+
+    private RouteData createRoute() {
+        if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1)) {
+            AirportData origin = new AirportData(0, "Berlin Flughafen", "BRLN", "Berlin", "Germany");
+            AirportData destination = new AirportData(1, "New York Airport", "NY", "New York", "USA");
+            return new RouteData(origin, destination);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Initializes the controller class.
+     *
+     * @param url
+     * @param rb
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        modelDropDownOrigin.getItems().addAll("-- select origin --","Berlin");
+        modelDropDownDestination.getItems().addAll("-- select destination --","New York");
+        modelDropDownOrigin.getSelectionModel().select("-- select origin --");
+        modelDropDownDestination.getSelectionModel().select("-- select destination --");
+    }
+
 }

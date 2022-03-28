@@ -15,10 +15,20 @@
  */
 package businesslogic;
 
+import datarecords.RouteData;
+
 /**
  *
  * @author daniel
  */
 public class Route {
+    
+    private RouteData route;
+
+    public Route(RouteData route) {
+        this.route = route;
+    }
+    
+    
     
 }

@@ -4,7 +4,7 @@ import persistence.PersistenceAPI;
 
 /**
  * Actual business logic implementation.
- * 
+ *
  * @author Informatics Fontys Venlo
  */
 class BusinessLogicAPIImpl implements BusinessLogicAPI {
@@ -14,7 +14,7 @@ class BusinessLogicAPIImpl implements BusinessLogicAPI {
     BusinessLogicAPIImpl(PersistenceAPI persistenceAPI) {
         this.persistenceAPI = persistenceAPI;
     }
-    
+
     @Override
     public AirportManager getAirportManager() {
         return new AirportManager(persistenceAPI.getAirportStorageService());
@@ -23,6 +23,11 @@ class BusinessLogicAPIImpl implements BusinessLogicAPI {
     @Override
     public PlaneManager getPlaneManager() {
         return new PlaneManager(persistenceAPI.getPlaneStorageService());
+    }
+
+    @Override
+    public RouteManager getRouteManager() {
+        return new RouteManager(persistenceAPI.getRouteStorageService());
     }
 
 }
