@@ -234,14 +234,15 @@
 | Scenario:  | 1. The System displays the main sales manager dashboard. |
 || 2. The Actor selects the option to register a route. |
 || 3. The System allows the Actor to chose specific route details (destination, origin, length will be derived from airports) . |
-|| 4. The Actor selects their route details. |
+|| 4. The Actor selects the route details. |
 || 5. The System saves the route. |
 | Results: | The Sales Manager created a route. |
-<<<<<<< Updated upstream
-
-=======
-| Exceptions: | 5.a. The flight information are not valid and the system informs the actor that the route is not valid. |
-| | 5.a.1. Return to Step 3. |
+| Exceptions: | 5.a. The flight information are not valid. |
+| | 5.a.1. The System informs the actor that the route is not valid. |
+| | 5.a.2. Return to Step 3. |
+| | 5.b. The flight already exists. |
+| | 5.b.1. The system informs the actor that the route already exists. |
+| | 5.b.1. Return to Step 3. |
 
 ## Register airport
 | Name: | _Register airport_ |
@@ -250,12 +251,11 @@
 | Description: | The Sales Manager registers new airport. |
 | Pre-condition: | The Sales Manager has logged in. |
 | Scenario: | 1. The Actor wants to register new airport. |
-| | 2. The system asks the actor to give information of airport name, abbreviation, city, and country. |
+| | 2. The system asks the actor to provide information (airport name, abbreviation, city, and country). |
 | | 3. The actor enters all the requested information. |
-| | 4. The system checks and process the the given information. |
-| | 5. The system adds new airport. |
-| | 6. The system inform the actor that new airport has been added. |
+| | 4. The system adds new airport. |
+| | 5. The system inform the actor that new airport has been added. |
 | Results: | The Actor has successfully registered a new airport. |
-| Exceptions: | 4. System message: "existing airport" |
-| | 4.1 Use case ends here. |
->>>>>>> Stashed changes
+| Exceptions: | 4.a Airport already exists. |
+| | 4.a.1 System informs User that the airport already exists. |
+| | 4.a.2 Use case ends here. |
