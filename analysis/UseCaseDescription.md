@@ -224,4 +224,25 @@
 || 4. The Actor selects their route details. |
 || 5. The System saves the route. |
 | Results: | The Sales Manager created a route. |
+<<<<<<< Updated upstream
 
+=======
+| Exceptions: | 5.a. The flight information are not valid and the system informs the actor that the route is not valid. |
+| | 5.a.1. Return to Step 3. |
+
+## Register airport
+| Name: | _Register airport_ |
+|----|----|
+| Actor: | Sales Manager |
+| Description: | The Sales Manager registers new airport. |
+| Pre-condition: | The Sales Manager has logged in. |
+| Scenario: | 1. The Actor wants to register new airport. |
+| | 2. The system asks the actor to give information of airport name, abbreviation, city, and country. |
+| | 3. The actor enters all the requested information. |
+| | 4. The system checks and process the the given information. |
+| | 5. The system adds new airport. |
+| | 6. The system inform the actor that new airport has been added. |
+| Results: | The Actor has successfully registered a new airport. |
+| Exceptions: | 4. System message: "existing airport" |
+| | 4.1 Use case ends here. |
+>>>>>>> Stashed changes
