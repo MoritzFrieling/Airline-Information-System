@@ -8,7 +8,7 @@ class RouteStorageServiceImpl implements RouteStorageService {
     @Override
     public RouteData add(RouteData routeData) {
         
-        return new RouteData(routeData.getOrigin(), routeData.getDestination());
+        return new RouteData(routeData.getOrigin(), routeData.getDestination(), routeData.getDistance());
     }
 
     @Override

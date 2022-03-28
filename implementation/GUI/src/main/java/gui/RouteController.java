@@ -7,15 +7,18 @@ import java.util.function.Supplier;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 
 import businesslogic.RouteManager;
 
 import datarecords.RouteData;
 import datarecords.AirportData;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+
 
 
 /**
@@ -33,7 +36,12 @@ class RouteController implements Initializable {
     @FXML
     private ComboBox modelDropDownDestination;
     @FXML
+    private Slider distanceSlider;
+    @FXML
     private Label result;
+    @FXML
+    private Label l;
+
 
     private final Supplier<SceneManager> sceneManagerSupplier;
     private final RouteManager routeManager;
@@ -59,13 +67,16 @@ class RouteController implements Initializable {
 
         result.setText("Route added: " + addedRoute.toString());
 
+
+
     }
+
 
     private RouteData createRoute() {
         if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1)) {
             AirportData origin = new AirportData(0, "Berlin Flughafen", "BRLN", "Berlin", "Germany");
             AirportData destination = new AirportData(1, "New York Airport", "NY", "New York", "USA");
-            return new RouteData(origin, destination);
+            return new RouteData(origin, destination, (int)distanceSlider.getValue());
         } else {
             return null;
         }
@@ -83,6 +94,18 @@ class RouteController implements Initializable {
         modelDropDownDestination.getItems().addAll("-- select destination --","New York");
         modelDropDownOrigin.getSelectionModel().select("-- select origin --");
         modelDropDownDestination.getSelectionModel().select("-- select destination --");
+
+
+        distanceSlider.valueProperty().addListener(
+                new ChangeListener<Number>() {
+
+                    public void changed(ObservableValue <? extends Number >
+                                                observable, Number oldValue, Number newValue)
+                    {
+
+                        l.setText("distance: " + newValue.intValue());
+                    }
+                });
     }
 
 }
