@@ -184,6 +184,19 @@
 | Exceptions: | If a selected flight already has a discount, the new discount will be enabled and the old one falls away. |
 
 
+## Disable Price reduction
+| Name: | Disable temporary price reductions_ |
+|----|----|
+| Actor: | Sales Officer |
+| Description: | The Sales Officer disables the price reduction of a flight. |
+| Pre-condition: | Sales Officer has logged in and a flight has been found. Furthermore, the flight has an active discount. |
+| Scenario: | 1. The Actor indicates that they want to disable a price reduction. |
+| | 2. The System asks Actor if he wants to disable the reduction.|
+| | 4. The Actor confirms. |
+| Results: | The Actor has successfully reduced price of a ticket / booking. |
+| Extensions: | 4a. Actor decides to not disable the reduction. |
+| | 4.a.1. Use Case ends here. |
+
 ## Look up upcoming flights
 | Name: | _Look up upcoming flights_ |
 |----|----|
