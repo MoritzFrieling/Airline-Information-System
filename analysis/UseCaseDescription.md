@@ -259,3 +259,7 @@
 | Exceptions: | 4.a Airport already exists. |
 | | 4.a.1 System informs User that the airport already exists. |
 | | 4.a.2 Use case ends here. |
+| | 4.b field was left empty. |
+| | 4.b.1 System informs user that field can't be empty. |
+| | 4.b.2 Return to Step 2. |
+
