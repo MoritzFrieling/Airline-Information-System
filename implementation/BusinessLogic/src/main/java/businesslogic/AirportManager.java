@@ -1,7 +1,7 @@
 package businesslogic;
 
 import datarecords.AirportData;
-import persistence.AirportStorageService;
+import persistence.StorageService;
 
 /**
  * Manages customers in the business logic.
@@ -12,14 +12,14 @@ import persistence.AirportStorageService;
  */
 public class AirportManager {
     
-    private final AirportStorageService airportStorageService;
+    private final StorageService storageService;
 
-    public AirportManager( AirportStorageService airportStorageService ) {
-        this.airportStorageService = airportStorageService;
+    public AirportManager( StorageService airportStorageService ) {
+        this.storageService = airportStorageService;
     }
     
     public AirportData add( AirportData airportData ){
-        return airportStorageService.add(airportData);
+        return storageService.add(airportData);
     }
     
 }

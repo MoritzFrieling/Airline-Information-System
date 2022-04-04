@@ -2,17 +2,17 @@ package businesslogic;
 
 import datarecords.AirportData;
 import datarecords.PlaneData;
-import persistence.PlaneStorageService;
+import persistence.StorageService;
 
 public class PlaneManager {
 
-    private final PlaneStorageService planeStorageService;
+    private final StorageService storageService;
 
-    public PlaneManager(PlaneStorageService planeStorageService) {
-        this.planeStorageService = planeStorageService;
+    public PlaneManager(StorageService planeStorageService) {
+        this.storageService = planeStorageService;
     }
 
     public PlaneData add(PlaneData planeData){
-        return planeStorageService.add(planeData);
+        return storageService.add(planeData);
     }
 }
