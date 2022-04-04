@@ -15,9 +15,19 @@
 
 ## Log out
 
+| Name: | Actor doesn't log out (Maybe pressed on the button by accident?) |
+|----|----|
+| Scenario: |1. Actor chooses to log out. |
+|  | 2. System asks the Actor for confirmation. |
+|  | 3. Actor indicates he doesn't want to log out. |
+| Results: | Nothing happens |
+
 | Name: | Actor logs out |
 |----|----|
 | Scenario: |1. Actor chooses to log out. |
+|  | 2. System asks the Actor for confirmation. |
+|  | 3. Actor indicates he wants to log out. |
+|  | 4. System dispalys the login page. |
 | Results: | System logs the Actor out. |
 
 ## Register Flight
