@@ -261,7 +261,7 @@
 
 
 ### Create ticket (in a booking) extends "Create Booking"
-| Name: | _Create ticket |
+| Name: | Create ticket |
 | --- | --- |
 | Actor: | Sales Employee |
 | Description: | A Sales Employee creates one ticket for a customer in a booking. |
