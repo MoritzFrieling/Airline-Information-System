@@ -8,13 +8,12 @@
 | Actor: | Staff Member |
 | Description: | The Actor logs into the platform. |
 | Pre-condition: | The Actor is already registered.  |
-| Scenario: |1. The System displays a login page. |
-|  | 2. The System asks for username and password. |
-|  | 3. The Actor enters a username and password. |
-|  | 4. The System allows access to platform. |
+| Scenario: |1. The System displays a login page with fields for username and password. |
+|  | 2. The Actor enters a username and password. |
+|  | 3. The System allows access to platform. |
 | Results: | The Actor gets access to platform. |
-| Exceptions: | 4.a. The System informs the user that the combination of username/password is invalid. |
-|  | 4.a.1. Return to step 2.  |
+| Exceptions: | 3.a. The System informs the user that the combination of username/password is invalid. |
+|  | 3.a.1. Return to step 1.  |
 
 ## Log out
 | Name: | _Log out_ |
@@ -23,9 +22,13 @@
 | Description: | The Actor logs out of the platform. |
 | Pre-condition: | The Actor has logged in. |
 | Scenario: | 1. The Actor indicates they want to log out. |
-|  | 2. The System displays a login page. |
+|  | 2. The System asks for confirmation. |
+|  | 3. The Actor confirms his logout request. |
+|  | 4. The System displays a login page. |
 | Results: | The Actor loses access to platform. |
-| Exceptions: | None |
+| Exceptions: | 3.a. The actor decides to not log out. |
+|  | 3.a.1. Actor denies the request  |
+|  | 3.a.2. Actor keeps access. Use Case ends here.  |
 
 ## Register sales officer or sales employee
 | Name: | _Register sales officer or sales employee_ |
