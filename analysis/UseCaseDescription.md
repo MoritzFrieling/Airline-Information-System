@@ -2,7 +2,7 @@
 
 ## Cancelling in Use Cases:  not an extension or exception since the option is always there and no data will be inserted into the DB before the confirmation is given.
 
-### this is a tier 3
+## General Use Cases
 ### Log in
 | Name: | _Log in_ |
 |----|----|
@@ -31,6 +31,58 @@
 |  | 3.a.1. Actor denies the request  |
 |  | 3.a.2. Actor keeps access. Use Case ends here.  |
 
+## Managing Use Cases (Only Sales Manager can execute these.)
+
+### Check key performance indicators
+| Name: | _Check key performance indicators_ |
+|----|----|
+| Actor: | Sales Manager |
+| Description: | Sales Manager checks the key performance indicators. |
+| Pre-condition: | Sales Manager is already logged in. |
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
+|| 2. The Actor selects the option to check key performance indicators. |
+|| 3. The System allows the Actor to select a specific route. |
+|| 4. The Actor selects the route they want to examine. |
+|| 5. The System displays the key performance indicators for that route. |
+| Results: | The Sales Manager gained access to various statistics, such as total revenue numbers, numbers of tickets sold in each class, and statistics on all options sold for a specific route. |
+
+### Register route
+| Name: | _Register route_ |
+|----|----|
+| Actor: | Sales Manager |
+| Description: | Sales Manager registers a route. |
+| Pre-condition: | Sales Manager is already logged in. |
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
+|| 2. The Actor selects the option to register a route. |
+|| 3. The System allows the Actor to chose specific route details (destination, origin, length will be derived from airports) . |
+|| 4. The Actor selects the route details. |
+|| 5. The System saves the route. |
+| Results: | The Sales Manager created a route. |
+| Exceptions: | 5.a. The flight information are not valid. |
+| | 5.a.1. The System informs the actor that the route is not valid. |
+| | 5.a.2. Return to Step 3. |
+| | 5.b. The flight already exists. |
+| | 5.b.1. The system informs the actor that the route already exists. |
+| | 5.b.1. Return to Step 3. |
+
+### Register airport
+| Name: | _Register airport_ |
+|----|----|
+| Actor: | Sales Manager |
+| Description: | The Sales Manager registers new airport. |
+| Pre-condition: | The Sales Manager has logged in. |
+| Scenario: | 1. The Actor wants to register new airport. |
+| | 2. The system asks the actor to provide information (airport name, abbreviation, city, and country). |
+| | 3. The actor enters all the requested information. |
+| | 4. The system adds new airport. |
+| | 5. The system inform the actor that new airport has been added. |
+| Results: | The Actor has successfully registered a new airport. |
+| Exceptions: | 4.a Airport already exists. |
+| | 4.a.1 System informs User that the airport already exists. |
+| | 4.a.2 Use case ends here. |
+| | 4.b field was left empty. |
+| | 4.b.1 System informs user that field can't be empty. |
+| | 4.b.2 Return to Step 2. |
 ### Register sales officer or sales employee
 | Name: | _Register sales officer or sales employee_ |
 |----|----|
@@ -53,6 +105,7 @@
 | Extension: | 3.a. The Actor indicates that they want to register a new Sales Employee. |
 | | 3.a.1. Go to step 4. |
 
+## Operational Use Cases
 
 ### Register flight
 | Name: | _Register upcoming flights_ |
@@ -67,8 +120,6 @@
 | | 5. The system makes the flight available for booking. |
 | Results: | The Actor has successfully registered a flight. |
 
-
-
 ### Update flight
 | Name: | _Update  upcoming flights_ |
 |----|----|
@@ -82,7 +133,6 @@
 | | 5. The System shows a succes message. |
 | Results: | The Actor has successfully updated the  flight. |
 | Extensions: |  |
-
 
 ### Delete flight
 | Name: | Delete  upcoming flights_ |
@@ -99,6 +149,38 @@
 | Extensions: |  |
 | Exceptions: | 4.a. The Actor selects cancel. |
 | | 4.a.1. The use case ends here. |
+
+### Create Price reduction
+| Name: | _Enable temporary price reductions_ |
+|----|----|
+| Actor: | Sales Officer |
+| Description: | The Sales Officer reduces the price of a flight. |
+| Pre-condition: | Sales Officer has logged in and a flight has been found. |
+| Scenario: | 1. The Actor indicates that they want to enable a price reduction. |
+| | 3. The System gives Actor option to choose between a static and a dynamic price reduction. |
+| | 4. The Actor indicates he wants to enable a dynamic discount. |
+| | 6. The System offers an opportunity to select a measure the discount is calculated by (sun days at destination, duration of flight, ...). |
+| | 7. The System enables the discount. |
+| Results: | The Actor has successfully reduced price of a ticket / booking. |
+| Extensions: | 6a. If the Actor wants to enable a static discount, the System offers an opportunity to chose discount percentage. |
+| | 6.a.1. The Actor choses the discount percentage. |
+| | 6.a.2. Return to step 7. |
+| Exceptions: | If a selected flight already has a discount, the new discount will be enabled and the old one falls away. |
+
+### Disable Price reduction
+| Name: | Disable temporary price reductions_ |
+|----|----|
+| Actor: | Sales Officer |
+| Description: | The Sales Officer disables the price reduction of a flight. |
+| Pre-condition: | Sales Officer has logged in and a flight has been found. Furthermore, the flight has an active discount. |
+| Scenario: | 1. The Actor indicates that they want to disable a price reduction. |
+| | 2. The System asks Actor if he wants to disable the reduction.|
+| | 4. The Actor confirms. |
+| Results: | The Actor has successfully reduced price of a ticket / booking. |
+| Extensions: | 4a. Actor decides to not disable the reduction. |
+| | 4.a.1. Use Case ends here. |
+
+## Business Use Cases
 
 ### Create booking
 | **Name:** | _Create booking_ |
@@ -179,38 +261,6 @@
 || 4.a.2 Return to step 3. |
 
 
-
-### Create Price reduction
-| Name: | _Enable temporary price reductions_ |
-|----|----|
-| Actor: | Sales Officer |
-| Description: | The Sales Officer reduces the price of a flight. |
-| Pre-condition: | Sales Officer has logged in and a flight has been found. |
-| Scenario: | 1. The Actor indicates that they want to enable a price reduction. |
-| | 3. The System gives Actor option to choose between a static and a dynamic price reduction. |
-| | 4. The Actor indicates he wants to enable a dynamic discount. |
-| | 6. The System offers an opportunity to select a measure the discount is calculated by (sun days at destination, duration of flight, ...). |
-| | 7. The System enables the discount. |
-| Results: | The Actor has successfully reduced price of a ticket / booking. |
-| Extensions: | 6a. If the Actor wants to enable a static discount, the System offers an opportunity to chose discount percentage. |
-| | 6.a.1. The Actor choses the discount percentage. |
-| | 6.a.2. Return to step 7. |
-| Exceptions: | If a selected flight already has a discount, the new discount will be enabled and the old one falls away. |
-
-
-### Disable Price reduction
-| Name: | Disable temporary price reductions_ |
-|----|----|
-| Actor: | Sales Officer |
-| Description: | The Sales Officer disables the price reduction of a flight. |
-| Pre-condition: | Sales Officer has logged in and a flight has been found. Furthermore, the flight has an active discount. |
-| Scenario: | 1. The Actor indicates that they want to disable a price reduction. |
-| | 2. The System asks Actor if he wants to disable the reduction.|
-| | 4. The Actor confirms. |
-| Results: | The Actor has successfully reduced price of a ticket / booking. |
-| Extensions: | 4a. Actor decides to not disable the reduction. |
-| | 4.a.1. Use Case ends here. |
-
 ### Look up upcoming flights
 | Name: | _Look up upcoming flights_ |
 |----|----|
@@ -226,54 +276,5 @@
 | Exceptions: | 5.a. If no matching flight is found, the System indicates that this is the case and returns to step 4. |
 
 
-### Check key performance indicators
-| Name: | _Check key performance indicators_ |
-|----|----|
-| Actor: | Sales Manager |
-| Description: | Sales Manager checks the key performance indicators. |
-| Pre-condition: | Sales Manager is already logged in. |
-| Scenario:  | 1. The System displays the main sales manager dashboard. |
-|| 2. The Actor selects the option to check key performance indicators. |
-|| 3. The System allows the Actor to select a specific route. |
-|| 4. The Actor selects the route they want to examine. |
-|| 5. The System displays the key performance indicators for that route. |
-| Results: | The Sales Manager gained access to various statistics, such as total revenue numbers, numbers of tickets sold in each class, and statistics on all options sold for a specific route. |
 
-### Register route
-| Name: | _Register route_ |
-|----|----|
-| Actor: | Sales Manager |
-| Description: | Sales Manager registers a route. |
-| Pre-condition: | Sales Manager is already logged in. |
-| Scenario:  | 1. The System displays the main sales manager dashboard. |
-|| 2. The Actor selects the option to register a route. |
-|| 3. The System allows the Actor to chose specific route details (destination, origin, length will be derived from airports) . |
-|| 4. The Actor selects the route details. |
-|| 5. The System saves the route. |
-| Results: | The Sales Manager created a route. |
-| Exceptions: | 5.a. The flight information are not valid. |
-| | 5.a.1. The System informs the actor that the route is not valid. |
-| | 5.a.2. Return to Step 3. |
-| | 5.b. The flight already exists. |
-| | 5.b.1. The system informs the actor that the route already exists. |
-| | 5.b.1. Return to Step 3. |
-
-### Register airport
-| Name: | _Register airport_ |
-|----|----|
-| Actor: | Sales Manager |
-| Description: | The Sales Manager registers new airport. |
-| Pre-condition: | The Sales Manager has logged in. |
-| Scenario: | 1. The Actor wants to register new airport. |
-| | 2. The system asks the actor to provide information (airport name, abbreviation, city, and country). |
-| | 3. The actor enters all the requested information. |
-| | 4. The system adds new airport. |
-| | 5. The system inform the actor that new airport has been added. |
-| Results: | The Actor has successfully registered a new airport. |
-| Exceptions: | 4.a Airport already exists. |
-| | 4.a.1 System informs User that the airport already exists. |
-| | 4.a.2 Use case ends here. |
-| | 4.b field was left empty. |
-| | 4.b.1 System informs user that field can't be empty. |
-| | 4.b.2 Return to Step 2. |
 
