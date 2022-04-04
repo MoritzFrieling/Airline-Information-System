@@ -182,6 +182,35 @@
 
 ## Business Use Cases
 
+### Look up upcoming flights
+| Name: | _Look up upcoming flights_ |
+|----|----|
+| Actor: | Sales Employee |
+| Description: | Sales Employee looks up an upcoming flight. |
+| Pre-condition: | Sales Employee is already logged in. |
+| Scenario: | 2. The Actor selects the option to search for upcoming flights. |
+|| 2. The System allows the user to input flight details (Arrival airport, Departure airport, Departure date, Number of seats). |
+|| 4. The Actor searches for a specific flight by delivering at least one of the mentioned flight details. |
+|| 5. The System returns a list of matching flights. |
+|| 6. The Actor selects the desired flight. |
+| Results: | The System delivers flight to booking. |
+| Exceptions: | 5.a. If no matching flight is found, the System indicates that this is the case and returns to step 4. |
+
+### Look up a Booking
+| Name: | _Look up upcoming flights_ |
+|----|----|
+| Actor: | Sales Manager |
+| Description: | Sales Manager looks up a Booking. |
+| Pre-condition: | Sales Manager is already logged in. |
+| Scenario: | 2. The Actor selects the option to search for upcoming flights. |
+|| 2. The System allows the user to input Booking details (origin, destination, CustomerID, BookingID, CustomerName). |
+|| 4. The Actor searches for a specific Booking by delivering at least one of the mentioned booking details. |
+|| 5. The System returns a list of matching Bookings. |
+|| 6. The Actor selects the desired Booking. |
+| Results: | The System delivers flight to booking. |
+| Exceptions: | 5.a. No matching Booking is found. |
+|| 5.a.1 The System indicates that this is the case and returns to step 4. |
+
 ### Create booking
 | **Name:** | _Create booking_ |
 | --- | --- |
@@ -230,20 +259,6 @@
 | | 5. The System shows a succes message. |
 | Results: | The Actor has successfully updated the  booking. |
 
-### Look up a Booking
-| Name: | _Look up upcoming flights_ |
-|----|----|
-| Actor: | Sales Manager |
-| Description: | Sales Manager looks up a Booking. |
-| Pre-condition: | Sales Manager is already logged in. |
-| Scenario: | 2. The Actor selects the option to search for upcoming flights. |
-|| 2. The System allows the user to input Booking details (origin, destination, CustomerID, BookingID, CustomerName). |
-|| 4. The Actor searches for a specific Booking by delivering at least one of the mentioned booking details. |
-|| 5. The System returns a list of matching Bookings. |
-|| 6. The Actor selects the desired Booking. |
-| Results: | The System delivers flight to booking. |
-| Exceptions: | 5.a. No matching Booking is found. |
-|| 5.a.1 The System indicates that this is the case and returns to step 4. |
 
 ### Create ticket (in a booking) extends "Create Booking"
 | Name: | _Create ticket |
@@ -261,19 +276,7 @@
 || 4.a.2 Return to step 3. |
 
 
-### Look up upcoming flights
-| Name: | _Look up upcoming flights_ |
-|----|----|
-| Actor: | Sales Employee |
-| Description: | Sales Employee looks up an upcoming flight. |
-| Pre-condition: | Sales Employee is already logged in. |
-| Scenario: | 2. The Actor selects the option to search for upcoming flights. |
-|| 2. The System allows the user to input flight details (Arrival airport, Departure airport, Departure date, Number of seats). |
-|| 4. The Actor searches for a specific flight by delivering at least one of the mentioned flight details. |
-|| 5. The System returns a list of matching flights. |
-|| 6. The Actor selects the desired flight. |
-| Results: | The System delivers flight to booking. |
-| Exceptions: | 5.a. If no matching flight is found, the System indicates that this is the case and returns to step 4. |
+
 
 
 
