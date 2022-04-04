@@ -3,7 +3,7 @@
 ## Cancelling in Use Cases:  not an extension or exception since the option is always there and no data will be inserted into the DB before the confirmation is given.
 
 ### this is a tier 3
-## Log in
+### Log in
 | Name: | _Log in_ |
 |----|----|
 | Actor: | Staff Member |
@@ -16,7 +16,7 @@
 | Exceptions: | 3.a. The System informs the user that the combination of username/password is invalid. |
 |  | 3.a.1. Return to step 1.  |
 
-## Log out
+### Log out
 | Name: | _Log out_ |
 |----|----|
 | Actor: | Staff Member |
@@ -31,7 +31,7 @@
 |  | 3.a.1. Actor denies the request  |
 |  | 3.a.2. Actor keeps access. Use Case ends here.  |
 
-## Register sales officer or sales employee
+### Register sales officer or sales employee
 | Name: | _Register sales officer or sales employee_ |
 |----|----|
 | Actor: | Sales Manager | 
@@ -54,7 +54,7 @@
 | | 3.a.1. Go to step 4. |
 
 
-## Register flight
+### Register flight
 | Name: | _Register upcoming flights_ |
 |----|----|
 | Actor: | Sales Officer |
@@ -69,7 +69,7 @@
 
 
 
-## Update flight
+### Update flight
 | Name: | _Update  upcoming flights_ |
 |----|----|
 | Actor: | Sales Officer |
@@ -84,7 +84,7 @@
 | Extensions: |  |
 
 
-## Delete flight
+### Delete flight
 | Name: | Delete  upcoming flights_ |
 |----|----|
 | Actor: | Sales Officer |
@@ -100,7 +100,7 @@
 | Exceptions: | 4.a. The Actor selects cancel. |
 | | 4.a.1. The use case ends here. |
 
-## Create booking
+### Create booking
 | **Name:** | _Create booking_ |
 | --- | --- |
 | Actor: | Sales Employee |
@@ -135,7 +135,7 @@
 || 18. The Actor indicates that everything is fine and allows proceeding. |
 || 19. The System processes the booking request. |
 
-## Edit Booking
+### Edit Booking
 | Name: | Edit  certain Booking |
 |----|----|
 | Actor: | Sales Officer |
@@ -148,7 +148,7 @@
 | | 5. The System shows a succes message. |
 | Results: | The Actor has successfully updated the  booking. |
 
-## Look up a Booking
+### Look up a Booking
 | Name: | _Look up upcoming flights_ |
 |----|----|
 | Actor: | Sales Manager |
@@ -163,8 +163,8 @@
 | Exceptions: | 5.a. No matching Booking is found. |
 || 5.a.1 The System indicates that this is the case and returns to step 4. |
 
-## Create ticket (in a booking) extends "Create Booking"
-| **Name:** | _Create ticket |
+### Create ticket (in a booking) extends "Create Booking"
+| Name: | _Create ticket |
 | --- | --- |
 | Actor: | Sales Employee |
 | Description: | A Sales Employee creates one ticket for a customer in a booking. |
@@ -180,7 +180,7 @@
 
 
 
-## Create Price reduction
+### Create Price reduction
 | Name: | _Enable temporary price reductions_ |
 |----|----|
 | Actor: | Sales Officer |
@@ -198,7 +198,7 @@
 | Exceptions: | If a selected flight already has a discount, the new discount will be enabled and the old one falls away. |
 
 
-## Disable Price reduction
+### Disable Price reduction
 | Name: | Disable temporary price reductions_ |
 |----|----|
 | Actor: | Sales Officer |
@@ -211,7 +211,7 @@
 | Extensions: | 4a. Actor decides to not disable the reduction. |
 | | 4.a.1. Use Case ends here. |
 
-## Look up upcoming flights
+### Look up upcoming flights
 | Name: | _Look up upcoming flights_ |
 |----|----|
 | Actor: | Sales Employee |
@@ -226,7 +226,7 @@
 | Exceptions: | 5.a. If no matching flight is found, the System indicates that this is the case and returns to step 4. |
 
 
-## Check key performance indicators
+### Check key performance indicators
 | Name: | _Check key performance indicators_ |
 |----|----|
 | Actor: | Sales Manager |
@@ -239,7 +239,7 @@
 || 5. The System displays the key performance indicators for that route. |
 | Results: | The Sales Manager gained access to various statistics, such as total revenue numbers, numbers of tickets sold in each class, and statistics on all options sold for a specific route. |
 
-## Register route
+### Register route
 | Name: | _Register route_ |
 |----|----|
 | Actor: | Sales Manager |
@@ -258,7 +258,7 @@
 | | 5.b.1. The system informs the actor that the route already exists. |
 | | 5.b.1. Return to Step 3. |
 
-## Register airport
+### Register airport
 | Name: | _Register airport_ |
 |----|----|
 | Actor: | Sales Manager |
