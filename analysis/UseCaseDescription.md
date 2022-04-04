@@ -1,5 +1,7 @@
 # Use cases
 
+## Cancelling in Use Cases:  not an extension or exception since the option is always there and no data will be inserted into the DB before the confirmation is given.
+
 ## Log in
 | Name: | _Log in_ |
 |----|----|
@@ -105,13 +107,13 @@
 || 3. The Actor chooses destination and origin of the journey 
 || 4. The System displays available flights. |
 || 5. The Actor chooses a flight. |
-|| 6. The System displays input fields for personal information and extra options |
-|| 7. The Actor enters information of the customer and confirms. |
-|| 8. The System displays all information regarding the booking. |
+|| 6. The System enables the Actor to create a ticket. |
+|| 7. The Actor creates a ticket. |
+|| 8. The System displays all tickets. |
 || 9. The Actor confirms booking. |
-|| 10. The System creates booking. |
-| Extensions: | 7.a The Actor chooses to add another ticket |
-| | 7.a.1 return to step 6. |
+|| 10. The System shows a success message. |
+| Extensions: | 9.a The Actor chooses to add another ticket |
+| | 9.a.1 return to step 6. |
 | Result: | The desired trip has been booked. |
 | Exceptions: | 2. The System offers to add tickets of the flight to the booking. |
 || 6. If the Actor wants to add (more) tickets, they select a flight and decide to add tickets. |
@@ -133,15 +135,14 @@
 | Name: | Edit  certain Booking |
 |----|----|
 | Actor: | Sales Officer |
-| Description: | The information regarding an certain Booking will be edited. |
+| Description: | The information regarding a certain Booking will be edited. |
 | Pre-condition: | The Sales Officer has logged in and  the Booking has been found. |
 | Scenario: | 1. The system displays an option to edit the booking. |
 | | 2. The Actor selects to edit the booking Information(Tickets,origin ,destination, Delete). |
 | | 3. The System displays form with all booking information. |
-| | 4. The Actor choses different options confirms all desired information. |
+| | 4. The Actor choses different options and confirms all desired information. |
 | | 5. The System shows a succes message. |
 | Results: | The Actor has successfully updated the  booking. |
-| Extensions: |  |
 
 ## Look up a Booking
 | Name: | _Look up upcoming flights_ |
@@ -155,16 +156,25 @@
 || 5. The System returns a list of matching Bookings. |
 || 6. The Actor selects the desired Booking. |
 | Results: | The System delivers flight to booking. |
-| Exceptions: | 5.a. If no matching Booking is found, the System indicates that this is the case and returns to step 4. |
+| Exceptions: | 5.a. No matching Booking is found. |
+|| 5.a.1 The System indicates that this is the case and returns to step 4. |
 
-## Create ticket (in a booking)
+## Create ticket (in a booking) extends "Create Booking"
 | **Name:** | _Create ticket |
 | --- | --- |
 | Actor: | Sales Employee |
 | Description: | A Sales Employee creates one ticket for a customer in a booking. |
-| Pre-condition: | The Sales Employee is logged in and a booking is currently created. |
-| Scenario: | 1. The Actor chooses to add a ticket to the already existing booking. |
-| THIS NEEDS TO BE CONTINUED!!!! |
+| Pre-condition: | The Sales Employee is logged in and the Actor decided to add a ticket to a booking. |
+| Scenario: | 1. The System displays the options for the ticket(Extra options, seat choice, passenger data like age, name). |
+|| 2. The Actor enters information and saves the changes. |
+|| 3. The System displays all information regarding the ticket, including the price. |
+|| 4. The Actor confirms the ticket creation |
+|| 5. The tickets displays a success message. |
+| Extension: | 4.a. The Actor wants to change some of the information. |
+|| 4.a.1 The Actor changes information in the ticket. |
+|| 4.a.2 Return to step 3. |
+
+
 
 ## Create Price reduction
 | Name: | _Enable temporary price reductions_ |
