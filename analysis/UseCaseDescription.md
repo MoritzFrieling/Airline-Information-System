@@ -1,6 +1,6 @@
 # Use cases
 
-## Cancelling in Use Cases:  not an extension or exception since the option is always there and no data will be inserted into the DB before the confirmation is given.  Actor== target user, not everyone who has access.
+## Cancelling in Use Cases:  not an extension or exception since the option is always there and no data will be inserted into the DB before the confirmation is given.   </br> Actor== target user, not everyone who has access.
 
 ## General Use Cases
 ### Log in
