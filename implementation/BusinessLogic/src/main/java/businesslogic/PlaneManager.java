@@ -1,6 +1,5 @@
 package businesslogic;
 
-import datarecords.AirportData;
 import datarecords.PlaneData;
 import persistence.StorageService;
 
