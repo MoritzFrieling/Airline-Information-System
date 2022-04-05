@@ -223,7 +223,7 @@
 || 4. The System displays available flights and the number of available seats. |
 || 5. The Actor chooses a flight. |
 || 6. The System enables the Actor to create a ticket. |
-|| 7. The Actor creates a ticket. |
+|| 7. The Actor [creates a ticket](#Create-ticket). |
 || 8. The System displays all tickets and a total price. |
 || 9. The Actor confirms booking. |
 || 10. The System shows a success message. |
@@ -251,8 +251,8 @@
 | Results: | The Actor has successfully updated the  booking. |
 
 
-### Create ticket (in a booking) extends "Create Booking"
-| Name: | Create ticket |
+### Create ticket
+| Name: | Create ticket (extends "Create booking") |
 | --- | --- |
 | Actor: | Sales Employee |
 | Description: | A Sales Employee creates one ticket for a customer in a booking. |
