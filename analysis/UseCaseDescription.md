@@ -1,6 +1,6 @@
 # Use cases
 
-## Cancelling in Use Cases:  not an extension or exception since the option is always there and no data will be inserted into the DB before the confirmation is given.   </br> Actor== target user, not everyone who has access.
+## Cancelling in Use Cases:  not an extension or exception since the option is always there and no data will be inserted into the DB before the confirmation is given.
 
 ## General Use Cases
 ### Log in
@@ -220,31 +220,22 @@
 | Scenario: | 1. The Actor chooses to create a new booking for a customer. |
 || 2. The System requests destination and origin of the journey. |
 || 3. The Actor chooses destination and origin of the journey 
-|| 4. The System displays available flights. |
+|| 4. The System displays available flights and the number of available seats. |
 || 5. The Actor chooses a flight. |
 || 6. The System enables the Actor to create a ticket. |
 || 7. The Actor creates a ticket. |
-|| 8. The System displays all tickets. |
+|| 8. The System displays all tickets and a total price. |
 || 9. The Actor confirms booking. |
 || 10. The System shows a success message. |
 | Extensions: | 9.a The Actor chooses to add another ticket |
 | | 9.a.1 return to step 6. |
 | Result: | The desired trip has been booked. |
-| Exceptions: | 2. The System offers to add tickets of the flight to the booking. |
-|| 6. If the Actor wants to add (more) tickets, they select a flight and decide to add tickets. |
-|| 7. The System creates and lists all tickets matching the actor's request or the currently selected flight. |
-|| 8. The Actor selects a ticket. |
-|| 9. The System offers the option to add paid options (food, luggage, seats picked) as well as the opportunity to enter a name. |
-|| 10. If the Actor wants to add options, they select the options desired by the customer. |
-|| 11. The Actor enters the name that is to be on the ticket given by the customer. |
-|| 12. The System displays an option to save ticket information. |
-|| 13. When the Actor needs to save ticket information, they select that option.|
-|| 14. The System adds the information to the booking. |
-|| 15. The System shows booking information, a calculated price for the booking and displays the opportunity to proceed with processing the booking.|
-|| 16. The Actor decides to proceed. | 
-|| 17. The System asks for confirmation. |
-|| 18. The Actor indicates that everything is fine and allows proceeding. |
-|| 19. The System processes the booking request. |
+| Exceptions: | 6.a The flight has no empty seats left. |
+|| 6.a.1 System informs Actor that no seats are left. |
+|| 6.a.2 Return to step 8. |
+
+
+
 
 ### Edit Booking
 | Name: | Edit  certain Booking |
