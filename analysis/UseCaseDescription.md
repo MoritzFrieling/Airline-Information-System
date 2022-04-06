@@ -190,7 +190,7 @@
 | Pre-condition: | Sales Employee is already logged in. |
 | Scenario: | 2. The Actor selects the option to search for upcoming flights. |
 || 2. The System allows the user to input flight details (Arrival airport, Departure airport, Departure date, Number of seats). |
-|| 4. The Actor searches for a specific flight by delivering at least one of the mentioned flight details. |
+|| 4. The Actor searches for a specific flight by using the flight details (if no details are given, all flights are displayed) |
 || 5. The System returns a list of matching flights. |
 || 6. The Actor selects the desired flight. |
 | Results: | The System delivers flight to booking. |
