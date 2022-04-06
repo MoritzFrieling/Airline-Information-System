@@ -53,7 +53,7 @@ public class AirportData {
 
     @Override
     public String toString() {
-        return "AirportData{" + "id=" + id + ", airportName=" + airportName + ", Abbreviation=" + abbreviation + ", city=" + cityName + ", country=" + countryName + '}';
+        return "Name: " + airportName + ", abbreviation: " + abbreviation + ", city: " +cityName +", country: " + countryName + " ";
     }
     
 }

@@ -102,6 +102,8 @@ public class GUIApp extends Application {
         stage.setTitle("Airline Information System");
         sceneManager.displayOn(stage, 640, 480);
         
+        
+        
     }
 
     public SceneManager getSceneManager() {

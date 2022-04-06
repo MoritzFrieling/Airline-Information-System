@@ -67,8 +67,6 @@ class RouteController implements Initializable {
 
         result.setText("Route added: " + addedRoute.toString());
 
-
-
     }
 
 

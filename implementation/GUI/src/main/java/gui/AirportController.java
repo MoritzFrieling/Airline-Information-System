@@ -61,7 +61,7 @@ class AirportController implements Initializable {
 
         AirportData addedAirport = airportManager.add(airportData);
      
-        result.setText("Airport added: " + addedAirport.toString() );
+        result.setText("AIRPORT ADDED \n \n" + addedAirport.toString() );
     }
 
     /**

@@ -18,6 +18,7 @@ public class Assembler {
         BusinessLogicAPI businesslogicAPI = BusinessLogicFactory.getImplementation( persistenceAPI );
         
         new GUIApp( businesslogicAPI ).show();
+        
     }
 }
 
