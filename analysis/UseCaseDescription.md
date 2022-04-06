@@ -231,7 +231,7 @@
 | Extensions: | 9.a The Actor chooses to add another ticket |
 | | 9.a.1 return to step 6. |
 | Result: | The desired trip has been booked. |
-| Exceptions: | 6.a The flight has no empty seats left. |
+| Exceptions: | 6.a The flight has no empty seats left (Can only happen after 1st ticket was created). |
 || 6.a.1 System informs Actor that no seats are left. |
 || 6.a.2 Return to step 8. |
 
