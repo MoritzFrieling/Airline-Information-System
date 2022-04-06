@@ -262,7 +262,8 @@
 || 2. The Actor enters information and saves the changes. |
 || 3. The System displays all information regarding the ticket, including the price. |
 || 4. The Actor confirms the ticket creation |
-|| 5. The tickets displays a success message. |
+|| 5. The system displays a success message and goes back to step 6 of [create booking](#create-booking). |
+| Results: | The Actor has successfully created a ticket. |
 | Extension: | 4.a. The Actor wants to change some of the information. |
 || 4.a.1 The Actor changes information in the ticket. |
 || 4.a.2 Return to step 3. |
