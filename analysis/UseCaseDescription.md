@@ -203,14 +203,14 @@
 | Actor: | Sales Employee |
 | Description: | Sales Employee looks up a Booking. |
 | Pre-condition: | Sales Employee is already logged in. |
-| Scenario: | 2. The Actor selects the option to search for upcoming flights. |
+| Scenario: | 1. The Actor selects the option to search for upcoming flights. |
 || 2. The System allows the user to input Booking details (origin, destination, CustomerID, BookingID, CustomerName). |
-|| 4. The Actor searches for a specific Booking by delivering at least one of the mentioned booking details. |
-|| 5. The System returns a list of matching Bookings. |
-|| 6. The Actor selects the desired Booking. |
+|| 3. The Actor searches for a specific Booking by delivering at least one of the mentioned booking details. |
+|| 4. The System returns a list of matching Bookings. |
+|| 5. The Actor selects the desired Booking. |
 | Results: | The System delivers flight to booking. |
-| Exceptions: | 5.a. No matching Booking is found. |
-|| 5.a.1 The System indicates that this is the case and returns to step 4. |
+| Exceptions: | 4.a. No matching Booking is found. |
+|| 4.a.1 The System indicates that this is the case and returns to step 2. |
 
 ### Create booking
 | **Name:** | _Create booking_ |
