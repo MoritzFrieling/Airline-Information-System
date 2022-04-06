@@ -200,9 +200,9 @@
 ### Look up a Booking
 | Name: | _Look up upcoming flights_ |
 |----|----|
-| Actor: | Sales Manager |
-| Description: | Sales Manager looks up a Booking. |
-| Pre-condition: | Sales Manager is already logged in. |
+| Actor: | Sales Employee |
+| Description: | Sales Employee looks up a Booking. |
+| Pre-condition: | Sales Employee is already logged in. |
 | Scenario: | 2. The Actor selects the option to search for upcoming flights. |
 || 2. The System allows the user to input Booking details (origin, destination, CustomerID, BookingID, CustomerName). |
 || 4. The Actor searches for a specific Booking by delivering at least one of the mentioned booking details. |
@@ -241,9 +241,9 @@
 ### Edit Booking
 | Name: | Edit  certain Booking |
 |----|----|
-| Actor: | Sales Officer |
+| Actor: | Sales Employee |
 | Description: | The information regarding a certain Booking will be edited. |
-| Pre-condition: | The Sales Officer has logged in and  the Booking has been found. |
+| Pre-condition: | The Sales Employee has logged in and  the Booking has been found. |
 | Scenario: | 1. The system displays an option to edit the booking. |
 | | 2. The Actor selects to edit the booking Information(Tickets,origin ,destination, Delete). |
 | | 3. The System displays form with all booking information. |
