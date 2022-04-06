@@ -188,13 +188,14 @@
 | Actor: | Sales Employee |
 | Description: | Sales Employee looks up an upcoming flight. |
 | Pre-condition: | Sales Employee is already logged in. |
-| Scenario: | 2. The Actor selects the option to search for upcoming flights. |
+| Scenario: | 1. The Actor selects the option to search for upcoming flights. |
 || 2. The System allows the user to input flight details (Arrival airport, Departure airport, Departure date, Number of seats). |
-|| 4. The Actor searches for a specific flight by using the flight details (if no details are given, all flights are displayed) |
-|| 5. The System returns a list of matching flights. |
-|| 6. The Actor selects the desired flight. |
+|| 3. The Actor searches for a specific flight by using the flight details (if no details are given, all flights are displayed) |
+|| 4. The System returns a list of matching flights. |
+|| 5. The Actor selects the desired flight. |
 | Results: | The System delivers flight to booking. |
-| Exceptions: | 5.a. If no matching flight is found, the System indicates that this is the case and returns to step 4. |
+| Exceptions: | 4.a. No matching flight was found. |
+| | 4.a.1 The System indicates that this is the case and returns to step 2. |
 
 ### Look up a Booking
 | Name: | _Look up upcoming flights_ |
