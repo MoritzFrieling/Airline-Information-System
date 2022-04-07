@@ -13,7 +13,7 @@
 ## User stories
 
 
-#### As a sales employee ... 
+### As a sales employee ... 
 
 - *I want to look up flights to check whether a certain route is available* 
 
@@ -23,7 +23,7 @@
 
 - *I want to edit a booking to change information about in the booking for the customer*
 
-#### As a sales officer ... 
+### As a sales officer ... 
 
 - *I want to register flights to start the sales process*
 
@@ -33,7 +33,7 @@
 
 - *I want to disable those temporary price reductions to end the time for a discouznt*
 
-#### As a sales manager ... 
+### As a sales manager ... 
 
 - *I want to inspect the management board to view the KPI’s (Key Performance Indicators) for specific routes*
 - 
