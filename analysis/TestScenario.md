@@ -124,3 +124,30 @@
 |  | 4. The Actor confirms the ticket creation. |
 |  | 5. The system displays a success message. |
 | Results: | Ticket was created for the passenger "Moritz Frieling". |
+
+## Register airport
+
+| Name: | Actor registers existed airport |
+|----|----|
+| Scenario: |1. Actor chooses register new airport. |
+|  | 2. System asks the Actor to provide information for airport name, abbreviation, city, and country . |
+|  | 3. Actor enters abcde for airport name, ABC for abbreviation, Venlo for city and Netherlands for country. |
+| Results: | System informs that the airport already exists. |
+
+
+| Name: | Actor registers airport with blank fields |
+|----|----|
+| Scenario: |1. Actor chooses register new airport. |
+|  | 2. System asks the Actor to provide information for airport name, abbreviation, city, and country . |
+|  | 3. Actor enters abcde for airport name, ABC for abbreviation, Venlo for city. |
+| Results: | System informs that fields can not be empty. |
+
+## Register route
+
+
+| Name: | Actor registers existed route |
+|----|----|
+| Scenario: |1. The System displays the main sales manager dashboard. |
+|  | 2. Actor choose to register route. |
+|  | 3. System asks the Actor to choose destination and origin airports. |
+| Results: | System informs that the route already exists. |
