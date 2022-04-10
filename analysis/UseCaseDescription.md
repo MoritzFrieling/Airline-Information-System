@@ -203,7 +203,7 @@
 | Actor: | Sales Employee |
 | Description: | Sales Employee looks up a Booking. |
 | Pre-condition: | Sales Employee is already logged in. |
-| Scenario: | 1. The Actor selects the option to search for upcoming flights. |
+| Scenario: | 1. The Actor selects the option to search for bookings. |
 || 2. The System allows the user to input Booking details (origin, destination, CustomerID, BookingID, CustomerName). |
 || 3. The Actor searches for a specific Booking by delivering at least one of the mentioned booking details. |
 || 4. The System returns a list of matching Bookings. |
