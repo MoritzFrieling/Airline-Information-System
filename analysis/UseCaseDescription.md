@@ -185,7 +185,7 @@
 ### Look up upcoming flights
 | Name: | _Look up upcoming flights_ |
 |----|----|
-| Actor: | Sales Employee |
+| Actor: | Sales Officer, Sales Employee |
 | Description: | Sales Employee looks up an upcoming flight. |
 | Pre-condition: | Sales Employee is already logged in. |
 | Scenario: | 1. The Actor selects the option to search for upcoming flights. |
