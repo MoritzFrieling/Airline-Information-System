@@ -37,11 +37,11 @@
 
        <!-- Navigation buttons home and back -->
        <Button layoutX="508.0" layoutY="339.0" mnemonicParsing="false" onAction="#toSecondary" text="Home" />
+       <Button layoutX="508.0" layoutY="303.0" mnemonicParsing="false" onAction="#goFlightOptions" prefHeight="25.0" prefWidth="49.0" text="Back" />
 
        <!-- Save button to save the flight -->
        <Button layoutX="321.0" layoutY="252.0" mnemonicParsing="false" onAction="#storeFlight" prefHeight="25.0" prefWidth="124.0" text="Save" />
 
-       <Button layoutX="506.0" layoutY="303.0" mnemonicParsing="false" onAction="#goFlightOptions" prefHeight="25.0" prefWidth="49.0" text="Back" />
 
    </children>
 </AnchorPane>
