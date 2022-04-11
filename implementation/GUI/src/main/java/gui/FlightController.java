@@ -91,7 +91,7 @@ class FlightController implements Initializable {
 
             return new FlightData(origin, destination, departureDateTime, arrivalDateTime, plane);
         } else {
-            result.setText("You picked a not yet implemented plane or City! Please ensure picking the first entry!");
+            result.setText("You picked a not yet implemented plane or City or you didnt fill in minutes / date!\nPlease ensure picking the first entry!");
             return null;
         }
     }
