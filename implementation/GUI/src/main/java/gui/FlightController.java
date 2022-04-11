@@ -25,13 +25,11 @@ class FlightController implements Initializable {
     @FXML
     public DatePicker datePickerDeparture;
     @FXML
-    public DatePicker datePickerArrival;
-    @FXML
     public ComboBox modelDropDownPlane;
     @FXML
     public TextField durationMinutes;
     @FXML
-    public Label testText;
+    public TextField departureTime;
     @FXML
     private Label result;
 
@@ -69,21 +67,22 @@ class FlightController implements Initializable {
 
         flightManager.add(flightData);
 
-        result.setText("Flight added: " + flightData.toString());
+        result.setText("Flight added:\n" + flightData.toString());
 
     }
 
     private FlightData createFlight() {
-        if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1) && modelDropDownPlane.getSelectionModel().isSelected(1)) {
+        if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1) && modelDropDownPlane.getSelectionModel().isSelected(1) && !departureTime.getText().isEmpty() && !durationMinutes.getText().isEmpty()) {
 
             AirportData origin = new AirportData(0, "Berlin Flughafen", "BRLN", "Berlin", "Germany");
             AirportData destination = new AirportData(1, "New York Airport", "NY", "New York", "USA");
 
             PlaneData plane = new PlaneData("9",new PlaneModelData("Avions de Transport Regional","42-300",50,1150,4950));
 
+            String[] split = departureTime.getText().split(":");
 
             LocalDate departureDate = datePickerDeparture.getValue();
-            LocalTime departureTime = LocalTime.of(13,50);
+            LocalTime departureTime = LocalTime.of(Integer.valueOf(split[0]),Integer.valueOf(split[1]));
             LocalDateTime departureDateTime = departureDate.atTime(departureTime);
             LocalDateTime arrivalDateTime = departureDateTime.plusMinutes(Integer.valueOf(durationMinutes.getText()));
 
@@ -91,7 +90,7 @@ class FlightController implements Initializable {
 
             return new FlightData(origin, destination, departureDateTime, arrivalDateTime, plane);
         } else {
-            result.setText("You picked a not yet implemented plane or City or you didnt fill in minutes / date!\nPlease ensure picking the first entry!");
+            result.setText("Please ensure picking the first entry for plane, origin and destination!\nThe format for departure time is 'hh:mm' -> '14:30'\nPlease fill out every field.");
             return null;
         }
     }
