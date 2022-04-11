@@ -4,7 +4,7 @@
 | User group | Use case |
 |----|----|
 | All |  |
-| | 1. Log in |
+| | 1. Log in [Log in](/analysis/UseCaseDescription.md/#log-in) |
 | | 2. Log out |
 | Sales Employee |  |
 | | 1. Create booking |
