@@ -121,7 +121,7 @@
 | Results: | The Actor has successfully registered a flight. |
 
 ### Update flight
-| Name: | _Update  upcoming flights_ |
+| Name: | _Update upcoming flights_ |
 |----|----|
 | Actor: | Sales Officer |
 | Description: | The information regarding an upcoming flight need to be altered. |
@@ -135,7 +135,7 @@
 | Extensions: |  |
 
 ### Delete flight
-| Name: | Delete  upcoming flights_ |
+| Name: | _Delete upcoming flights_ |
 |----|----|
 | Actor: | Sales Officer |
 | Description: | The flight should be deleted . |
@@ -168,7 +168,7 @@
 | Exceptions: | If a selected flight already has a discount, the new discount will be enabled and the old one falls away. |
 
 ### Disable Price reduction
-| Name: | Disable temporary price reductions_ |
+| Name: | _Disable temporary price reductions_ |
 |----|----|
 | Actor: | Sales Officer |
 | Description: | The Sales Officer disables the price reduction of a flight. |
@@ -239,7 +239,7 @@
 
 
 ### Edit Booking
-| Name: | Edit  certain Booking |
+| Name: | _Edit certain Booking_ |
 |----|----|
 | Actor: | Sales Employee |
 | Description: | The information regarding a certain Booking will be edited. |
@@ -253,7 +253,7 @@
 
 
 ### Create ticket
-| Name: | Create ticket (extends "Create booking") |
+| Name: | _Create ticket (extends "Create booking")_ |
 | --- | --- |
 | Actor: | Sales Employee |
 | Description: | A Sales Employee creates one ticket for a customer in a booking. |
