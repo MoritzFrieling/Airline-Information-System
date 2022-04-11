@@ -17,6 +17,7 @@ class SecondaryController {
     private Button addAirportButton;
     private Button addPlaneButton;
     private Button addRouteButton;
+    private Button addFlightButton;
     private Button dashboardButton;
     private Button logoutButton;
 
@@ -39,6 +40,10 @@ class SecondaryController {
     
     @FXML
     private void goAddRoute(){ sceneManagerSupplier.get().changeScene("addRouteView"); 
+    }
+
+    @FXML
+    private void goAddFlight(){ sceneManagerSupplier.get().changeScene("addFlightView");
     }
     
        

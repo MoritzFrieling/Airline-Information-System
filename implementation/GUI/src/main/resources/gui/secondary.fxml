@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-   
-
-<AnchorPane style="-fx-background-color: WHITE; " 
-            fx:id="backgroundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SecondaryController">
+<AnchorPane fx:id="backgroundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: WHITE; " xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SecondaryController">
     <children>
-        <Button style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" 
-                fx:id="addAirportButton" layoutX="87.0" layoutY="95.0" mnemonicParsing="false" onAction="#goAddAirport" text="Add Airport" />
-        <Button style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;"
-                fx:id="addRouteButton" layoutX="87.0" layoutY="165.0" mnemonicParsing="false" onAction="#goAddRoute" prefHeight="26.0" prefWidth="78.0" text="Add Route" />
-        <Button style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;"
-                fx:id="dashboardButton" layoutX="87.0" layoutY="249.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" text="Dashboard" />
-        <Button style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;"
-                fx:id="logoutButton" layoutX="502.0" layoutY="345.0" mnemonicParsing="false" text="Log out" />
-        <Button style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;"
-                layoutX="241.0" layoutY="95.0" mnemonicParsing="false" onAction="#goAddPlane" prefHeight="26.0" prefWidth="98.0" text="Add Plane" />
+        <Button fx:id="addAirportButton" layoutX="87.0" layoutY="95.0" mnemonicParsing="false" onAction="#goAddAirport" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Add Airport" />
+        <Button fx:id="addRouteButton" layoutX="87.0" layoutY="165.0" mnemonicParsing="false" onAction="#goAddRoute" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Add Route" />
+        <Button fx:id="dashboardButton" layoutX="87.0" layoutY="249.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Dashboard" />
+        <Button fx:id="logoutButton" layoutX="502.0" layoutY="345.0" mnemonicParsing="false" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Log out" />
+        <Button layoutX="241.0" layoutY="95.0" mnemonicParsing="false" onAction="#goAddPlane" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Add Plane" />
+      <Button fx:id="addFlight" layoutX="251.0" layoutY="165.0" mnemonicParsing="false" onAction="#goAddFlight" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Add Flight" />
     </children>
 </AnchorPane>

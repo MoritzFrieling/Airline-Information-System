@@ -37,6 +37,8 @@ public class GUIApp extends Application {
                 return new AirportController(this::getSceneManager, businessLogicAPI.getAirportManager());
             case "gui.RouteController":
                 return new RouteController(this::getSceneManager, businessLogicAPI.getRouteManager());
+            case "gui.FlightController":
+                return new FlightController(this::getSceneManager, businessLogicAPI.getFlightManager());
             case "gui.PrimaryController":
                 return new PrimaryController(this::getSceneManager);
             case "gui.SecondaryController":
