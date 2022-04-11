@@ -218,22 +218,17 @@
 | Actor: | Sales Employee |
 | Description: | A Sales Employee books a trip for a customer. |
 | Pre-condition: | The Sales Employee is logged in. |
-| Scenario: | 1. The Actor chooses to create a new booking for a customer. |
-|| 2. The System requests destination and origin of the journey. |
-|| 3. The Actor chooses destination and origin of the journey 
-|| 4. The System displays available flights and the number of available seats. |
-|| 5. The Actor chooses a flight. |
-|| 6. The System enables the Actor to create a ticket. |
-|| 7. The Actor [creates a ticket](#Create-ticket). |
-|| 8. The System displays all tickets and a total price. |
-|| 9. The Actor confirms booking. |
-|| 10. The System shows a success message. |
-| Extensions: | 9.a The Actor chooses to add another ticket |
-| | 9.a.1 return to step 6. |
+| Scenario: | 1. The System enables the Actor to create a ticket. |
+|| 2. The Actor [creates a ticket](#Create-ticket). |
+|| 3. The System displays all tickets and a total price. |
+|| 4. The Actor confirms booking. |
+|| 5. The System shows a success message. |
+| Extensions: | 4.a The Actor chooses to add another ticket |
+| | 4.a.1 return to step 1. |
 | Result: | The desired trip has been booked. |
-| Exceptions: | 6.a The flight has no empty seats left (Can only happen after 1st ticket was created). |
-|| 6.a.1 System informs Actor that no seats are left. |
-|| 6.a.2 Return to step 8. |
+| Exceptions: | 1.a The flight has no empty seats left (Can only happen after 1st ticket was created). |
+|| 1.a.1 System informs Actor that no seats are left. |
+|| 1.a.2 Return to step 3. |
 
 
 
