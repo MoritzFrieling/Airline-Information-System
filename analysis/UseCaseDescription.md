@@ -198,7 +198,7 @@
 | | 4.a.1 The System indicates that this is the case and returns to step 2. |
 
 ### Look up a Booking
-| Name: | _Look up upcoming flights_ |
+| Name: | _Look up a Booking_ |
 |----|----|
 | Actor: | Sales Employee |
 | Description: | Sales Employee looks up a Booking. |
