@@ -2,14 +2,18 @@ package gui;
 
 import businesslogic.FlightManager;
 import datarecords.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 import java.util.function.Supplier;
 
@@ -24,6 +28,10 @@ class FlightController implements Initializable {
     public DatePicker datePickerArrival;
     @FXML
     public ComboBox modelDropDownPlane;
+    @FXML
+    public TextField durationMinutes;
+    @FXML
+    public Label testText;
     @FXML
     private Label result;
 
@@ -48,7 +56,7 @@ class FlightController implements Initializable {
         modelDropDownOrigin.getSelectionModel().select("-- select origin --");
         modelDropDownDestination.getSelectionModel().select("-- select destination --");
 
-        modelDropDownPlane.getItems().addAll("-- select plane --","ATR 42","ATR 72","Airbus A300");
+        modelDropDownPlane.getItems().addAll("-- select plane --","ATR 42-300","ATR 72","Airbus A300");
 
 
 
@@ -66,19 +74,28 @@ class FlightController implements Initializable {
     }
 
     private FlightData createFlight() {
-        if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1) && modelDropDownPlane.getSelectionModel().isSelected(1) &&modelDropDownDestination.getValue() !=null && modelDropDownOrigin.getValue()!= null) {
+        if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1) && modelDropDownPlane.getSelectionModel().isSelected(1)) {
+
             AirportData origin = new AirportData(0, "Berlin Flughafen", "BRLN", "Berlin", "Germany");
             AirportData destination = new AirportData(1, "New York Airport", "NY", "New York", "USA");
-            LocalDateTime arrival = datePickerArrival.getValue().atStartOfDay();
-            LocalDateTime departure = datePickerDeparture.getValue().atTime(3,45);
+
+            PlaneData plane = new PlaneData("9",new PlaneModelData("Avions de Transport Regional","42-300",50,1150,4950));
+
+
+            LocalDate departureDate = datePickerDeparture.getValue();
+            LocalTime departureTime = LocalTime.of(13,50);
+            LocalDateTime departureDateTime = departureDate.atTime(departureTime);
+            LocalDateTime arrivalDateTime = departureDateTime.plusMinutes(Integer.valueOf(durationMinutes.getText()));
 
 
 
-            //LocalDateTime.now() just for test purpose. Needs to retrieve real time picked!!
-            return new FlightData(origin, destination, departure, LocalDateTime.now());
+            return new FlightData(origin, destination, departureDateTime, arrivalDateTime, plane);
         } else {
+            result.setText("You picked a not yet implemented plane or City! Please ensure picking the first entry!");
             return null;
         }
     }
-
+    @FXML
+    private void goFlightOptions(){ sceneManagerSupplier.get().changeScene("flightOptionsView");
+    }
 }
