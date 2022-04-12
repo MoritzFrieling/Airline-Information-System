@@ -127,11 +127,18 @@
 
 ## Register airport
 
-| Name: | Actor registers existed airport |
+| Name: | Actor registers airport, works |
 |----|----|
 | Scenario: |1. Actor chooses register new airport. |
 |  | 2. System asks the Actor to provide information for airport name, abbreviation, city, and country . |
-|  | 3. Actor enters abcde for airport name, ABC for abbreviation, Venlo for city and Netherlands for country. |
+|  | 3. Actor enters "abcde" for airport name, "ABC" for abbreviation, "Venlo" for city and "Netherlands" for Country. |
+| Results: | System informs that airport has been registered. |
+
+| Name: | Actor registers existed airport |
+|----|----|
+| Scenario: |1. Actor chooses register new airport |
+|  | 2. System asks the Actor to provide information for airport name, abbreviation, city, and country . |
+|  | 3. Actor enters "abcde" for airport name, "ABC" for abbreviation, "Venlo" for city and "Netherlands" for country. |
 | Results: | System informs that the airport already exists. |
 
 
@@ -139,7 +146,7 @@
 |----|----|
 | Scenario: |1. Actor chooses register new airport. |
 |  | 2. System asks the Actor to provide information for airport name, abbreviation, city, and country . |
-|  | 3. Actor enters abcde for airport name, ABC for abbreviation, Venlo for city. |
+|  | 3. Actor enters "abcde" for airport name, "ABC" for abbreviation, "Venlo" for city. |
 | Results: | System informs that fields can not be empty. |
 
 ## Register route
