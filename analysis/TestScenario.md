@@ -151,3 +151,33 @@
 |  | 2. Actor choose to register route. |
 |  | 3. System asks the Actor to choose destination and origin airports. |
 | Results: | System informs that the route already exists. |
+
+## Register sales officer or sales employee
+
+| Name: | Actor registers sales officer/ sales employees successfully |
+|----|----|
+| Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
+|  | 2. The System asks the actor what kind of account he wants to create. |
+|  | 3. The Actor indicates that they want to register a new Sales Officer/Sales employee. |
+|  | 4. The System offers an opportunity to enter personal information (name, password, company mail address). |
+|  | 5. The Actor enters John Doe for name, 123Password for password, john@abc.com for email |
+| Results: | System informs that the staff member has been successfully registered. |
+
+
+| Name: | Actor registers existed sales officer/ sales employees  |
+|----|----|
+| Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
+|  | 2. The System asks the actor what kind of account he wants to create. |
+|  | 3. The Actor indicates that they want to register a new Sales Officer/Sales employee. |
+|  | 4. The System offers an opportunity to enter personal information (name, password, company mail address). |
+|  | 5. The Actor enters John Doe for name, 123Password for password, john@abc.com for email |
+| Results: | System informs that the staff member exists in the database. |
+
+| Name: | Actor registers sales officer/ sales employees with unaccepted password  |
+|----|----|
+| Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
+|  | 2. The System asks the actor what kind of account he wants to create. |
+|  | 3. The Actor indicates that they want to register a new Sales Officer/Sales employee. |
+|  | 4. The System offers an opportunity to enter personal information (name, password, company mail address). |
+|  | 5. The Actor enters John Doe for name, Password for password, john@abc.com for email |
+| Results: | System informs that the password does not fulfill the requirement. |
