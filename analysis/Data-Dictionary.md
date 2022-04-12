@@ -8,6 +8,9 @@
 | Management Board | Tool to manage and supervise the sales department as well as inspect the Key performance Indicators |
 | Key Performance Indicator(s) | A key performance indicator is a type of performance measurement. KPIs evaluate the success of an organization or of a particular activity in which it engages |
 | Customer | An individual on whose name a ticket is booked |
+| Name | The name of the airport |
+| Country | The nation where the airport is located |
+| Abbreviation | The shorten form of the airport name |
 
 |  Words related to the journey  |      Definition     |
 |----------|:-------------:|
@@ -62,9 +65,3 @@
 |----------|:-------------:|
 | Nr | The number of the seat |
 | Type | The type of the seat which may be economic or business |
-
-|  Words related to Airport  |      Definition     |
-|----------|:-------------:|
-| Name | The name of the airport |
-| Country | The nation where the airport is located |
-| Abbreviation | The shorten form of the airport name |
