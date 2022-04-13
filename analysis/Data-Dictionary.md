@@ -1,10 +1,11 @@
 |  Words related to the airport  |      Definition     |
 |----------|:-------------:|
 | Airline |  A company that offers flights for certain routes  for a monetary compensation | 
-| Sales-Employee | Airline staff responsible for selling tickets and handling customer contact |
-| Sales-Officer | Supervising middle management and managing flights|
-| Sales-Manager | Upper management responsible for the sales department |
-| Dashboard | A dashboard used by the sales manager, which presents important key performance indicators |
+| Sales Employee | Airline staff responsible for selling tickets and handling customer contact |
+| Sales Officer | Supervising middle management and managing flights|
+| Sales Manager | Upper management responsible for the sales department |
+| Staff Member | All Groups combined |
+| Dashboard | A visual representation of the tasks which are executable by a specific role. |
 | Management Board | Tool to manage and supervise the sales department as well as inspect the Key performance Indicators |
 | Key Performance Indicator(s) | A key performance indicator is a type of performance measurement. KPIs evaluate the success of an organization or of a particular activity in which it engages |
 | Customer | An individual on whose name a ticket is booked |
