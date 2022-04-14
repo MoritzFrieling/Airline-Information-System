@@ -2,34 +2,29 @@ package datarecords;
 
 import java.time.LocalDateTime;
 
+
 public class FlightData {
 
-    private final AirportData origin;
-    private final AirportData destination;
     private final LocalDateTime departure;
     private final LocalDateTime arrival;
     private final PlaneData plane;
-    //plane missing!
+    private final RouteData route;
+    private final float price;
 
-
-    //calculated later sprint
-
-    //private final int length;
-
-    public FlightData(AirportData origin, AirportData destination, LocalDateTime departure, LocalDateTime arrival, PlaneData plane) {
-        this.origin = origin;
-        this.destination = destination;
+    public FlightData(RouteData route, LocalDateTime departure, LocalDateTime arrival, PlaneData plane, float price) {
+        this.route = route;
         this.departure = departure;
         this.arrival = arrival;
         this.plane = plane;
+        this.price = price;
     }
 
-    public AirportData getOrigin() {
-        return origin;
+    public RouteData getRoute() {
+        return route;
     }
 
-    public AirportData getDestination() {
-        return destination;
+    public float getPrice() {
+        return price;
     }
 
     public LocalDateTime getDeparture() {
@@ -46,7 +41,7 @@ public class FlightData {
 
     @Override
     public String toString() {
-        return "Origin: " + origin.getCityName() + ", Destination: " + destination.getCityName() + "\nDeparture: "+getDeparture() +", Arrival: "+getArrival() +"\nPlane Manufacturer: "+getPlane().getPlaneModelData().getManufacturer()+", Model Number: "+getPlane().getPlaneModelData().getModelNumber();
+        return "Origin: " + getRoute().getOrigin().getCityName() + ", Destination: " + getRoute().getDestination().getCityName() + ", Price: "+getPrice()/100+"€\nDeparture: "+getDeparture() +", Arrival: "+getArrival() +"\nPlane Manufacturer: "+getPlane().getPlaneModelData().getManufacturer()+", Model Number: "+getPlane().getPlaneModelData().getModelNumber();
     }
 
 

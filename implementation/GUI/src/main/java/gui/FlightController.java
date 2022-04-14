@@ -2,7 +2,6 @@ package gui;
 
 import businesslogic.FlightManager;
 import datarecords.*;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -30,6 +29,8 @@ class FlightController implements Initializable {
     public TextField durationMinutes;
     @FXML
     public TextField departureTime;
+    @FXML
+    public TextField defaultFlightPrice;
     @FXML
     private Label result;
 
@@ -74,21 +75,20 @@ class FlightController implements Initializable {
     private FlightData createFlight() {
         if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1) && modelDropDownPlane.getSelectionModel().isSelected(1) && !departureTime.getText().isEmpty() && !durationMinutes.getText().isEmpty()) {
 
+
             AirportData origin = new AirportData(0, "Berlin Flughafen", "BRLN", "Berlin", "Germany");
             AirportData destination = new AirportData(1, "New York Airport", "NY", "New York", "USA");
+            RouteData route = new RouteData(origin, destination, 0);
 
             PlaneData plane = new PlaneData("9",new PlaneModelData("Avions de Transport Regional","42-300",50,1150,4950));
-
             String[] split = departureTime.getText().split(":");
 
-            LocalDate departureDate = datePickerDeparture.getValue();
-            LocalTime departureTime = LocalTime.of(Integer.valueOf(split[0]),Integer.valueOf(split[1]));
-            LocalDateTime departureDateTime = departureDate.atTime(departureTime);
+            LocalDateTime departureDateTime = datePickerDeparture.getValue().atTime(LocalTime.of(Integer.valueOf(split[0]),Integer.valueOf(split[1])));
             LocalDateTime arrivalDateTime = departureDateTime.plusMinutes(Integer.valueOf(durationMinutes.getText()));
 
+            int price = Integer.valueOf(defaultFlightPrice.getText());
 
-
-            return new FlightData(origin, destination, departureDateTime, arrivalDateTime, plane);
+            return new FlightData(route, departureDateTime, arrivalDateTime, plane, price);
         } else {
             result.setText("Please ensure picking the first entry for plane, origin and destination!\nThe format for departure time is 'hh:mm' -> '14:30'\nPlease fill out every field.");
             return null;
