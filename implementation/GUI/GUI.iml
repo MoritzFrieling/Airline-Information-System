@@ -28,7 +28,6 @@
     <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-logger-api:2.22.1" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.3.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.checkerframework:checker-qual:3.5.0" level="project" />
-    <orderEntry type="library" name="Maven: jdbc-pg-json:jdbc-pg-json:0.1.0-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="DataRecords" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testfx:testfx-junit5:4.0.15-alpha" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.1" level="project" />
