@@ -30,4 +30,5 @@ class BusinessLogicAPIImpl implements BusinessLogicAPI {
         return new RouteManager(persistenceAPI.getStorageService());
     }
 
+    public FlightManager getFlightManager() { return new FlightManager(persistenceAPI.getStorageService()); }
 }

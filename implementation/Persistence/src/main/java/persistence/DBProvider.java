@@ -1,4 +1,4 @@
-package persistence;
+/*package persistence;
 
 import org.postgresql.ds.PGSimpleDataSource;
 
@@ -74,3 +74,4 @@ public class DBProvider {
         return properties;
     }
 }
+*/

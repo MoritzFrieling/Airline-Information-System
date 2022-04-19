@@ -1,6 +1,7 @@
 package persistence;
 
 import datarecords.AirportData;
+import datarecords.FlightData;
 import datarecords.PlaneData;
 import datarecords.RouteData;
 
@@ -36,6 +37,11 @@ public class StorageServiceImpl implements StorageService{
     }
 
     @Override
+    public FlightData add(FlightData flightData) {
+        return new FlightData(flightData.getRoute(),flightData.getDeparture(),flightData.getArrival(),flightData.getPlane(), flightData.getPrice());
+    }
+
+    @Override
     public List<AirportData> getAllAirports() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
@@ -46,5 +52,9 @@ public class StorageServiceImpl implements StorageService{
 
     @Override
     public List<RouteData> getAllRoutes() {
+        throw new UnsupportedOperationException("Not supported yet.");    }
+
+    @Override
+    public List<FlightData> getAllFlights() {
         throw new UnsupportedOperationException("Not supported yet.");    }
 }
