@@ -1,23 +1,19 @@
 package gui;
 
-import java.net.URL;
-import java.util.Objects;
-import java.util.ResourceBundle;
-import java.util.function.Supplier;
-
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-
 import businesslogic.RouteManager;
-
-import datarecords.RouteData;
 import datarecords.AirportData;
-
+import datarecords.RouteData;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.function.Supplier;
 
 
 
@@ -72,8 +68,8 @@ class RouteController implements Initializable {
 
     private RouteData createRoute() {
         if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1)) {
-            AirportData origin = new AirportData(0, "Berlin Flughafen", "BRLN", "Berlin", "Germany");
-            AirportData destination = new AirportData(1, "New York Airport", "NY", "New York", "USA");
+            AirportData origin = new AirportData( "Berlin Flughafen", "BRLN", "Berlin", "Germany");
+            AirportData destination = new AirportData( "New York Airport", "NY", "New York", "USA");
             return new RouteData(origin, destination, (int)distanceSlider.getValue());
         } else {
             return null;

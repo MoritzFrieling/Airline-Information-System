@@ -1,18 +1,16 @@
 package gui;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.function.Supplier;
+import businesslogic.AirportManager;
+import datarecords.AirportData;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import businesslogic.AirportManager;
-import datarecords.AirportData;
-import datarecords.AirportData;
-import java.time.LocalDate;
-import java.util.function.Consumer;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.function.Supplier;
 
 /**
  * FXML Customer Controller class.
@@ -57,7 +55,7 @@ class AirportController implements Initializable {
     @FXML
     private void storeAirport() {
 
-        AirportData airportData = new AirportData(0, airportName.getText(), abbreviationName.getText(), cityName.getText(), countryName.getText());
+        AirportData airportData = new AirportData( airportName.getText(), abbreviationName.getText(), cityName.getText(), countryName.getText());
 
         AirportData addedAirport = airportManager.add(airportData);
      

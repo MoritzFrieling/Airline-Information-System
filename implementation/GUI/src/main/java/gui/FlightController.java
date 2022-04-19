@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
@@ -76,8 +75,8 @@ class FlightController implements Initializable {
         if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1) && modelDropDownPlane.getSelectionModel().isSelected(1) && !departureTime.getText().isEmpty() && !durationMinutes.getText().isEmpty()) {
 
 
-            AirportData origin = new AirportData(0, "Berlin Flughafen", "BRLN", "Berlin", "Germany");
-            AirportData destination = new AirportData(1, "New York Airport", "NY", "New York", "USA");
+            AirportData origin = new AirportData( "Berlin Flughafen", "BRLN", "Berlin", "Germany");
+            AirportData destination = new AirportData( "New York Airport", "NY", "New York", "USA");
             RouteData route = new RouteData(origin, destination, 0);
 
             PlaneData plane = new PlaneData("9",new PlaneModelData("Avions de Transport Regional","42-300",50,1150,4950));
