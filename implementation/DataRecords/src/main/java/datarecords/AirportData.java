@@ -15,23 +15,21 @@ import java.time.LocalDate;
  */
 public class AirportData {
     
-    private final int id;
+    
     private final String airportName;
     private final String abbreviation;
     private final String cityName;
     private final String countryName;
 
-    public AirportData(int id, String airportName, String abbreviation, String cityName, String countryName) {
-        this.id = id;
+    public AirportData( String airportName, String abbreviation, String cityName, String countryName) {
+       
         this.airportName = airportName;
         this.abbreviation = abbreviation;
         this.cityName = cityName;
         this.countryName = countryName;
     }
 
-    public int getId() {
-        return id;
-    }
+    
 
     public String getAirportName() {
         return airportName;
