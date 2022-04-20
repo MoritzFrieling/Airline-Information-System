@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="399.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RouteController">
@@ -16,8 +15,6 @@
       <Button layoutX="511.0" layoutY="327.0" mnemonicParsing="false" onAction="#toSecondary" text="Home" />
       <Button layoutX="511.0" layoutY="360.0" mnemonicParsing="false" onAction="#storeRoute" text="Save" />
       <Label fx:id="result" layoutX="13.0" layoutY="365.0" />
-      <Slider fx:id="distanceSlider" layoutX="28.0" layoutY="181.0" majorTickUnit="5000.0" max="20000.0" minorTickCount="1000" prefHeight="14.0" prefWidth="418.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
-      <Label layoutX="30.0" layoutY="157.0" text="Distance" />
-      <Label fx:id="l" layoutX="483.0" layoutY="181.0"  underline="true" />
+      <Label fx:id="l" layoutX="483.0" layoutY="181.0" underline="true" />
    </children>
 </AnchorPane>

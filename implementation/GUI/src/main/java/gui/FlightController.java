@@ -1,5 +1,6 @@
 package gui;
 
+import businesslogic.Coordinate;
 import businesslogic.FlightManager;
 import datarecords.*;
 import javafx.fxml.FXML;
@@ -74,10 +75,11 @@ class FlightController implements Initializable {
     private FlightData createFlight() {
         if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1) && modelDropDownPlane.getSelectionModel().isSelected(1) && !departureTime.getText().isEmpty() && !durationMinutes.getText().isEmpty()) {
 
-
-            AirportData origin = new AirportData( "Berlin Flughafen", "BRLN", "Berlin", "Germany");
-            AirportData destination = new AirportData( "New York Airport", "NY", "New York", "USA");
-            RouteData route = new RouteData(origin, destination, 0);
+            AirportData origin = new AirportData( "Berlin Flughafen", "BRLN", "Germany", new CoordinateData(40.446,-79.982));
+            AirportData destination = new AirportData( "New York Airport", "NY", "USA", new CoordinateData(30.456,-20.345));
+            RouteData route = new RouteData(origin, destination,
+                    new Coordinate( origin.getCoordinateData() ).rangeTo( new Coordinate( destination.getCoordinateData() ) )
+            );
 
             PlaneData plane = new PlaneData("9",new PlaneModelData("Avions de Transport Regional","42-300",50,1150,4950));
             String[] split = departureTime.getText().split(":");

@@ -9,16 +9,14 @@
    <children>
       <Label layoutX="58.0" layoutY="68.0" text="Airport Name" />
       <Label layoutX="58.0" layoutY="106.0" prefHeight="18.0" prefWidth="73.0" text="Abbreviation" />
-      <Label layoutX="58.0" layoutY="147.0" text="City" />
       <TextField fx:id="airportName" layoutX="220.0" layoutY="64.0" />
       <TextField fx:id="abbreviationName" layoutX="220.0" layoutY="102.0" />
-      <TextField fx:id="cityName" layoutX="220.0" layoutY="143.0" />
-      <Button style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;"
-              fx:id="saveButton" layoutX="215.0" layoutY="232.0" mnemonicParsing="false" onAction="#storeAirport" prefHeight="26.0" prefWidth="160.0" text="Save Airport" />
-      <Button style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;"
-              fx:id="toSecondaryButton" layoutX="511.0" layoutY="360.0" mnemonicParsing="false" onAction="#toSecondary" text="Home" />
-      <Label fx:id="result" layoutX="57.0" layoutY="279.0" prefHeight="69.0" prefWidth="515.0" text="" wrapText="true" />
-      <Label layoutX="57.0" layoutY="191.0" text="Country" />
-      <TextField fx:id="countryName" layoutX="220.0" layoutY="187.0" />
+      <Button fx:id="saveButton" layoutX="215.0" layoutY="254.0" mnemonicParsing="false" onAction="#storeAirport" prefHeight="26.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Save Airport" />
+      <Button fx:id="toSecondaryButton" layoutX="506.0" layoutY="360.0" mnemonicParsing="false" onAction="#toSecondary" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Home" />
+      <Label fx:id="result" layoutX="38.0" layoutY="309.0" prefHeight="71.0" prefWidth="444.0" text="" wrapText="true" />
+      <Label layoutX="57.0" layoutY="146.0" text="Country" />
+      <TextField fx:id="countryName" layoutX="220.0" layoutY="142.0" />
+      <TextField fx:id="coordinate" layoutX="220.0" layoutY="180.0" />
+      <Label layoutX="57.0" layoutY="184.0" text="Coordinate" />
    </children>
 </AnchorPane>

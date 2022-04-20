@@ -23,13 +23,13 @@ public class RouteData {
 
     private final AirportData origin;
     private final AirportData destination;
-    private final int distance;
+    private final double distance;
     
     //calculated later sprint
     
     //private final int length;
 
-    public RouteData(AirportData origin, AirportData destination, int distance) {
+    public RouteData(AirportData origin, AirportData destination, double distance) {
         this.origin = origin;
         this.destination = destination;
         this.distance = distance;
@@ -43,11 +43,11 @@ public class RouteData {
         return destination;
     }
 
-    public int getDistance() {return distance;}
+    public double getDistance() {return distance;}
 
     @Override
     public String toString() {
-        return "origin= " + origin.getCityName() + ", destination= " + destination.getCityName() + "Distance:" +getDistance();
+        return "origin= " + origin.getCountryName() + ", destination= " + destination.getCountryName() + "Distance:" +getDistance();
     }
     
     

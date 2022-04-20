@@ -1,7 +1,5 @@
 package datarecords;
 
-import java.time.LocalDate;
-
 /**
  * Data carrier for CustomerData.
  * As of Java14, you would typically use so-calles Records. The idea is to have
@@ -18,15 +16,15 @@ public class AirportData {
     
     private final String airportName;
     private final String abbreviation;
-    private final String cityName;
     private final String countryName;
+    private final CoordinateData coordinateData;
 
-    public AirportData( String airportName, String abbreviation, String cityName, String countryName) {
+    public AirportData(String airportName, String abbreviation, String countryName, CoordinateData coordinateData) {
        
         this.airportName = airportName;
         this.abbreviation = abbreviation;
-        this.cityName = cityName;
         this.countryName = countryName;
+        this.coordinateData = coordinateData;
     }
 
     
@@ -38,20 +36,18 @@ public class AirportData {
     public String getAbbreviation() {
         return abbreviation;
     }
-
-    public String getCityName() {
-        return cityName;
-    }
     
     public String getCountryName(){
         return countryName;
     }
 
+    public CoordinateData getCoordinateData() { return coordinateData; }
+
    
 
     @Override
     public String toString() {
-        return "Name: " + airportName + ", abbreviation: " + abbreviation + ", city: " +cityName +", country: " + countryName + " ";
+        return "Name: " + airportName + ", abbreviation: " + abbreviation + ", country: " + countryName + ", Coordinates: " + coordinateData.toString() + " ";
     }
     
 }

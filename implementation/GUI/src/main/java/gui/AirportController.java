@@ -1,6 +1,7 @@
 package gui;
 
 import businesslogic.AirportManager;
+import businesslogic.CoordinateManager;
 import datarecords.AirportData;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,9 +29,9 @@ class AirportController implements Initializable {
     @FXML
     private TextField abbreviationName;
     @FXML
-    private TextField cityName;
-    @FXML
     private TextField countryName;
+    @FXML
+    private TextField coordinate;
     @FXML
     private Button saveButton;
     @FXML
@@ -40,10 +41,12 @@ class AirportController implements Initializable {
 
     private final Supplier<SceneManager> sceneManagerSupplier;
     private final AirportManager airportManager;
+    private final CoordinateManager coordinateManager;
 
-    public AirportController(Supplier<SceneManager> sceneManagerSupplier, AirportManager airportManager) {
+    public AirportController(Supplier<SceneManager> sceneManagerSupplier, AirportManager airportManager, CoordinateManager coordinateManager) {
         this.sceneManagerSupplier = sceneManagerSupplier;
         this.airportManager = airportManager;
+        this.coordinateManager = coordinateManager;
     }
 
     @FXML
@@ -55,7 +58,12 @@ class AirportController implements Initializable {
     @FXML
     private void storeAirport() {
 
-        AirportData airportData = new AirportData( airportName.getText(), abbreviationName.getText(), cityName.getText(), countryName.getText());
+        AirportData airportData = new AirportData(
+                airportName.getText(),
+                abbreviationName.getText(),
+                countryName.getText(),
+                coordinateManager.add(coordinate.getText())
+                );
 
         AirportData addedAirport = airportManager.add(airportData);
      

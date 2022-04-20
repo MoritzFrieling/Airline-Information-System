@@ -41,7 +41,7 @@ public class FlightData {
 
     @Override
     public String toString() {
-        return "Origin: " + getRoute().getOrigin().getCityName() + ", Destination: " + getRoute().getDestination().getCityName() + ", Price: "+getPrice()/100+"€\nDeparture: "+getDeparture() +", Arrival: "+getArrival() +"\nPlane Manufacturer: "+getPlane().getPlaneModelData().getManufacturer()+", Model Number: "+getPlane().getPlaneModelData().getModelNumber();
+        return "Origin: " + getRoute().getOrigin().getCountryName() + ", Destination: " + getRoute().getDestination().getCountryName() + ", Price: "+getPrice()/100+"€\nDeparture: "+getDeparture() +", Arrival: "+getArrival() +"\nPlane Manufacturer: "+getPlane().getPlaneModelData().getManufacturer()+", Model Number: "+getPlane().getPlaneModelData().getModelNumber();
     }
 
 

@@ -14,6 +14,7 @@ public interface StorageService {
     RouteData add(RouteData routeData);
     FlightData add(FlightData flightData);
 
+
     List<FlightData> getAllFlights();
     List<AirportData> getAllAirports();
     List<PlaneData> getAllPlanes();

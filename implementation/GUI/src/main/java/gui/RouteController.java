@@ -1,15 +1,14 @@
 package gui;
 
+import businesslogic.Coordinate;
 import businesslogic.RouteManager;
 import datarecords.AirportData;
+import datarecords.CoordinateData;
 import datarecords.RouteData;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,8 +30,6 @@ class RouteController implements Initializable {
     private ComboBox modelDropDownOrigin;
     @FXML
     private ComboBox modelDropDownDestination;
-    @FXML
-    private Slider distanceSlider;
     @FXML
     private Label result;
     @FXML
@@ -68,9 +65,11 @@ class RouteController implements Initializable {
 
     private RouteData createRoute() {
         if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1)) {
-            AirportData origin = new AirportData( "Berlin Flughafen", "BRLN", "Berlin", "Germany");
-            AirportData destination = new AirportData( "New York Airport", "NY", "New York", "USA");
-            return new RouteData(origin, destination, (int)distanceSlider.getValue());
+            AirportData origin = new AirportData( "Berlin Flughafen", "BRLN", "Germany", new CoordinateData(40.446,-79.982));
+            AirportData destination = new AirportData( "New York Airport", "NY", "USA", new CoordinateData(30.456,-20.345));
+            return new RouteData(origin, destination,
+                    new Coordinate( origin.getCoordinateData() ).rangeTo( new Coordinate( destination.getCoordinateData() ) )
+            );
         } else {
             return null;
         }
@@ -89,17 +88,6 @@ class RouteController implements Initializable {
         modelDropDownOrigin.getSelectionModel().select("-- select origin --");
         modelDropDownDestination.getSelectionModel().select("-- select destination --");
 
-
-        distanceSlider.valueProperty().addListener(
-                new ChangeListener<Number>() {
-
-                    public void changed(ObservableValue <? extends Number >
-                                                observable, Number oldValue, Number newValue)
-                    {
-
-                        l.setText("distance: " + newValue.intValue());
-                    }
-                });
     }
 
 }
