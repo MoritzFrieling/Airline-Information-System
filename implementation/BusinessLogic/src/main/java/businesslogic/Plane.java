@@ -9,6 +9,10 @@ public class Plane {
     public Plane(PlaneData planeData) {
         this.planeData = planeData;
     }
+
+    public PlaneData getPlaneData() {
+        return planeData;
+    }
 }
 
 

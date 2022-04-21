@@ -9,7 +9,7 @@ import datarecords.AirportData;
  */
 public class Airport {
     
-    private AirportData airportData;
+    private final AirportData airportData;
 
     public Airport(AirportData airportData) {
         this.airportData = airportData;

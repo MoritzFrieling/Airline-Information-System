@@ -30,5 +30,10 @@ class BusinessLogicAPIImpl implements BusinessLogicAPI {
         return new RouteManager(persistenceAPI.getStorageService());
     }
 
+    @Override
+    public CoordinateManager getCoordinateManager() {
+        return new CoordinateManager();
+    }
+
     public FlightManager getFlightManager() { return new FlightManager(persistenceAPI.getStorageService()); }
 }

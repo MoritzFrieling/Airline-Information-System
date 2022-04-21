@@ -2,11 +2,11 @@ package gui;
 
 import businesslogic.BusinessLogicAPI;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
-import javafx.application.Platform;
-import javafx.util.Callback;
 
 
 /**
@@ -33,7 +33,7 @@ public class GUIApp extends Application {
             case "gui.AddPlaneController":
                 return new AddPlaneController(this::getSceneManager, businessLogicAPI.getPlaneManager());
             case "gui.AirportController":
-                return new AirportController(this::getSceneManager, businessLogicAPI.getAirportManager());
+                return new AirportController(this::getSceneManager, businessLogicAPI.getAirportManager(), businessLogicAPI.getCoordinateManager());
             case "gui.RouteController":
                 return new RouteController(this::getSceneManager, businessLogicAPI.getRouteManager());
             case "gui.FlightController":
