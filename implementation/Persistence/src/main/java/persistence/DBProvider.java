@@ -1,4 +1,4 @@
-/*package persistence;
+package persistence;
 
 import org.postgresql.ds.PGSimpleDataSource;
 
@@ -37,8 +37,7 @@ public class DBProvider {
                     source.setUser( user );
 
                     source.setDatabaseName( props.getProperty( prefix + "dbname" ) );
-                    source.setPassword( props
-                            .getProperty( prefix + "password" ) );
+                    source.setPassword( props.getProperty( prefix + "password" ) );
                     String pingQuery = "SELECT current_database(), now()::TIMESTAMP as now;";
                     try (Connection con = source.getConnection();
                          // ping the database for success.
@@ -74,4 +73,3 @@ public class DBProvider {
         return properties;
     }
 }
-*/

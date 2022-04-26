@@ -30,6 +30,8 @@ public class GUIApp extends Application {
             -> {
 
         switch (c.getName()) {
+            case "gui.LogInController":
+                return new LogInController(this::getSceneManager);
             case "gui.AddPlaneController":
                 return new AddPlaneController(this::getSceneManager, businessLogicAPI.getPlaneManager());
             case "gui.AirportController":
@@ -46,6 +48,8 @@ public class GUIApp extends Application {
                 return new SecondaryController(this::getSceneManager);
             case "gui.ErrorController":
                 return new ErrorController(this::getSceneManager);
+            case "gui.accountRegistrationController":
+                return new accountRegistrationController(this::getSceneManager);
             default:
                 return null;
         }
