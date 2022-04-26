@@ -1,9 +1,9 @@
 package gui;
 
-import java.util.function.Supplier;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+
+import java.util.function.Supplier;
 
 
 /**
@@ -48,6 +48,9 @@ class SecondaryController {
     @FXML
     private void goFlightOptions(){ sceneManagerSupplier.get().changeScene("flightOptionsView");
     }
+
+    @FXML
+    private void logOut(){sceneManagerSupplier.get().changeScene("logInView");}
     
        
 }
