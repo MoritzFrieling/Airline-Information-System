@@ -51,6 +51,9 @@ class SecondaryController {
 
     @FXML
     private void logOut(){sceneManagerSupplier.get().changeScene("logInView");}
+
+    @FXML
+    private void toRegisterAccount(){sceneManagerSupplier.get().changeScene("accountRegistrationView");}
     
        
 }

@@ -56,7 +56,7 @@ class AirportController implements Initializable {
     }
 
     @FXML
-    private void storeAirport() {
+    private void storeAirport() throws Exception {
 
         AirportData airportData = new AirportData(
                 airportName.getText(),

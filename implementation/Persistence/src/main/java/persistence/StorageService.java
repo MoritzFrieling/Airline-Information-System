@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface StorageService {
 
-    AirportData add(AirportData airportData);
-    PlaneData add(PlaneData planeData);
+    AirportData add(AirportData airportData) throws Exception;
+    PlaneData add(PlaneData planeData) throws Exception;
     RouteData add(RouteData routeData);
     FlightData add(FlightData flightData);
 

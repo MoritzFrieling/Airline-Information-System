@@ -48,6 +48,8 @@ public class GUIApp extends Application {
                 return new SecondaryController(this::getSceneManager);
             case "gui.ErrorController":
                 return new ErrorController(this::getSceneManager);
+            case "gui.accountRegistrationController":
+                return new accountRegistrationController(this::getSceneManager);
             default:
                 return null;
         }

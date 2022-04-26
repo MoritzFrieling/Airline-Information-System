@@ -1,10 +1,5 @@
 package gui;
 
-import java.net.URL;
-import java.util.Objects;
-import java.util.ResourceBundle;
-import java.util.function.Supplier;
-
 import businesslogic.PlaneManager;
 import datarecords.PlaneData;
 import datarecords.PlaneModelData;
@@ -12,10 +7,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
-import businesslogic.AirportManager;
-import datarecords.AirportData;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.function.Supplier;
 
 /**
  * FXML Customer Controller class.
@@ -54,7 +51,7 @@ class AddPlaneController implements Initializable {
     }
 
     @FXML
-    private void storePlane() {
+    private void storePlane() throws Exception {
 
         PlaneData planeData = new PlaneData(planeNumber.getText(), setModel());
 
