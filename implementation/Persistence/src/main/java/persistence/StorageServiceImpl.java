@@ -1,9 +1,6 @@
 package persistence;
 
-import datarecords.AirportData;
-import datarecords.FlightData;
-import datarecords.PlaneData;
-import datarecords.RouteData;
+import datarecords.*;
 
 import java.util.List;
 
@@ -45,6 +42,11 @@ public class StorageServiceImpl implements StorageService{
     @Override
     public FlightData add(FlightData flightData) {
         return new FlightData(flightData.getRoute(),flightData.getDeparture(),flightData.getArrival(),flightData.getPlane(), flightData.getPrice());
+    }
+
+    @Override
+    public boolean add(AccountData accountData) throws Exception{
+        return databaseManager.executeSQL(databaseManager.prepareAccountInsert(accountData));
     }
 
     @Override

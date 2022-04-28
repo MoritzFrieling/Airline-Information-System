@@ -1,9 +1,6 @@
 package persistence;
 
-import datarecords.AirportData;
-import datarecords.FlightData;
-import datarecords.PlaneData;
-import datarecords.RouteData;
+import datarecords.*;
 
 import java.util.List;
 
@@ -13,6 +10,7 @@ public interface StorageService {
     PlaneData add(PlaneData planeData) throws Exception;
     RouteData add(RouteData routeData);
     FlightData add(FlightData flightData);
+    boolean add(AccountData accountData) throws Exception;
 
 
     List<FlightData> getAllFlights();

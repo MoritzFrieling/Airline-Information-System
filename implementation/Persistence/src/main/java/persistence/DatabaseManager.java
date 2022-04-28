@@ -1,5 +1,6 @@
 package persistence;
 
+import datarecords.AccountData;
 import datarecords.AirportData;
 import datarecords.PlaneData;
 
@@ -12,4 +13,6 @@ public interface DatabaseManager {
     PreparedStatement prepareAirportInsert(AirportData airportData) throws Exception;
 
     PreparedStatement preparePlaneInsert(PlaneData planeData);
+
+    PreparedStatement prepareAccountInsert(AccountData accountData);
 }
