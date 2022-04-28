@@ -26,8 +26,8 @@
 
        <!-- Duration in minutes to determine arrival Date (temporary)
        later the arrival date gets calculated by speed of plane and distance -->
-       <Label layoutX="44.0" layoutY="120.0" text="Duration (Minutes)" />
-       <TextField fx:id="durationMinutes" layoutX="44.0" layoutY="139.0" prefHeight="25.0" prefWidth="166.0" />
+       <Label layoutX="44.0" layoutY="120.0" text="number of seats('economy,business,firstClass'" />
+       <TextField fx:id="seatClasses" layoutX="44.0" layoutY="139.0" prefHeight="25.0" prefWidth="166.0" />
 
        <!-- Result of picked options -->
        <Label fx:id="result" layoutX="13.0" layoutY="335.0">
