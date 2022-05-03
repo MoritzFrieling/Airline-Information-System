@@ -16,5 +16,8 @@ public interface BusinessLogicAPI {
     FlightManager getFlightManager();
 
     CoordinateManager getCoordinateManager();
-    
+
+    AccountManager getAccountManager();
+
+    LogInManager getLogInManager();
 }

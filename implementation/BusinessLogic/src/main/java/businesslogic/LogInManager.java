@@ -3,6 +3,7 @@ package businesslogic;
 import persistence.StorageService;
 
 import java.net.PasswordAuthentication;
+import java.util.Arrays;
 
 public class LogInManager {
 
@@ -13,22 +14,21 @@ public class LogInManager {
     }
 
     //================================================================================================================//
-    /* Primary Methods                                                                                                */
+    /* Primary-Methods                                                                                                */
     //================================================================================================================//
 
 
-    public boolean authenticate(String username, String password ){
-        PasswordAuthentication passwordAuthentication = new PasswordAuthentication( username, password.toCharArray() );
-        return true;
+    public boolean authenticate(PasswordAuthentication passwordAuthentication ) throws Exception {
+
+        String passwordHash = AccountManager.hashString(Arrays.toString(passwordAuthentication.getPassword()), storageService.getSalt(passwordAuthentication.getUserName()));
+
+        String pw = Arrays.toString(storageService.getAccountData(passwordAuthentication).getPassword());
+        return pw.equals(passwordHash);
     }
 
     //================================================================================================================//
-    /* Helper Methods                                                                                                 */
+    /* Helper-Methods                                                                                                 */
     //================================================================================================================//
 
-    private String generateSalt(String str){
-
-        return "bla";
-    }
 
 }

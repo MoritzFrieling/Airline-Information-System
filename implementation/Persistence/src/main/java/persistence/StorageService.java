@@ -2,6 +2,7 @@ package persistence;
 
 import datarecords.*;
 
+import java.net.PasswordAuthentication;
 import java.util.List;
 
 public interface StorageService {
@@ -14,6 +15,11 @@ public interface StorageService {
 
 
     List<FlightData> getAllFlights();
+
+    PasswordAuthentication getAccountData(PasswordAuthentication passwordAuthentication) throws Exception;
+
+    String getSalt(String str) throws Exception;
+
     List<AirportData> getAllAirports();
     List<PlaneData> getAllPlanes();
     List<RouteData> getAllRoutes();
