@@ -1,10 +1,8 @@
 package persistence;
 
-import datarecords.AirportData;
-import datarecords.FlightData;
-import datarecords.PlaneData;
-import datarecords.RouteData;
+import datarecords.*;
 
+import java.net.PasswordAuthentication;
 import java.util.List;
 
 public interface StorageService {
@@ -13,9 +11,15 @@ public interface StorageService {
     PlaneData add(PlaneData planeData) throws Exception;
     RouteData add(RouteData routeData);
     FlightData add(FlightData flightData);
+    boolean add(AccountData accountData) throws Exception;
 
 
     List<FlightData> getAllFlights();
+
+    PasswordAuthentication getAccountData(PasswordAuthentication passwordAuthentication) throws Exception;
+
+    String getSalt(String str) throws Exception;
+
     List<AirportData> getAllAirports();
     List<PlaneData> getAllPlanes();
     List<RouteData> getAllRoutes();
