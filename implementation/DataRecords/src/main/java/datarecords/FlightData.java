@@ -59,7 +59,8 @@ public class FlightData {
 
     @Override
     public String toString() {
-        return "Origin: " + getRoute().getOrigin().getCountryName() + ", Destination: " + getRoute().getDestination().getCountryName() + ", Price: "+getPrice()/100+"€\nDeparture: "+getDeparture() +", Arrival: "+getArrival() +"\nPlane Manufacturer: "+getPlane().getPlaneModelData().getManufacturer()+", Model Number: "+getPlane().getPlaneModelData().getModelNumber();
+        return "Seats (E,B,F): " + getEconomy() + " " +getBusiness() + " " + getFirstClass() +
+                 " Origin: " + getRoute().getOrigin().getCountryName() + ", Destination: " + getRoute().getDestination().getCountryName() + ", Price: "+getPrice()/100+"€\nDeparture: "+getDeparture() +", Arrival: "+getArrival() +"\nPlane Manufacturer: "+getPlane().getPlaneModelData().getManufacturer()+", Model Number: "+getPlane().getPlaneModelData().getModelNumber();
     }
 
 

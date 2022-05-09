@@ -49,11 +49,13 @@ class FlightController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //Drop down for the available routes
-        modelDropDownRoute.getItems().addAll("-- select route --","Berlin -> New York");
-        modelDropDownRoute.getSelectionModel().select("-- select origin --");
+        modelDropDownRoute.getItems().addAll("Berlin -> New York");
+        modelDropDownRoute.getSelectionModel().select("-- Select Route --");
 
         //Drop down for the available planes
-        modelDropDownPlane.getItems().addAll("-- select plane --","ATR 42-300","ATR 72","Airbus A300");
+        modelDropDownPlane.getItems().addAll("ATR 42-300","ATR 72","Airbus A300");
+        modelDropDownPlane.getSelectionModel().select("-- Select Plane --");
+
     }
 
     @FXML
@@ -64,7 +66,7 @@ class FlightController implements Initializable {
     }
 
     private FlightData createFlight() {
-        if (modelDropDownRoute.getSelectionModel().isSelected(1) && modelDropDownPlane.getSelectionModel().isSelected(1) && !departureTime.getText().isEmpty()) {
+        if (modelDropDownRoute.getSelectionModel().isSelected(0) && modelDropDownPlane.getSelectionModel().isSelected(0) && !departureTime.getText().isEmpty()) {
 
             //Origin and destination for the route
             AirportData origin = new AirportData( "Berlin Flughafen", "BRLN", "Germany", new CoordinateData(40.446,-79.982));
@@ -82,24 +84,26 @@ class FlightController implements Initializable {
             String[] splitDepartureTime = departureTime.getText().split(":");
 
             //EST. Departure time
-            LocalDateTime departureDateTime = datePickerDeparture.getValue().atTime(LocalTime.of(Integer.valueOf(splitDepartureTime[0]),Integer.valueOf(splitDepartureTime[1])));
+            LocalDateTime departureDateTime = datePickerDeparture.getValue().atTime(LocalTime.of(Integer.parseInt(splitDepartureTime[0]),Integer.parseInt(splitDepartureTime[1])));
 
-            //EST. Arrival time
+            //EST. Arrival time -- Duration should be retrieved by the flight speed and distance! 
             int duration = 120;
             LocalDateTime arrivalDateTime = departureDateTime.plusMinutes(duration);
 
             //default flight price
-            int price = Integer.valueOf(defaultFlightPrice.getText());
+            int price = Integer.parseInt(defaultFlightPrice.getText());
 
             //splits the seats for each seatClass (economy, business, firstClass)
-
+            String[] splitSeatClass = seatClasses.getText().split(",");
 
             //number of seats for each seatClass
-
+            int economy = Integer.parseInt(splitSeatClass[0]);
+            int business = Integer.parseInt(splitSeatClass[1]);
+            int firstClass = Integer.parseInt(splitSeatClass[2]);
 
             //returns the finished flight with:
             //route, departure time, arrival time, plane, price and number of seats for each class(economy, business, firstClass)
-            return new FlightData(route, departureDateTime, arrivalDateTime, plane, price);
+            return new FlightData(route, departureDateTime, arrivalDateTime, plane, price, economy, business, firstClass);
         } else {
             result.setText("Please ensure picking the first entry for plane, origin and destination!\nThe format for departure time is 'hh:mm' -> '14:30'\nPlease fill out every field.");
             return null;
