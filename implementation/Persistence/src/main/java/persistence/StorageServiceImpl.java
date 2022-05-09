@@ -47,6 +47,11 @@ public class StorageServiceImpl implements StorageService{
     }
 
     @Override
+    public PlaneModelData add(PlaneModelData planeModelData) {
+        return new PlaneModelData(planeModelData.getManufacturer(),planeModelData.getModelNumber(),planeModelData.getSeats(),planeModelData.getRange(),planeModelData.getWeightCapacity());
+    }
+
+    @Override
     public boolean add(AccountData accountData) throws Exception{
         return databaseManager.executeSQLInsert(databaseManager.prepareAccountInsert(accountData));
     }
@@ -73,6 +78,11 @@ public class StorageServiceImpl implements StorageService{
     @Override
     public List<RouteData> getAllRoutes() {
         throw new UnsupportedOperationException("Not supported yet.");    }
+
+    @Override
+    public List<PlaneModelData> getAllPlaneModels() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
     @Override
     public List<FlightData> getAllFlights() {

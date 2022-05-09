@@ -42,4 +42,7 @@ class BusinessLogicAPIImpl implements BusinessLogicAPI {
 
     @Override
     public LogInManager getLogInManager(){return new LogInManager(persistenceAPI.getStorageService()); }
+
+    @Override
+    public PlaneModelManager getPlaneModelManager(){return new PlaneModelManager(persistenceAPI.getStorageService()); }
 }

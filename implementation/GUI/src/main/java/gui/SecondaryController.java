@@ -12,7 +12,8 @@ import java.util.function.Supplier;
  * @author Informatics Fontys Venlo
  */
 class SecondaryController {
-    
+    @FXML
+    public Button addPlaneModelButton;
     @FXML
     private Button addAirportButton;
     private Button addPlaneButton;
@@ -54,6 +55,9 @@ class SecondaryController {
 
     @FXML
     private void toRegisterAccount(){sceneManagerSupplier.get().changeScene("accountRegistrationView");}
+
+    @FXML
+    private void goAddPlaneModel(){ sceneManagerSupplier.get().changeScene("addPlaneModelView");}
     
        
 }

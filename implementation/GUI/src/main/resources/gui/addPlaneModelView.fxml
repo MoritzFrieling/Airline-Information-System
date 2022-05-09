@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AddPlaneModelController">
+   <children>
+      <TextField fx:id="manufacturer" layoutX="75.0" layoutY="100.0" />
+      <TextField fx:id="maximumRange" layoutX="347.0" layoutY="175.0" />
+      <TextField fx:id="modelNumber" layoutX="347.0" layoutY="100.0" />
+      <TextField fx:id="weightCapacity" layoutX="75.0" layoutY="250.0" />
+      <TextField fx:id="maximumSeats" layoutX="75.0" layoutY="175.0" />
+      <Label layoutX="43.0" layoutY="30.0" text="Create new Plane Model" />
+      <Label layoutX="75.0" layoutY="80.0" text="Manufacturer" />
+      <Label layoutX="347.0" layoutY="80.0" text="Model Number" />
+      <Label layoutX="75.0" layoutY="155.0" text="Maximum Seats" />
+      <Label layoutX="347.0" layoutY="155.0" prefHeight="17.0" prefWidth="94.0" text="Maximum Range" />
+      <Label layoutX="75.0" layoutY="230.0" text="Weight Capacity" />
+      <Button layoutX="508.0" layoutY="339.0" mnemonicParsing="false" onAction="#toSecondary" text="Home" />
+      <Button layoutX="381.0" layoutY="250.0" mnemonicParsing="false" onAction="#storePlaneModel" prefHeight="25.0" prefWidth="81.0" text="Save" />
+   </children>
+</AnchorPane>
