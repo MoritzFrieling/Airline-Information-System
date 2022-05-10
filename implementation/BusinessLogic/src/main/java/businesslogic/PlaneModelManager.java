@@ -11,7 +11,7 @@ public class PlaneModelManager {
         this.storageService = storageService;
     }
 
-    public PlaneModelData add(PlaneModelData planeModelData) throws Exception{
+    public boolean add(PlaneModelData planeModelData) throws Exception{
         return storageService.add(planeModelData);
     }
 }

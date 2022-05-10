@@ -11,7 +11,7 @@ public interface StorageService {
     PlaneData add(PlaneData planeData) throws Exception;
     RouteData add(RouteData routeData);
     FlightData add(FlightData flightData);
-    PlaneModelData add(PlaneModelData planeModelData);
+    boolean add(PlaneModelData planeModelData) throws Exception;
 
     boolean add(AccountData accountData) throws Exception;
 

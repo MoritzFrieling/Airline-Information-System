@@ -47,8 +47,8 @@ public class StorageServiceImpl implements StorageService{
     }
 
     @Override
-    public PlaneModelData add(PlaneModelData planeModelData) {
-        return new PlaneModelData(planeModelData.getManufacturer(),planeModelData.getModelNumber(),planeModelData.getSeats(),planeModelData.getRange(),planeModelData.getWeightCapacity());
+    public boolean add(PlaneModelData planeModelData) throws Exception{
+        return databaseManager.executeSQLInsert(databaseManager.preparePlaneModelInsert(planeModelData));
     }
 
     @Override

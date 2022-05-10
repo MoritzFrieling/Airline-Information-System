@@ -5,6 +5,7 @@ import businesslogic.PlaneModelManager;
 import datarecords.PlaneModelData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.util.function.Supplier;
@@ -24,6 +25,10 @@ public class AddPlaneModelController {
     public TextField weightCapacity;
     @FXML
     public TextField maximumSeats;
+    @FXML
+    public TextField speed;
+    @FXML
+    public Label result;
 
     public AddPlaneModelController(Supplier<SceneManager> sceneManagerSupplier, PlaneModelManager planeModelManager) {
         this.sceneManagerSupplier = sceneManagerSupplier;
@@ -40,6 +45,8 @@ public class AddPlaneModelController {
         PlaneModelData planeModelData = createPlaneModel();
 
         planeModelManager.add(planeModelData);
+
+        result.setText(planeModelData.toString());
     }
 
 
@@ -51,8 +58,9 @@ public class AddPlaneModelController {
         int seats= Integer.parseInt(this.maximumSeats.getText());
         int range = Integer.parseInt(this.maximumRange.getText());
         int weightCapacity = Integer.parseInt(this.weightCapacity.getText());
+        int speed = Integer.parseInt(this.speed.getText());
 
-        PlaneModelData planeModelData = new PlaneModelData(manufacturer, modelNumber, seats, range, weightCapacity);
+        PlaneModelData planeModelData = new PlaneModelData(manufacturer, modelNumber, seats, range, weightCapacity, speed);
         return planeModelData;
     }
 }
