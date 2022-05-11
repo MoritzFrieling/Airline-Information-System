@@ -3,6 +3,7 @@ package persistence;
 import datarecords.AccountData;
 import datarecords.AirportData;
 import datarecords.PlaneData;
+import datarecords.PlaneModelData;
 
 import javax.sql.DataSource;
 import java.net.PasswordAuthentication;
@@ -163,6 +164,31 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
             }
         }
+
+    @Override
+    public PreparedStatement preparePlaneModelInsert(PlaneModelData planeModelData){
+        String sql = " INSERT INTO aisdb.ais.planeModels VALUES(?, ?, ?, ?, ?, ?) ";
+
+        try {
+            con = ds.getConnection("aisdemouser", "ais");
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1, planeModelData.getModelNumber());
+            statement.setString(2, planeModelData.getManufacturer());
+            statement.setInt(3, planeModelData.getSeats());
+            statement.setDouble(4, planeModelData.getRange());
+            statement.setInt(5, planeModelData.getSpeed());
+            statement.setDouble(6, planeModelData.getWeightCapacity());
+
+            return statement;
+
+        }catch (Exception e){
+
+            e.printStackTrace();
+            return null;
+
+        }
+    }
 
         @Override
         public PasswordAuthentication getAccountData(String string){

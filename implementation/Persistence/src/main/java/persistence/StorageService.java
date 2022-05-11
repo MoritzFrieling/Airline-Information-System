@@ -11,18 +11,19 @@ public interface StorageService {
     PlaneData add(PlaneData planeData) throws Exception;
     RouteData add(RouteData routeData);
     FlightData add(FlightData flightData);
+    boolean add(PlaneModelData planeModelData) throws Exception;
+
     boolean add(AccountData accountData) throws Exception;
 
-
-    List<FlightData> getAllFlights();
 
     PasswordAuthentication getAccountData(PasswordAuthentication passwordAuthentication) throws Exception;
 
     String getSalt(String str) throws Exception;
 
+    List<FlightData> getAllFlights();
     List<AirportData> getAllAirports();
     List<PlaneData> getAllPlanes();
     List<RouteData> getAllRoutes();
-
+    List<PlaneModelData> getAllPlaneModels();
 
 }

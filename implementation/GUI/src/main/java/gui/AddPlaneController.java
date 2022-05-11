@@ -63,11 +63,11 @@ class AddPlaneController implements Initializable {
 
     private PlaneModelData setModel(){
         if (modelDropDown.getSelectionModel().isSelected(0)){
-            return new PlaneModelData("Boeing","737",230,7000,35000);
+            return new PlaneModelData("Boeing","737",230,7000,35000, 900);
         }else if (modelDropDown.getSelectionModel().isSelected(1)){
-            return new PlaneModelData("Boeing","747",350,8000,40000);
+            return new PlaneModelData("Boeing","747",350,8000,40000, 1000);
         }else if (modelDropDown.getSelectionModel().isSelected(2)){
-            return new PlaneModelData("Boeing","757",230,7000,35000);
+            return new PlaneModelData("Boeing","757",230,7000,35000, 950);
         }else return null;
     }
 

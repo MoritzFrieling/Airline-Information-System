@@ -77,8 +77,8 @@ class FlightController implements Initializable {
                     new Coordinate( origin.getCoordinateData() ).rangeTo(new Coordinate( destination.getCoordinateData()))
             );
 
-            //plane for the flight
-            PlaneData plane = new PlaneData("9",new PlaneModelData("Avions de Transport Regional","42-300",50,1150,4950));
+
+            PlaneData plane = new PlaneData("9",new PlaneModelData("Avions de Transport Regional","42-300",50,1150,4950, 950));
 
             //splits the departure time into hours and minutes
             String[] splitDepartureTime = departureTime.getText().split(":");

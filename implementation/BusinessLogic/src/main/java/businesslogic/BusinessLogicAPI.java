@@ -10,6 +10,8 @@ public interface BusinessLogicAPI {
     AirportManager getAirportManager();
 
     PlaneManager getPlaneManager();
+
+    PlaneModelManager getPlaneModelManager();
     
     RouteManager getRouteManager();
 
