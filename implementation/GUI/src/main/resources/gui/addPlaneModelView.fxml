@@ -17,6 +17,9 @@
       <Label layoutX="347.0" layoutY="155.0" prefHeight="17.0" prefWidth="94.0" text="Maximum Range" />
       <Label layoutX="75.0" layoutY="230.0" text="Weight Capacity" />
       <Button layoutX="508.0" layoutY="339.0" mnemonicParsing="false" onAction="#toSecondary" text="Home" />
-      <Button layoutX="381.0" layoutY="250.0" mnemonicParsing="false" onAction="#storePlaneModel" prefHeight="25.0" prefWidth="81.0" text="Save" />
+      <Button layoutX="243.0" layoutY="297.0" mnemonicParsing="false" onAction="#storePlaneModel" prefHeight="25.0" prefWidth="81.0" text="Save" />
+      <TextField fx:id="speed" layoutX="347.0" layoutY="250.0" />
+      <Label layoutX="347.0" layoutY="230.0" text="Speed" />
+      <Label fx:id="result" layoutX="43.0" layoutY="322.0" />
    </children>
 </AnchorPane>

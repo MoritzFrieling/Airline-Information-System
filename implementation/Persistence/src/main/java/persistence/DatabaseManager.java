@@ -3,6 +3,7 @@ package persistence;
 import datarecords.AccountData;
 import datarecords.AirportData;
 import datarecords.PlaneData;
+import datarecords.PlaneModelData;
 
 import java.net.PasswordAuthentication;
 import java.sql.PreparedStatement;
@@ -20,7 +21,11 @@ public interface DatabaseManager {
 
     PreparedStatement prepareAccountInsert(AccountData accountData);
 
+    PreparedStatement preparePlaneModelInsert(PlaneModelData planeModelData);
+
     PasswordAuthentication getAccountData(String string);
+
+
 
     String getSalt(String string);
 }
