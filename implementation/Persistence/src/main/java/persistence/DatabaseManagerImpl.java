@@ -167,7 +167,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
     @Override
     public PreparedStatement preparePlaneModelInsert(PlaneModelData planeModelData){
-        String sql = " INSERT INTO aisdb.ais.planeModels VALUES(?, ?, ?, ?, ?, ?) ";
+        String sql = " INSERT INTO aisdb.ais.\"planeModels\" VALUES(?, ?, ?, ?, ?, ?) ";
 
         try {
             con = ds.getConnection("aisdemouser", "ais");
@@ -225,7 +225,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
     @Override
     public String getSalt(String string){
 
-        String sql = "SELECT salt FROM aisdb.ais.accounts WHERE 'e-Mail'= ?";
+        String sql = "SELECT salt FROM aisdb.ais.accounts WHERE 'e-Mail'=?";
 
         String returner = null;
         try {
