@@ -54,19 +54,19 @@
                         <HBox prefHeight="46.0" prefWidth="226.0">
                            <children>
                               <Label prefHeight="18.0" prefWidth="90.0" text="Firstname" />
-                              <TextField fx:id="firstname" alignment="CENTER_RIGHT" style="-fx-background-radius: 30; -fx-background-insets: 0;" />
+                              <TextField fx:id="firstname" style="-fx-background-radius: 30; -fx-background-insets: 0;" />
                            </children>
                         </HBox>
                         <HBox prefHeight="46.0" prefWidth="247.0">
                            <children>
                               <Label lineSpacing="1.0" prefHeight="38.0" prefWidth="90.0" text="Lastname " />
-                              <TextField fx:id="lastname" alignment="TOP_CENTER" style="-fx-background-radius: 30; -fx-background-insets: 0;" />
+                              <TextField fx:id="lastname" style="-fx-background-radius: 30; -fx-background-insets: 0;" />
                            </children>
                         </HBox>
                         <HBox prefHeight="52.0" prefWidth="275.0">
                            <children>
                               <Label lineSpacing="2.0" prefHeight="26.0" prefWidth="90.0" text="E-Mail   " />
-                              <TextField fx:id="eMail" alignment="TOP_CENTER" style="-fx-background-radius: 30; -fx-background-insets: 0;" />
+                              <TextField fx:id="eMail" style="-fx-background-radius: 30; -fx-background-insets: 0;" />
                            </children>
                         </HBox>
                      </children>
