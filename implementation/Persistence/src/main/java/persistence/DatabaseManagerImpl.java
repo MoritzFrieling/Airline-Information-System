@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class DatabaseManagerImpl implements DatabaseManager {
 
         private final DataSource ds = DBProvider.getDataSource("aisdb.jdbc");
-        private Connection con;
+        private Connection con ;
 
 
     //================================================================================================================//

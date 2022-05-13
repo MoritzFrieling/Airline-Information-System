@@ -6,9 +6,7 @@ import persistence.StorageService;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
-import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
-import java.util.Arrays;
 
 public class AccountManager {
 
@@ -44,17 +42,36 @@ public class AccountManager {
     public static String getSalt()
             throws NoSuchAlgorithmException, NoSuchProviderException
     {
-        // Always use a SecureRandom generator
-        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG", "SUN");
 
-        // Create array for salt
-        byte[] salt = new byte[16];
+        String[] options = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+                            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+                            "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+                            "@", "#", "%", "^", "&", "*", "(", ")", "-", "_", "|", "!",};
 
-        // Get a random salt
-        sr.nextBytes(salt);
+        StringBuilder returner = null;
+        for (int i = 0; i < 12; i++){
+            int min = 0;
+            int max = options.length - 1;
+            int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
 
-        // return salt
-        return Arrays.toString(salt);
+            String c = options[random_int];
+
+            returner = (returner == null ? new StringBuilder() : returner).append(c);
+        }
+
+        return String.valueOf(returner);
+//
+//        // Always use a SecureRandom generator
+//        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG", "SUN");
+//
+//        // Create array for salt
+//        byte[] salt = new byte[16];
+//
+//        // Get a random salt
+//        sr.nextBytes(salt);
+//
+//        // return salt
+//        return Arrays.toString(salt);
     }
 
 
