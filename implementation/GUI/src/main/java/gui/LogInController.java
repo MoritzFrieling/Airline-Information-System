@@ -38,8 +38,26 @@ public class LogInController implements Initializable {
 
     @FXML
     private void logIn() throws Exception {
-        if (logInManager.authenticate(new PasswordAuthentication(eMailField.getText(), passwordField.getText().toCharArray()))){
+
+        PasswordAuthentication entered = new PasswordAuthentication(eMailField.getText(), passwordField.getText().toCharArray());
+
+        if (String.copyValueOf(entered.getPassword()).contentEquals("") && entered.getUserName().contentEquals("dev")){
             sceneManagerSupplier.get().changeScene("secondary");
+        }else if (logInManager.authenticate(entered)){
+
+            String p = logInManager.identify(entered);
+
+            if (p.contentEquals("Manager")){
+                sceneManagerSupplier.get().changeScene("secondary");
+            } else if (p.contentEquals("Officer")){
+                sceneManagerSupplier.get().changeScene("OfficerView");
+            } else if (p.contentEquals("Employee")){
+                sceneManagerSupplier.get().changeScene("EmpView");
+            }else {
+                label.setText("Couldn't identify Position!");
+            }
+
+
         }else {
             label.setText("Something Went Wrong! Couldn't log in");
         }

@@ -58,11 +58,12 @@ public class DatabaseManagerImpl implements DatabaseManager {
             try {
 
                 statement.execute();
+                statement.close();
                 return true;
 
             } catch (Exception e) {
 
-                e.printStackTrace();
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 return false;
             }
         }
@@ -71,6 +72,17 @@ public class DatabaseManagerImpl implements DatabaseManager {
     /* Helper-Methods                                                                                                 */
     //================================================================================================================//
 
+
+    public Connection connect()  {
+
+        try {
+            return ds.getConnection("aisdemouser", "ais");
+        } catch (SQLException e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        }
+
+        return null;
+    }
 
     /**
      * Create the Prepared Statement to Insert a AirportDataObject into the airports table.
@@ -81,12 +93,12 @@ public class DatabaseManagerImpl implements DatabaseManager {
      * @throws Exception
      */
     @Override
-    public PreparedStatement prepareAirportInsert(AirportData airportData) throws Exception {
+    public PreparedStatement prepareAirportInsert(AirportData airportData) {
 
         String sql = " INSERT INTO aisdb.ais.airports VALUES (?, ?, ?, ?) ";
 
         try {
-            con = ds.getConnection("aisdemouser","ais");
+            con = connect();
 
             PreparedStatement statement = con.prepareStatement(sql);
             statement.setString(1,airportData.getAbbreviation());
@@ -98,7 +110,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
         } catch (Exception e) {
 
-                e.printStackTrace();
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
 
                 return null;
         }
@@ -117,7 +129,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
         String sql = " INSERT INTO aisdb.ais.planes VALUES (?, ?) ";
 
         try {
-            con = ds.getConnection("aisdemouser","ais");
+            con = connect();
 
             PreparedStatement statement = con.prepareStatement(sql);
             statement.setString(1,planeData.getPlaneNumber());
@@ -126,7 +138,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
         } catch (Exception e) {
 
-            e.printStackTrace();
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
 
             return null;
         }
@@ -145,7 +157,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
             String sql = " INSERT INTO aisdb.ais.accounts VALUES(?, ?, ?, ?, ?, ?) ";
 
             try {
-                con = ds.getConnection("aisdemouser", "ais");
+                con = connect();
 
                 PreparedStatement statement = con.prepareStatement(sql);
                 statement.setString(1, accountData.getFirstname());
@@ -159,7 +171,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
             }catch (Exception e){
 
-                e.printStackTrace();
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 return null;
 
             }
@@ -170,7 +182,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
         String sql = " INSERT INTO aisdb.ais.\"planeModels\" VALUES(?, ?, ?, ?, ?, ?) ";
 
         try {
-            con = ds.getConnection("aisdemouser", "ais");
+            con = connect();
 
             PreparedStatement statement = con.prepareStatement(sql);
             statement.setString(1, planeModelData.getModelNumber());
@@ -184,7 +196,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
         }catch (Exception e){
 
-            e.printStackTrace();
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
             return null;
 
         }
@@ -193,13 +205,13 @@ public class DatabaseManagerImpl implements DatabaseManager {
         @Override
         public PasswordAuthentication getAccountData(String string){
 
-            String sql = "SELECT 'e-Mail', password FROM aisdb.ais.accounts WHERE 'e-Mail'=?";
+            String sql = "SELECT \"e-Mail\", password FROM aisdb.ais.accounts WHERE \"e-Mail\"=?";
 
             String user = null;
             String pw = null;
 
             try {
-                con = ds.getConnection("aisdemouser", "ais");
+                con = connect();
 
                 PreparedStatement statement = con.prepareStatement(sql);
                 statement.setString(1, string);
@@ -214,44 +226,75 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
             } catch (SQLException e) {
 
-                e.printStackTrace();
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
 
             }
 
+            assert pw != null;
             return new PasswordAuthentication(user,pw.toCharArray());
+
+
         }
 
 
     @Override
     public String getSalt(String string){
 
-        String sql = "SELECT salt FROM aisdb.ais.accounts WHERE 'e-Mail'=?";
-
         String returner = null;
         try {
-            con = ds.getConnection("aisdemouser", "ais");
+            con = connect();
 
-            PreparedStatement statement = con.prepareStatement(sql);
+            PreparedStatement statement = con.prepareStatement("SELECT salt FROM aisdb.ais.accounts WHERE \"e-Mail\" = ?");
             statement.setString(1, string);
 
 
             ResultSet rs = statement.executeQuery();
 
+            while(rs.next()){
+                returner = rs.getString("salt");
+            }
+            rs.close();
+            statement.close();
+            return returner;
+
+
+        } catch (SQLException e) {
+
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+
+
+        }
+
+        return "Couldn't fetch Salt";
+    }
+
+    @Override
+    public String getPosition(String str) {
+
+        String sql = "SELECT position FROM aisdb.ais.accounts WHERE \"e-Mail\"=?";
+
+        String position = null;
+
+        try {
+            con = connect();
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1, str);
+
+            ResultSet rs = statement.executeQuery();
+
             if (rs.next()){
-                returner = rs.getString(1);
+                position = rs.getString(1);
             }
 
 
         } catch (SQLException e) {
 
-            e.printStackTrace();
-
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
 
         }
 
-        return returner;
+        return position;
     }
-
-
 }
 

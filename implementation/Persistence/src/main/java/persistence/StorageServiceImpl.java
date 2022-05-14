@@ -62,8 +62,17 @@ public class StorageServiceImpl implements StorageService{
     }
 
     @Override
+    public String getPosition(String str) {
+        return databaseManager.getPosition(str);
+    }
+
+    @Override
     public String getSalt(String str) throws Exception {
-        return databaseManager.getSalt(str);
+        String s = databaseManager.getSalt(str);
+
+        if(s != null){
+            return s;
+        }else return "WHYYYYYYY";
     }
 
     @Override
