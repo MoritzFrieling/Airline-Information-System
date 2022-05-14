@@ -23,6 +23,8 @@ public interface DatabaseManager {
 
     PreparedStatement preparePlaneModelInsert(PlaneModelData planeModelData);
 
+    String getPosition(String str);
+
     PasswordAuthentication getAccountData(String string);
 
 
