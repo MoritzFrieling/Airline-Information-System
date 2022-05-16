@@ -121,7 +121,7 @@
 | Exceptions: | 5.a. Incorrect or missing information. |
 | | 5.a.1. System indicates which information are missing or need to be altered. |
 | | 5.a.2. Return to step 3. |
-| Exceptions: | 5.b. The exact same information can be found within the already existing system. |
+| | 5.b. The exact same information can be found within the already existing system. |
 | | 5.b.1. Actor gets informed that this plane model already exists. |
 | | 5.b.2. Return to step 3. |
 
