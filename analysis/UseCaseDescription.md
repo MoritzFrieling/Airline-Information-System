@@ -114,7 +114,7 @@
 | Pre-condition: | Sales Manager is already logged in. |
 | Scenario:  | 1. The System displays the main sales manager dashboard. |
 || 2. The Actor selects the option to register a plane model. |
-|| 3. The System asks the actor for information about the model (manufacturer, model number(?), max. seats, max. range, weight capactiy, speed). |
+|| 3. The System asks the actor for information about the model (manufacturer, max. seats, max. range, weight capactiy, speed). |
 || 4. The Actor writes down and selects the information. |
 || 5. The System tells the actor that the registration has been successfull. |
 | Results: | A plane model has been added to the system. |
@@ -133,12 +133,12 @@
 | Pre-condition: | Sales Manager is already logged in. |
 | Scenario:  | 1. The System displays the main sales manager dashboard. |
 || 2. The Actor selects the option to register a plane. |
-|| 3. The System allows the Actor to select a model (and type in the plane number?). |
-|| 4. The Actor selects the model and types in the number. |
+|| 3. The System allows the Actor to select a model, the number of seats and how many seats of which class there are. |
+|| 4. The Actor selects the model and types in the numbers. |
 || 5. The System displays a message for a successful registration of a plane. |
 | Results: | A plane has been added to the system. |
-| Exceptions: | 5.a. No plane model has been selected. |
-| | 5.a.1. System indicates that a plane model has to be selected. |
+| Exceptions: | 5.a. No plane model has been selected or no/ incorrect numbers of seats have been written down. |
+| | 5.a.1. System indicates which field needs to be filled (differently). |
 | | 5.a.2. Return to step 3. |
 
 
