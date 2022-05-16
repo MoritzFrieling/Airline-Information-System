@@ -188,3 +188,7 @@
 |  | 4. The System offers an opportunity to enter personal information (name, password, company mail address). |
 |  | 5. The Actor enters John Doe for name, Password for password, john@abc.com for email |
 | Results: | System informs that the password does not fulfill the requirement. |
+
+## Register plane model
+
+## Register plane
