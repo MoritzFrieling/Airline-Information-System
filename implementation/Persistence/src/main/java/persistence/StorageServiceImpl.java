@@ -32,7 +32,7 @@ public class StorageServiceImpl implements StorageService{
 
         databaseManager.executeSQLInsert(databaseManager.preparePlaneInsert(planeData));
         // Create dummy Data object.
-        return new PlaneData(planeData.getPlaneNumber(), planeData.getPlaneModelData());    }
+        return new PlaneData(planeData.getPlaneModelData());    }
 
     @Override
     public RouteData add(RouteData routeData) {

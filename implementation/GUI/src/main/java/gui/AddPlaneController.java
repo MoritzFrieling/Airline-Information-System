@@ -26,8 +26,6 @@ import java.util.function.Supplier;
 class AddPlaneController implements Initializable {
 
     @FXML
-    private TextField planeNumber;
-    @FXML
     private ComboBox modelDropDown;
     @FXML
     private Button saveButton;
@@ -53,7 +51,7 @@ class AddPlaneController implements Initializable {
     @FXML
     private void storePlane() throws Exception {
 
-        PlaneData planeData = new PlaneData(planeNumber.getText(), setModel());
+        PlaneData planeData = new PlaneData(setModel());
 
         PlaneData addedPlane = planeManager.add(planeData);
 

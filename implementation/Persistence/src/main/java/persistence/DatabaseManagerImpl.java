@@ -126,14 +126,15 @@ public class DatabaseManagerImpl implements DatabaseManager {
      */
     @Override
     public PreparedStatement preparePlaneInsert(PlaneData planeData){
-        String sql = " INSERT INTO aisdb.ais.planes VALUES (?, ?) ";
+        String sql = " INSERT INTO aisdb.ais.planes (plane-model) VALUES (?) ";
 
         try {
             con = connect();
 
             PreparedStatement statement = con.prepareStatement(sql);
-            statement.setString(1,planeData.getPlaneNumber());
-            statement.setString(2, planeData.getPlaneModelData().getModelNumber());
+
+            //get plane model number from database!
+            statement.setInt(1, getPlaneModelID(planeData.getPlaneModelData()));
             return statement;
 
         } catch (Exception e) {
@@ -295,6 +296,31 @@ public class DatabaseManagerImpl implements DatabaseManager {
         }
 
         return position;
+    }
+
+
+    public int getPlaneModelID(PlaneModelData planeModelData){
+        String ID = null;
+        String sql = "SELECT ID FROM aisdb.ais.\"planeModels\" WHERE manufacturer="+planeModelData.getManufacturer()+" AND model-number="+ planeModelData.getModelNumber();
+
+        try {
+            con = connect();
+
+            PreparedStatement statement = con.prepareStatement(sql);
+
+            ResultSet rs = statement.executeQuery();
+
+            if (rs.next()){
+                ID = rs.getString(1);
+            }
+
+
+        } catch (SQLException e) {
+
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+
+        }
+        return Integer.parseInt(ID);
     }
 }
 
