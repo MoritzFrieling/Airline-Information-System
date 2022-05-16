@@ -53,3 +53,5 @@ analysis/Week_02/.Prj2 g14 domain model.vpp.lck
 /implementation/Assembler/target/
 /implementation/DataRecords/target/
 /implementation/Persistence/target/
+*.bak_001d
+*.bak_000f
