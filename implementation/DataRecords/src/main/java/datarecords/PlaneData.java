@@ -2,19 +2,13 @@ package datarecords;
 
 public class PlaneData {
 
-    private final String planeNumber;
-
     private final PlaneModelData planeModelData;
 
 
-    public PlaneData(String planeNumber, PlaneModelData planeModelData) {
-        this.planeNumber = planeNumber;
+    public PlaneData(PlaneModelData planeModelData) {
         this.planeModelData = planeModelData;
     }
 
-    public String getPlaneNumber() {
-        return planeNumber;
-    }
 
     public PlaneModelData getPlaneModelData() {
         return planeModelData;
@@ -22,9 +16,7 @@ public class PlaneData {
 
     @Override
     public String toString() {
-        return "PlaneData{" +
-                "planeNumber='" + planeNumber + '\'' +
-                ", planeModelData=" + planeModelData.getManufacturer() + "-" + planeModelData.getModelNumber() +
+        return "PlaneData{ planeModelData=" + planeModelData.getManufacturer() + "-" + planeModelData.getModelNumber() +
                 '}';
     }
 }
