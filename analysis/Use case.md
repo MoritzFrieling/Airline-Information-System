@@ -24,3 +24,5 @@
 | | 2. [Check key performance indicators](/analysis/UseCaseDescription.md/#check-key-performance-indicators) |
 | | 3. [Register route](/analysis/UseCaseDescription.md/#register-route) | 
 | | 4. [Register airport](/analysis/UseCaseDescription.md/#register-airport) | 
+| | 5. [Register plane model](/analysis/UseCaseDescription.md/#register-plane-model) | 
+| | 6. [Register plane](/analysis/UseCaseDescription.md/#register-plane) | 
