@@ -188,3 +188,48 @@
 |  | 4. The System offers an opportunity to enter personal information (name, password, company mail address). |
 |  | 5. The Actor enters John Doe for name, Password for password, john@abc.com for email |
 | Results: | System informs that the password does not fulfill the requirement. |
+
+## Register plane model
+
+| Name: | Actor choses to create a plane model with missing information |
+|----|----|
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
+|| 2. The Actor selects the option to register a plane model. |
+|| 3. The System asks the actor for information about the model (manufacturer, max. seats, max. range, weight capactiy, speed). |
+|| 4. The Actor does not write down anything. |
+|| 5. The System tells the actor that the registration has not been successfull since all fields need to be filled out. |
+
+| Name: | Actor choses to create a plan model (sucessfull) |
+|----|----|
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
+|| 2. The Actor selects the option to register a plane model. |
+|| 3. The System asks the actor for information about the model (manufacturer, max. seats, max. range, weight capactiy, speed). |
+|| 4. The Actor writes down "MAN" as manufacturer, "100" as max seats, "3000km" as max range, "10 kg" as max weight of luggage and "500km/h" as speed. |
+|| 5. The System tells the actor that the registration has been successfull. |
+
+| Name: | Actor choses to create a plane model which already exists |
+|----|----|
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
+|| 2. The Actor selects the option to register a plane model. |
+|| 3. The System asks the actor for information about the model (manufacturer, max. seats, max. range, weight capactiy, speed). |
+|| 4. The Actor writes down and selects the information. |
+|| 5. The System tells the actor that the plane model already exists (same data exists for the specific manufacturer). |
+
+
+## Register plane
+
+| Name: | Actor choses to create a plane with missing/ incorrect information |
+|----|----|
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
+|| 2. The Actor selects the option to register a plane. |
+|| 3. The System allows the Actor to select a model, the number of seats and how many seats of which class there are. |
+|| 4. The Actor  selects the model "Boeing-747" and does not write down the total number of seats and the number of seats for each class. |
+|| 5. The System displays a message for a unsuccessful registration of a plane and informs the actor that information are missing. |
+
+| Name: | Actor choses to create a plane (successfull) |
+|----|----|
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
+|| 2. The Actor selects the option to register a plane. |
+|| 3. The System allows the Actor to select a model, the number of seats and how many seats of which class there are. |
+|| 4. The Actor selects the model "Boeing-747", types in "200" as the maximum number of seats and indicates that there are 100 business class and 100 economy class seats . |
+|| 5. The System displays a message for a successful registration of a plane. |

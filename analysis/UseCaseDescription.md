@@ -83,6 +83,7 @@
 | | 4.b Field was left empty. |
 | | 4.b.1 System informs user that field can't be empty. |
 | | 4.b.2 Return to Step 2. |
+
 ### Register sales officer or sales employee
 | Name: | _Register sales officer or sales employee_ |
 |----|----|
@@ -104,6 +105,42 @@
 | | 6.b.2. Return to step 3. |
 | Extension: | 3.a. The Actor indicates that they want to register a new Sales Employee. |
 | | 3.a.1. Go to step 4. |
+
+### Register plane model
+| Name: | _Register plane model_ |
+|----|----|
+| Actor: | Sales Manager |
+| Description: | Sales Manager registers a plane model . |
+| Pre-condition: | Sales Manager is already logged in. |
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
+|| 2. The Actor selects the option to register a plane model. |
+|| 3. The System asks the actor for information about the model (manufacturer, max. seats, max. range, weight capactiy, speed). |
+|| 4. The Actor writes down and selects the information. |
+|| 5. The System tells the actor that the registration has been successfull. |
+| Results: | A plane model has been added to the system. |
+| Exceptions: | 5.a. Incorrect or missing information. |
+| | 5.a.1. System indicates which information are missing or need to be altered. |
+| | 5.a.2. Return to step 3. |
+| | 5.b. The exact same information can be found within the already existing system. |
+| | 5.b.1. Actor gets informed that this plane model already exists. |
+| | 5.b.2. Return to step 3. |
+
+### Register plane
+| Name: | _Register plane_ |
+|----|----|
+| Actor: | Sales Manager |
+| Description: | Sales Manager registers a specific plane . |
+| Pre-condition: | Sales Manager is already logged in. |
+| Scenario:  | 1. The System displays the main sales manager dashboard. |
+|| 2. The Actor selects the option to register a plane. |
+|| 3. The System allows the Actor to select a model, the number of seats and how many seats of which class there are. |
+|| 4. The Actor selects the model and types in the numbers. |
+|| 5. The System displays a message for a successful registration of a plane. |
+| Results: | A plane has been added to the system. |
+| Exceptions: | 5.a. No plane model has been selected or no/ incorrect numbers of seats have been written down. |
+| | 5.a.1. System indicates which field needs to be filled (differently). |
+| | 5.a.2. Return to step 3. |
+
 
 ## Operational Use Cases
 
@@ -132,7 +169,6 @@
 | | 4. The Actor choses different options confirms all desired information. |
 | | 5. The System shows a succes message. |
 | Results: | The Actor has successfully updated the  flight. |
-| Extensions: |  |
 
 ### Delete flight
 | Name: | _Delete upcoming flights_ |
