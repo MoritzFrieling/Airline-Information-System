@@ -159,6 +159,4 @@ ALTER TABLE aisdb.ais.planes
     ADD COLUMN businessClass int,
     ADD COLUMN firstClass int;
 
-
-
 ----------------------------------------------
