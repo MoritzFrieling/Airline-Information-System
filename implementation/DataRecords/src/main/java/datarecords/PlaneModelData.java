@@ -9,6 +9,9 @@ public class PlaneModelData {
     private final double weightCapacity;
     private final int speed;
 
+
+
+
     public PlaneModelData(String manufacturer, String modelNumber, int seats, double range, double weightCapacity, int speed) {
         this.manufacturer = manufacturer;
         this.modelNumber = modelNumber;
@@ -17,6 +20,7 @@ public class PlaneModelData {
         this.weightCapacity = weightCapacity;
         this.speed = speed;
     }
+
 
     @Override
     public String toString() {

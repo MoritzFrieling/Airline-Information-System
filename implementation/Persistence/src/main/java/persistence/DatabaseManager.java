@@ -8,6 +8,7 @@ import datarecords.PlaneModelData;
 import java.net.PasswordAuthentication;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 
 public interface DatabaseManager {
 
@@ -26,6 +27,8 @@ public interface DatabaseManager {
     String getPosition(String str);
 
     PasswordAuthentication getAccountData(String string);
+
+    List<PlaneModelData> preparePlaneModelsGetAll();
 
 
 
