@@ -55,9 +55,9 @@ class AddPlaneController implements Initializable {
 
         PlaneData planeData = new PlaneData(planeNumber.getText(), setModel());
 
-        PlaneData addedPlane = planeManager.add(planeData);
+        boolean planeAdded = planeManager.add(planeData);
 
-        result.setText("Plane added: " + addedPlane.toString() );
+        result.setText("Adding the plane worked: " + planeAdded );
 
     }
 
