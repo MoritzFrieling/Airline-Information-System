@@ -1,7 +1,10 @@
 package businesslogic;
 
 import datarecords.PlaneData;
+import datarecords.PlaneModelData;
 import persistence.StorageService;
+
+import java.util.List;
 
 public class PlaneManager {
 
@@ -14,4 +17,9 @@ public class PlaneManager {
     public boolean add(PlaneData planeData) throws Exception {
         return storageService.add(planeData);
     }
+
+    public List<PlaneModelData> getAllPlaneModels() throws Exception{
+        return storageService.getAllPlaneModels();
+    }
+
 }

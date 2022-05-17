@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class that executes as well as prepares the actual SQL Commands
@@ -239,6 +241,44 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
 
         }
+
+    @Override
+    public List<PlaneModelData> preparePlaneModelsGetAll() {
+
+        try {
+            con = connect();
+
+            PreparedStatement statement = con.prepareStatement("SELECT * FROM aisdb.ais.\"planeModels\"");
+            ResultSet rs = statement.executeQuery();
+            List<PlaneModelData> planeModelList = new ArrayList<>();
+            while(rs.next()){
+                String manufacturer = rs.getString("manufacturer");
+                String modelnumber = rs.getString("model-number");
+                int seats = rs.getInt("seats");
+                double range = rs.getDouble("range");
+                int speed = rs.getInt("speed");
+                double weightCapacity = rs.getDouble("weight-capacity");
+
+
+                planeModelList.add(new PlaneModelData(manufacturer, modelnumber, seats, range, weightCapacity, speed));
+
+            }
+
+            rs.close();
+            statement.close();
+            return planeModelList;
+
+
+        } catch (SQLException e) {
+
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+
+
+        }
+
+        return null;
+
+    }
 
 
     @Override

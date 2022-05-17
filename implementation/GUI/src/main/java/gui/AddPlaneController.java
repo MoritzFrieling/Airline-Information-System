@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.function.Supplier;
 
@@ -31,7 +32,7 @@ class AddPlaneController implements Initializable {
     @FXML
     public TextField firstClassSeats;
     @FXML
-    private ComboBox modelDropDown;
+    private ComboBox<PlaneModelData> modelDropDown;
     @FXML
     private Button saveButton;
     @FXML
@@ -82,6 +83,12 @@ class AddPlaneController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+
+        fore
+        List<PlaneModelData> list = planeManager.getAllPlaneModels();
+
+
         modelDropDown.getItems().addAll("Boeing-737","Boeing-747","Boeing-757");
         modelDropDown.getSelectionModel().select("Boeing-737");
     }
