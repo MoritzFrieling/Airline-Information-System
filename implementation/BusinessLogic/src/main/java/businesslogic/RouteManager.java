@@ -30,7 +30,7 @@ public class RouteManager {
         this.storageService = routeStorageService;
     }
     
-    public RouteData add(RouteData routeData){
+    public boolean add(RouteData routeData){
         return storageService.add(routeData);
     }
     

@@ -12,7 +12,7 @@ public class FlightManager {
         this.storageService = flightStorageService;
     }
 
-    public FlightData add(FlightData flightData){
+    public boolean add(FlightData flightData){
         return storageService.add(flightData);
     }
 
