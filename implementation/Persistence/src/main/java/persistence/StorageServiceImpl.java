@@ -43,7 +43,7 @@ public class StorageServiceImpl implements StorageService{
 
     @Override
     public FlightData add(FlightData flightData) {
-        return new FlightData(flightData.getRoute(),flightData.getDeparture(),flightData.getArrival(),flightData.getPlane(), flightData.getPrice(), flightData.getEconomy(), flightData.getBusiness(), flightData.getFirstClass());
+        return new FlightData(flightData.getRoute(),flightData.getDeparture(),flightData.getArrival(),flightData.getPlane(), flightData.getPrice());
     }
 
     @Override
