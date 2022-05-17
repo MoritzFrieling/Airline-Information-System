@@ -56,8 +56,6 @@ public class LogInController implements Initializable {
             }else {
                 label.setText("Couldn't identify Position!");
             }
-
-
         }else {
             label.setText("Something Went Wrong! Couldn't log in");
         }

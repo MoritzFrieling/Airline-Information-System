@@ -1,10 +1,5 @@
 package persistence;
 
-import datarecords.AccountData;
-import datarecords.AirportData;
-import datarecords.PlaneData;
-import datarecords.PlaneModelData;
-
 import java.net.PasswordAuthentication;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,21 +8,21 @@ public interface DatabaseManager {
 
     ResultSet executeSQLSelect(PreparedStatement statement) throws Exception;
 
-    boolean executeSQLInsert(PreparedStatement statement) throws Exception;
+    <T> boolean executeSQLInsert(T t) throws Exception;
 
-    PreparedStatement prepareAirportInsert(AirportData airportData) throws Exception;
+    <T> PreparedStatement prepareAirportInsert(T t) throws Exception;
 
-    PreparedStatement preparePlaneInsert(PlaneData planeData);
+   <T> PreparedStatement preparePlaneInsert(T t);
 
-    PreparedStatement prepareAccountInsert(AccountData accountData);
+    <T> PreparedStatement prepareAccountInsert(T t);
 
-    PreparedStatement preparePlaneModelInsert(PlaneModelData planeModelData);
+    <T> PreparedStatement preparePlaneModelInsert(T t);
+
+    <T> PreparedStatement prepareRouteInsert(T t);
 
     String getPosition(String str);
 
     PasswordAuthentication getAccountData(String string);
-
-
 
     String getSalt(String string);
 }
