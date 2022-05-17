@@ -1,5 +1,6 @@
 package gui;
 
+import businesslogic.Plane;
 import businesslogic.PlaneManager;
 import datarecords.PlaneData;
 import datarecords.PlaneModelData;
@@ -32,7 +33,7 @@ class AddPlaneController implements Initializable {
     @FXML
     public TextField firstClassSeats;
     @FXML
-    private ComboBox<PlaneModelData> modelDropDown;
+    private ComboBox modelDropDown;
     @FXML
     private Button saveButton;
     @FXML
@@ -40,12 +41,22 @@ class AddPlaneController implements Initializable {
     @FXML
     private Label result;
 
+    private List<PlaneModelData> planeModelList;
+
+
     private final Supplier<SceneManager> sceneManagerSupplier;
     private final PlaneManager planeManager;
 
     public AddPlaneController(Supplier<SceneManager> sceneManagerSupplier, PlaneManager planeManager) {
         this.sceneManagerSupplier = sceneManagerSupplier;
         this.planeManager = planeManager;
+
+        try {
+            this.planeModelList = planeManager.getAllPlaneModels();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @FXML
@@ -61,18 +72,25 @@ class AddPlaneController implements Initializable {
 
         PlaneData addedPlane = planeManager.add(planeData);
 
-        result.setText("Plane added: " + addedPlane.toString() );
+//        result.setText("Plane added: " + addedPlane.toString() );
 
     }
 
     private PlaneModelData setModel(){
-        if (modelDropDown.getSelectionModel().isSelected(0)){
-            return new PlaneModelData("Boeing","737",230,7000,35000, 900);
-        }else if (modelDropDown.getSelectionModel().isSelected(1)){
-            return new PlaneModelData("Boeing","747",350,8000,40000, 1000);
-        }else if (modelDropDown.getSelectionModel().isSelected(2)){
-            return new PlaneModelData("Boeing","757",230,7000,35000, 950);
-        }else return null;
+        String pickedModelString = modelDropDown.getSelectionModel().getSelectedItem().toString();
+        String[] splitString = pickedModelString.split(" ");
+        String manufacturer = splitString[0];
+        String modelNumber = splitString[1];
+        PlaneModelData pickedModel = null;
+        for (PlaneModelData planeModel: planeModelList) {
+            if (planeModel.getManufacturer().equals(manufacturer) && planeModel.getModelNumber().equals(modelNumber)){
+                pickedModel = planeModel;
+                break;
+            }
+        }
+
+
+        return pickedModel;
     }
 
     /**
@@ -84,21 +102,10 @@ class AddPlaneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-
-        try {
-            List<PlaneModelData> planeModelList = planeManager.getAllPlaneModels();
-            for (PlaneModelData planeModelData: planeModelList) {
-            modelDropDown.getItems().addAll(planeModelData);
-
-            }
-        } catch (Exception e) {
-            result.setText("No plane models available");
-            e.printStackTrace();
+        for (PlaneModelData planeModelData : planeModelList) {
+            modelDropDown.getItems().addAll(planeModelData.getManufacturer() + " " + planeModelData.getModelNumber());
         }
-
         modelDropDown.getSelectionModel().select(0);
-
-
     }
 
 }
