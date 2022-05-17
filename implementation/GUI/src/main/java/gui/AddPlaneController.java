@@ -85,12 +85,20 @@ class AddPlaneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
 
-        fore
-        List<PlaneModelData> list = planeManager.getAllPlaneModels();
+        try {
+            List<PlaneModelData> planeModelList = planeManager.getAllPlaneModels();
+            for (PlaneModelData planeModelData: planeModelList) {
+            modelDropDown.getItems().addAll(planeModelData);
+
+            }
+        } catch (Exception e) {
+            result.setText("No plane models available");
+            e.printStackTrace();
+        }
+
+        modelDropDown.getSelectionModel().select(0);
 
 
-        modelDropDown.getItems().addAll("Boeing-737","Boeing-747","Boeing-757");
-        modelDropDown.getSelectionModel().select("Boeing-737");
     }
 
 }

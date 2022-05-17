@@ -243,7 +243,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
         }
 
     @Override
-    public List<PlaneModelData> preparePlaneModelsGetAll() {
+    public List<PlaneModelData> getAllPlaneModels() {
 
         try {
             con = connect();

@@ -28,7 +28,7 @@ public interface DatabaseManager {
 
     PasswordAuthentication getAccountData(String string);
 
-    List<PlaneModelData> preparePlaneModelsGetAll();
+    List<PlaneModelData> getAllPlaneModels();
 
 
 
