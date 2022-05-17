@@ -89,8 +89,8 @@ public class StorageServiceImpl implements StorageService{
         throw new UnsupportedOperationException("Not supported yet.");    }
 
     @Override
-    public List<PlaneModelData> getAllPlaneModels() {
-        return databaseManager.executeSQLSelect();
+    public List<PlaneModelData> getAllPlaneModels() throws Exception{
+        return databaseManager.getAllPlaneModels();
     }
 
     @Override
