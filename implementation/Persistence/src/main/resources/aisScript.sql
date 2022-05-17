@@ -154,6 +154,11 @@ ALTER TABLE aisdb.ais.flights
 FOREIGN KEY ("flight-plane")
 REFERENCES aisdb.ais.planes("plane-number");
 
+ALTER TABLE aisdb.ais.planes
+    ADD COLUMN economyClass int,
+    ADD COLUMN businessClass int,
+    ADD COLUMN firstClass int;
+
 
 
 ----------------------------------------------

@@ -126,7 +126,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
      */
     @Override
     public PreparedStatement preparePlaneInsert(PlaneData planeData){
-        String sql = " INSERT INTO aisdb.ais.planes (plane-model) VALUES (?) ";
+        String sql = " INSERT INTO aisdb.ais.planes (\"plane-model\", economyclass, businessclass, firstclass) VALUES (?, ?, ?, ?) ";
 
         try {
             con = connect();
@@ -135,6 +135,9 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
             //get plane model number from database!
             statement.setInt(1, getPlaneModelID(planeData.getPlaneModelData()));
+            statement.setInt(2, planeData.getEconomySeats());
+            statement.setInt(3, planeData.getBusinessSeats());
+            statement.setInt(4, planeData.getFirstClassSeats());
             return statement;
 
         } catch (Exception e) {
@@ -301,12 +304,17 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
     public int getPlaneModelID(PlaneModelData planeModelData){
         String ID = null;
-        String sql = "SELECT ID FROM aisdb.ais.\"planeModels\" WHERE manufacturer="+planeModelData.getManufacturer()+" AND model-number="+ planeModelData.getModelNumber();
+        String sql = "SELECT \"model-ID\" FROM aisdb.ais.\"planeModels\" WHERE manufacturer= ? AND \"model-number\"= ?";
+
+
 
         try {
             con = connect();
 
             PreparedStatement statement = con.prepareStatement(sql);
+
+            statement.setString(1, planeModelData.getManufacturer());
+            statement.setString(2,planeModelData.getModelNumber());
 
             ResultSet rs = statement.executeQuery();
 

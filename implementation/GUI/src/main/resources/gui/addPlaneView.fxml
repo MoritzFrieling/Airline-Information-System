@@ -32,16 +32,20 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="399.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.AddPlaneController">
-   <Label layoutX="60.0" layoutY="132.0" text="Plane Model" />
-   <Button fx:id="saveBtn" layoutX="64.0" layoutY="250.0" mnemonicParsing="false" onAction="#storePlane" prefHeight="34.0" prefWidth="150.0" text="Save" />
-   <Button fx:id="homeBtn" layoutX="60.0" layoutY="309.0" mnemonicParsing="false" onAction="#toSecondary" text="Home" />
-   <Label fx:id="result" layoutX="341.0" layoutY="132.0" text="Result" />
-   <ComboBox fx:id="modelDropDown" layoutX="171.0" layoutY="128.0" prefWidth="150.0" />
+<AnchorPane prefHeight="399.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AddPlaneController">
+   <Label layoutX="122.0" layoutY="85.0" text="Plane Model" />
+   <Button fx:id="saveBtn" layoutX="214.0" layoutY="266.0" mnemonicParsing="false" onAction="#storePlane" prefHeight="34.0" prefWidth="150.0" text="Save" />
+   <Button fx:id="homeBtn" layoutX="498.0" layoutY="317.0" mnemonicParsing="false" onAction="#toSecondary" text="Home" />
+   <Label fx:id="result" layoutX="48.0" layoutY="321.0" text="Result" />
+   <ComboBox fx:id="modelDropDown" layoutX="214.0" layoutY="81.0" prefWidth="150.0" />
+   <Label layoutX="64.0" layoutY="34.0" text="Add new Plane" />
+   <TextField fx:id="economySeats" layoutX="231.0" layoutY="127.0" prefHeight="25.0" prefWidth="115.0" text="0" />
+   <TextField fx:id="businessSeats" layoutX="231.0" layoutY="165.0" prefHeight="25.0" prefWidth="115.0" text="0" />
+   <TextField fx:id="firstClassSeats" layoutX="231.0" layoutY="200.0" prefHeight="25.0" prefWidth="115.0" text="0" />
+   <Label fx:id="economyLabel" layoutX="175.0" layoutY="131.0" text="Economy" />
+   <Label fx:id="businessLabel" layoutX="176.0" layoutY="169.0" text="Business" />
+   <Label fx:id="firstClassLabel" layoutX="172.0" layoutY="204.0" text="First Class" />
 </AnchorPane>
