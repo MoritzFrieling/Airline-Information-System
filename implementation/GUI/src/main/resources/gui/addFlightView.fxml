@@ -21,10 +21,6 @@
        <Label fx:id="planeLabel" layoutX="300.0" layoutY="52.0" text="Plane" />
        <ComboBox fx:id="modelDropDownPlane" layoutX="299.0" layoutY="69.0" prefHeight="25.0" prefWidth="166.0" />
 
-       <!-- Number of Seats for each class in the form of "economy, business, firstClass" -> "80,20,10"
-       later the arrival date gets calculated by speed of plane and distance -->
-       <Label layoutX="300.0" layoutY="181.0" text="number of seats('economy,business,firstClass')" />
-       <TextField fx:id="seatClasses" layoutX="299.0" layoutY="198.0" prefHeight="25.0" prefWidth="166.0" />
 
        <!-- Result of picked options -->
        <Label fx:id="result" layoutX="13.0" layoutY="335.0">

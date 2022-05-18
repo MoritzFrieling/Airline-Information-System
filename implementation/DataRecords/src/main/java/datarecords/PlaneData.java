@@ -2,18 +2,29 @@ package datarecords;
 
 public class PlaneData {
 
-    private final String planeNumber;
-
     private final PlaneModelData planeModelData;
+    private final int economySeats;
+    private final int businessSeats;
+    private final int firstClassSeats;
 
 
-    public PlaneData(String planeNumber, PlaneModelData planeModelData) {
-        this.planeNumber = planeNumber;
+    public PlaneData(PlaneModelData planeModelData, int economySeats, int businessSeats, int firstClassSeats) {
         this.planeModelData = planeModelData;
+        this.economySeats = economySeats;
+        this.businessSeats = businessSeats;
+        this.firstClassSeats = firstClassSeats;
     }
 
-    public String getPlaneNumber() {
-        return planeNumber;
+    public int getEconomySeats() {
+        return economySeats;
+    }
+
+    public int getBusinessSeats() {
+        return businessSeats;
+    }
+
+    public int getFirstClassSeats() {
+        return firstClassSeats;
     }
 
     public PlaneModelData getPlaneModelData() {
@@ -22,9 +33,7 @@ public class PlaneData {
 
     @Override
     public String toString() {
-        return "PlaneData{" +
-                "planeNumber='" + planeNumber + '\'' +
-                ", planeModelData=" + planeModelData.getManufacturer() + "-" + planeModelData.getModelNumber() +
+        return "PlaneData{ planeModelData=" + planeModelData.getManufacturer() + "-" + planeModelData.getModelNumber() +
                 '}';
     }
 }

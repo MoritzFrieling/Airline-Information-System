@@ -108,3 +108,55 @@ create table accounts(
                          "log-in" string,
                          "password" string
 );
+
+
+
+-- Adjustments for Plane and PlaneModel--
+
+ALTER TABLE aisdb.ais.planes
+DROP CONSTRAINT "fk_planes-models";
+
+ALTER TABLE aisdb.ais."planeModels"
+DROP CONSTRAINT "planeModels_pkey";
+
+
+ALTER TABLE aisdb.ais."planeModels"
+ADD COLUMN "model-ID" serial PRIMARY KEY ;
+
+ALTER TABLE aisdb.ais.planes
+DROP COLUMN "plane-model";
+
+ALTER TABLE aisdb.ais.planes
+ADD COLUMN "plane-model" integer;
+
+ALTER TABLE aisdb.ais.planes
+ADD CONSTRAINT "fk_planeModel"
+FOREIGN KEY("plane-model")
+REFERENCES  aisdb.ais."planeModels"("model-ID");
+
+ALTER TABLE aisdb.ais.flights
+    DROP CONSTRAINT "fk_flights-planes";
+
+ALTER TABLE aisdb.ais.planes
+    DROP COLUMN "plane-number";
+
+ALTER TABLE aisdb.ais.planes
+    ADD COLUMN "plane-number" serial PRIMARY KEY;
+
+ALTER TABLE aisdb.ais.flights
+    drop column "flight-plane";
+
+ALTER TABLE aisdb.ais.flights
+    ADD COLUMN "flight-plane" int;
+
+ALTER TABLE aisdb.ais.flights
+    ADD CONSTRAINT "fk_flights-planes"
+FOREIGN KEY ("flight-plane")
+REFERENCES aisdb.ais.planes("plane-number");
+
+ALTER TABLE aisdb.ais.planes
+    ADD COLUMN economyClass int,
+    ADD COLUMN businessClass int,
+    ADD COLUMN firstClass int;
+
+----------------------------------------------

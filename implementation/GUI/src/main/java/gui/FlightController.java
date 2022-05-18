@@ -24,8 +24,6 @@ class FlightController implements Initializable {
     @FXML
     public ComboBox modelDropDownPlane;
     @FXML
-    public TextField seatClasses;
-    @FXML
     public TextField departureTime;
     @FXML
     public TextField defaultFlightPrice;
@@ -78,7 +76,7 @@ class FlightController implements Initializable {
             );
 
 
-            PlaneData plane = new PlaneData("9",new PlaneModelData("Avions de Transport Regional","42-300",50,1150,4950, 950));
+            PlaneData plane = new PlaneData(new PlaneModelData("Avions de Transport Regional","42-300",50,1150,4950, 950), 30,14,6);
 
             //splits the departure time into hours and minutes
             String[] splitDepartureTime = departureTime.getText().split(":");
@@ -93,17 +91,9 @@ class FlightController implements Initializable {
             //default flight price
             int price = Integer.parseInt(defaultFlightPrice.getText());
 
-            //splits the seats for each seatClass (economy, business, firstClass)
-            String[] splitSeatClass = seatClasses.getText().split(",");
-
-            //number of seats for each seatClass
-            int economy = Integer.parseInt(splitSeatClass[0]);
-            int business = Integer.parseInt(splitSeatClass[1]);
-            int firstClass = Integer.parseInt(splitSeatClass[2]);
-
             //returns the finished flight with:
-            //route, departure time, arrival time, plane, price and number of seats for each class(economy, business, firstClass)
-            return new FlightData(route, departureDateTime, arrivalDateTime, plane, price, economy, business, firstClass);
+            //route, departure time, arrival time, plane, price
+            return new FlightData(route, departureDateTime, arrivalDateTime, plane, price);
         } else {
             result.setText("Please ensure picking the first entry for plane, origin and destination!\nThe format for departure time is 'hh:mm' -> '14:30'\nPlease fill out every field.");
             return null;

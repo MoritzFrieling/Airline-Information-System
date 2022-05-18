@@ -27,7 +27,6 @@ public class StorageServiceImpl implements StorageService{
         }return false;
     }
 
-
     @Override
     public PasswordAuthentication getAccountData(PasswordAuthentication passwordAuthentication) throws Exception {
         return databaseManager.getAccountData(passwordAuthentication.getUserName());
@@ -61,8 +60,8 @@ public class StorageServiceImpl implements StorageService{
         throw new UnsupportedOperationException("Not supported yet.");    }
 
     @Override
-    public List<PlaneModelData> getAllPlaneModels() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public List<PlaneModelData> getAllPlaneModels() throws Exception{
+        return databaseManager.getAllPlaneModels();
     }
 
     @Override

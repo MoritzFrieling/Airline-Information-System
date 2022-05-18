@@ -1,5 +1,6 @@
 package gui;
 
+import businesslogic.Plane;
 import businesslogic.PlaneManager;
 import datarecords.PlaneData;
 import datarecords.PlaneModelData;
@@ -11,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.function.Supplier;
 
@@ -24,9 +26,12 @@ import java.util.function.Supplier;
  * @author Informatics Fontys Venlo
  */
 class AddPlaneController implements Initializable {
-
     @FXML
-    private TextField planeNumber;
+    public TextField economySeats;
+    @FXML
+    public TextField businessSeats;
+    @FXML
+    public TextField firstClassSeats;
     @FXML
     private ComboBox modelDropDown;
     @FXML
@@ -36,12 +41,22 @@ class AddPlaneController implements Initializable {
     @FXML
     private Label result;
 
+    private List<PlaneModelData> planeModelList;
+
+
     private final Supplier<SceneManager> sceneManagerSupplier;
     private final PlaneManager planeManager;
 
     public AddPlaneController(Supplier<SceneManager> sceneManagerSupplier, PlaneManager planeManager) {
         this.sceneManagerSupplier = sceneManagerSupplier;
         this.planeManager = planeManager;
+
+        try {
+            this.planeModelList = planeManager.getAllPlaneModels();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @FXML
@@ -53,22 +68,30 @@ class AddPlaneController implements Initializable {
     @FXML
     private void storePlane() throws Exception {
 
-        PlaneData planeData = new PlaneData(planeNumber.getText(), setModel());
+        PlaneData planeData = new PlaneData(setModel(), Integer.parseInt(economySeats.getText()), Integer.parseInt(businessSeats.getText()), Integer.parseInt(firstClassSeats.getText()));
 
         boolean planeAdded = planeManager.add(planeData);
 
         result.setText("Adding the plane worked: " + planeAdded );
 
+
     }
 
     private PlaneModelData setModel(){
-        if (modelDropDown.getSelectionModel().isSelected(0)){
-            return new PlaneModelData("Boeing","737",230,7000,35000, 900);
-        }else if (modelDropDown.getSelectionModel().isSelected(1)){
-            return new PlaneModelData("Boeing","747",350,8000,40000, 1000);
-        }else if (modelDropDown.getSelectionModel().isSelected(2)){
-            return new PlaneModelData("Boeing","757",230,7000,35000, 950);
-        }else return null;
+        String pickedModelString = modelDropDown.getSelectionModel().getSelectedItem().toString();
+        String[] splitString = pickedModelString.split(" ");
+        String manufacturer = splitString[0];
+        String modelNumber = splitString[1];
+        PlaneModelData pickedModel = null;
+        for (PlaneModelData planeModel: planeModelList) {
+            if (planeModel.getManufacturer().equals(manufacturer) && planeModel.getModelNumber().equals(modelNumber)){
+                pickedModel = planeModel;
+                break;
+            }
+        }
+
+
+        return pickedModel;
     }
 
     /**
@@ -79,8 +102,11 @@ class AddPlaneController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        modelDropDown.getItems().addAll("Boeing-737","Boeing-747","Boeing-757");
-        modelDropDown.getSelectionModel().select("Boeing-737");
+
+        for (PlaneModelData planeModelData : planeModelList) {
+            modelDropDown.getItems().addAll(planeModelData.getManufacturer() + " " + planeModelData.getModelNumber());
+        }
+        modelDropDown.getSelectionModel().select(0);
     }
 
 }

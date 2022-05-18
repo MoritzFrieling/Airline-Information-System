@@ -26,6 +26,6 @@ public interface StorageService {
     List<AirportData> getAllAirports();
     List<PlaneData> getAllPlanes();
     List<RouteData> getAllRoutes();
-    List<PlaneModelData> getAllPlaneModels();
+    List<PlaneModelData> getAllPlaneModels() throws Exception;
 
 }

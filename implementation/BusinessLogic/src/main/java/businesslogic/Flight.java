@@ -11,7 +11,4 @@ public class Flight {
         this.flight = flight;
     }
 
-    public FlightData getFlight() {
-        return flight;
-    }
 }
