@@ -18,7 +18,7 @@ public class AirportManager {
         this.storageService = airportStorageService;
     }
     
-    public AirportData add( AirportData airportData ) throws Exception {
+    public boolean add( AirportData airportData ) throws Exception {
         return storageService.add(airportData);
     }
     

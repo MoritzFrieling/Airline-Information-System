@@ -73,7 +73,7 @@ create table customers(
 
 create table bookings(
                          "booking-id" serial primary key,
-                         "customer-mail" number,
+                         "customer-mail" string,
                          "flight-number" number,
                          "price" float(2),
 

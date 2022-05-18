@@ -65,9 +65,9 @@ class AirportController implements Initializable {
                 coordinateManager.add(coordinate.getText())
                 );
 
-        AirportData addedAirport = airportManager.add(airportData);
+        boolean addedAirport = airportManager.add(airportData);
      
-        result.setText("AIRPORT ADDED \n \n" + addedAirport.toString() );
+        result.setText("Adding the airport worked:  \n \n" + addedAirport );
     }
 
     /**

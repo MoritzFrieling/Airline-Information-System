@@ -56,9 +56,9 @@ class RouteController implements Initializable {
 
         RouteData routeData = createRoute();
         
-        RouteData addedRoute = routeManager.add(routeData);
+        boolean addedRoute = routeManager.add(routeData);
 
-        result.setText("Route added: " + addedRoute.toString());
+        result.setText("Adding route worked: " + addedRoute);
 
     }
 
