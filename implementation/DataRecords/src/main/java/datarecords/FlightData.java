@@ -5,18 +5,20 @@ import java.time.LocalDateTime;
 
 public class FlightData {
 
+    private final int duration;
     private final LocalDateTime departure;
     private final LocalDateTime arrival;
     private final PlaneData plane;
     private final RouteData route;
     private final float price;
 
-    public FlightData(RouteData route, LocalDateTime departure, LocalDateTime arrival, PlaneData plane, float price) {
+    public FlightData(RouteData route, LocalDateTime departure, LocalDateTime arrival, PlaneData plane, float price, int duration) {
         this.route = route;
         this.departure = departure;
         this.arrival = arrival;
         this.plane = plane;
         this.price = price;
+        this.duration = duration;
     }
 
     public RouteData getRoute() {
@@ -45,9 +47,8 @@ public class FlightData {
     }
 
 
-
-
-
-
+    public int getDuration() {
+        return this.duration;
+    }
 }
 
