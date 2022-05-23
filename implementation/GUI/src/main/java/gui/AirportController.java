@@ -33,11 +33,14 @@ class AirportController implements Initializable {
     @FXML
     private TextField coordinate;
     @FXML
+    private TextField cityName;
+    @FXML
     private Button saveButton;
     @FXML
     private Button toSecondaryButton;
     @FXML
     private Label result;
+
 
     private final Supplier<SceneManager> sceneManagerSupplier;
     private final AirportManager airportManager;
@@ -62,8 +65,8 @@ class AirportController implements Initializable {
                 airportName.getText(),
                 abbreviationName.getText(),
                 countryName.getText(),
-                coordinateManager.add(coordinate.getText())
-                );
+                coordinateManager.add(coordinate.getText()),
+                cityName.getText());
 
         boolean addedAirport = airportManager.add(airportData);
      

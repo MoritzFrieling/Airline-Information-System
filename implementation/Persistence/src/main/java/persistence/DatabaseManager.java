@@ -5,6 +5,7 @@ import datarecords.PlaneModelData;
 import java.net.PasswordAuthentication;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface DatabaseManager {
@@ -32,4 +33,6 @@ public interface DatabaseManager {
     PasswordAuthentication getAccountData(String string);
 
     String getSalt(String string);
+
+    ArrayList<String> getAirports();
 }

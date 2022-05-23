@@ -18,13 +18,15 @@ public class AirportData {
     private final String abbreviation;
     private final String countryName;
     private final CoordinateData coordinateData;
+    private final String cityName;
 
-    public AirportData(String airportName, String abbreviation, String countryName, CoordinateData coordinateData) {
+    public AirportData(String airportName, String abbreviation, String countryName, CoordinateData coordinateData, String cityName) {
        
         this.airportName = airportName;
         this.abbreviation = abbreviation;
         this.countryName = countryName;
         this.coordinateData = coordinateData;
+        this.cityName = cityName;
     }
 
     
@@ -43,7 +45,12 @@ public class AirportData {
 
     public CoordinateData getCoordinateData() { return coordinateData; }
 
-   
+    public String getCityName() {
+        return cityName;
+    }
+
+
+
 
     @Override
     public String toString() {
