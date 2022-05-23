@@ -502,11 +502,11 @@ public class DatabaseManagerImpl implements DatabaseManager {
     @Override
     public ArrayList<String> getAirports() {
 
-        String sql = "SELECT  FROM aisdb.ais.airports";
+        String sql = "SELECT \"airport-name\",city FROM aisdb.ais.airports";
 
         ArrayList<String> list = new ArrayList<>();
         int i = 0;
-
+        int j = 0;
         try {
 
             con = connect();
@@ -516,10 +516,50 @@ public class DatabaseManagerImpl implements DatabaseManager {
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()){
+                String stringHelper= rs.getString(i+1) + ", " + rs.getString(i+2);
+                list.add(j,stringHelper);
+                j++;
+                i+=2;
 
-                list.add(i,rs.getString(i+1));
-                i++;
+            }
 
+
+        }catch (SQLException e){
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        }
+
+        if (list.isEmpty()){
+            list.add("Couldn't fetch Airports!");
+        }
+
+        return list;
+    }
+
+    @Override
+    public ArrayList<String> getAllRoutes() {
+
+        String sql = "SELECT origin FROM aisdb.ais.routes AND SELECT city from aisdb.ais.airports where abbreviation = origin ";
+        String sql2 = "SELECT destination FROM aisdb.ais.routes AND SELECT city from aisdb.ais.airports where abbreviation = destination";
+
+        ArrayList<String> list = new ArrayList<>();
+        int i = 0;
+        int j=0;
+        try {
+
+            con = connect();
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            PreparedStatement statement2 = con.prepareStatement(sql2);
+
+            ResultSet rs = statement.executeQuery();
+            ResultSet rs2 = statement2.executeQuery();
+
+            while (rs.next()){
+                String stringHelper= rs.getString(i+1) + ", " + rs.getString(i+2)
+                        + " -> " +   rs2.getString(i+1) + ", " + rs2.getString(i+2);
+                list.add(j,stringHelper);
+                i+=2;
+                j++;
             }
 
 

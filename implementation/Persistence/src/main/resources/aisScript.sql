@@ -113,8 +113,8 @@ create table accounts(
 
 -- Adjustments for Plane and PlaneModel--
 
-ALTER TABLE aisdb.ais.planes
-DROP CONSTRAINT "fk_planes-models";
+-- ALTER TABLE aisdb.ais.planes
+-- DROP CONSTRAINT "fk_planes-models";
 
 ALTER TABLE aisdb.ais."planeModels"
 DROP CONSTRAINT "planeModels_pkey";

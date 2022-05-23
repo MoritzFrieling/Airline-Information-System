@@ -35,7 +35,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="399.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AddPlaneController">
+<AnchorPane prefHeight="399.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.AddPlaneController">
    <Label layoutX="122.0" layoutY="85.0" text="Plane Model" />
    <Button fx:id="saveBtn" layoutX="214.0" layoutY="266.0" mnemonicParsing="false" onAction="#storePlane" prefHeight="34.0" prefWidth="150.0" text="Save" />
    <Button fx:id="homeBtn" layoutX="498.0" layoutY="317.0" mnemonicParsing="false" onAction="#toSecondary" text="Home" />

@@ -1,6 +1,7 @@
 package persistence;
 
 import datarecords.PlaneModelData;
+import datarecords.RouteData;
 
 import java.net.PasswordAuthentication;
 import java.sql.PreparedStatement;
@@ -35,4 +36,6 @@ public interface DatabaseManager {
     String getSalt(String string);
 
     ArrayList<String> getAirports();
+
+    ArrayList<String> getAllRoutes();
 }
