@@ -161,6 +161,11 @@ ALTER TABLE aisdb.ais.planes
 
 ----------------------------------------------
 
+ALTER TABLE aisdb.ais.airports
+    ADD COLUMN country string,
+    ADD COLUMN city string;
+    
+    
 -------- Adjustments for flight -------------
 
 Alter TABLE aisdb.ais.flights
