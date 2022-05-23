@@ -160,3 +160,11 @@ ALTER TABLE aisdb.ais.planes
     ADD COLUMN firstClass int;
 
 ----------------------------------------------
+
+-------- Adjustments for flight -------------
+
+Alter TABLE aisdb.ais.flights
+ADD COLUMN price int,
+    ADD COLUMN duration int;
+
+---------------------------------------------

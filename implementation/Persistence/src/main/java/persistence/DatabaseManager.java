@@ -23,6 +23,8 @@ public interface DatabaseManager {
 
     <T> PreparedStatement prepareRouteInsert(T t);
 
+    <T> PreparedStatement prepareFlightInsert(T t);
+
     List<PlaneModelData> getAllPlaneModels();
 
     String getPosition(String str);

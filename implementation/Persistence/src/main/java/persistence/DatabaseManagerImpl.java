@@ -1,9 +1,6 @@
 package persistence;
 
-import datarecords.AccountData;
-import datarecords.AirportData;
-import datarecords.PlaneData;
-import datarecords.PlaneModelData;
+import datarecords.*;
 
 import javax.sql.DataSource;
 import java.net.PasswordAuthentication;
@@ -240,6 +237,31 @@ public class DatabaseManagerImpl implements DatabaseManager {
     }
 
     @Override
+    public <T> PreparedStatement prepareFlightInsert(T t) {
+        assert t.getClass() == FlightData.class;
+        FlightData flightData = (FlightData) t;
+
+        String sql = " INSERT INTO aisdb.ais.flights (\"flight-date\", \"flight-route-id\", \"flight-plane\", price, duration) VALUES(?, ?, ?, ?, ?) ";
+
+        try {
+            con = connect();
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setDate(1, flightData.getDeparture().toLocalDate());
+            statement.setInt(2, getRouteID(flightData.getRoute()));
+            statement.setInt(3, getPlaneID(flightData.getPlane()));
+            statement.setFloat(4, flightData.getPrice());
+            statement.setInt(5, flightData.getDuration());
+
+            return statement;
+
+        }catch (Exception e){
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
         public PasswordAuthentication getAccountData(String string){
 
             String sql = "SELECT \"e-Mail\", password FROM aisdb.ais.accounts WHERE \"e-Mail\"=?";
@@ -290,25 +312,18 @@ public class DatabaseManagerImpl implements DatabaseManager {
                 int speed = rs.getInt("speed");
                 double weightCapacity = rs.getDouble("weight-capacity");
 
-
                 planeModelList.add(new PlaneModelData(manufacturer, modelnumber, seats, range, weightCapacity, speed));
 
             }
-
             rs.close();
             statement.close();
             return planeModelList;
 
-
         } catch (SQLException e) {
-
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
-
-
         }
 
         return null;
-
     }
 
 
@@ -377,8 +392,6 @@ public class DatabaseManagerImpl implements DatabaseManager {
         String ID = null;
         String sql = "SELECT \"model-ID\" FROM aisdb.ais.\"planeModels\" WHERE manufacturer= ? AND \"model-number\"= ?";
 
-
-
         try {
             con = connect();
 
@@ -401,5 +414,60 @@ public class DatabaseManagerImpl implements DatabaseManager {
         }
         return Integer.parseInt(ID);
     }
+
+    public int getRouteID(RouteData routeData){
+        String ID = null;
+        String sql = "SELECT id FROM aisdb.ais.routes WHERE origin= ? AND destination= ?";
+
+        try {
+            con = connect();
+            PreparedStatement statement = con.prepareStatement(sql);
+
+            statement.setString(1, routeData.getOrigin().getAbbreviation());
+            statement.setString(2, routeData.getDestination().getAbbreviation());
+
+            ResultSet rs = statement.executeQuery();
+
+            if (rs.next()){
+                ID = rs.getString(1);
+            }
+
+        } catch (SQLException e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        }
+        return Integer.parseInt(ID);
+    }
+
+    public int getPlaneID(PlaneData planeData){
+        String ID = null;
+        String sql = "SELECT \"plane-number\" FROM aisdb.ais.planes WHERE \"plane-model\"= ? AND economyclass= ? AND businessclass= ? AND firstclass= ?";
+
+        try {
+            con = connect();
+            PreparedStatement statement = con.prepareStatement(sql);
+
+            statement.setInt(1, getPlaneModelID(planeData.getPlaneModelData()));
+            statement.setInt(2, planeData.getEconomySeats());
+            statement.setInt(3, planeData.getBusinessSeats());
+            statement.setInt(4, planeData.getFirstClassSeats());
+
+            ResultSet rs = statement.executeQuery();
+
+            if (rs.next()){
+                ID = rs.getString(1);
+            }
+
+        } catch (SQLException e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        }
+        return Integer.parseInt(ID);
+    }
+
+
+
+
+
+
+
 }
 
