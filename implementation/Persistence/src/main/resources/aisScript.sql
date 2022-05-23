@@ -159,7 +159,20 @@ ALTER TABLE aisdb.ais.planes
     ADD COLUMN businessClass int,
     ADD COLUMN firstClass int;
 
+----------------------------------------------
+
 ALTER TABLE aisdb.ais.airports
     ADD COLUMN country string,
     ADD COLUMN city string;
-----------------------------------------------
+    
+    
+-------- Adjustments for flight -------------
+
+Alter TABLE aisdb.ais.flights
+ADD COLUMN price int,
+    ADD COLUMN duration int;
+
+Alter Table aisdb.ais.flights
+ALTER COLUMN "flight-date" TYPE timestamp;
+
+---------------------------------------------
