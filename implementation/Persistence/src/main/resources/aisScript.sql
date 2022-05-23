@@ -159,4 +159,7 @@ ALTER TABLE aisdb.ais.planes
     ADD COLUMN businessClass int,
     ADD COLUMN firstClass int;
 
+ALTER TABLE aisdb.ais.airports
+    ADD COLUMN country string,
+    ADD COLUMN city string;
 ----------------------------------------------
