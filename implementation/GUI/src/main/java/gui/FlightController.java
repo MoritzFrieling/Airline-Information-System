@@ -67,8 +67,8 @@ class FlightController implements Initializable {
         if (modelDropDownRoute.getSelectionModel().isSelected(0) && modelDropDownPlane.getSelectionModel().isSelected(0) && !departureTime.getText().isEmpty()) {
 
             //Origin and destination for the route
-            AirportData origin = new AirportData( "Berlin Flughafen", "BRLN", "Germany", new CoordinateData(40.446,-79.982));
-            AirportData destination = new AirportData( "New York Airport", "NY", "USA", new CoordinateData(30.456,-20.345));
+            AirportData origin = new AirportData( "Berlin Flughafen", "BRLN", "Germany", new CoordinateData(40.446,-79.982), "Berlin");
+            AirportData destination = new AirportData( "New York Airport", "NY", "USA", new CoordinateData(30.456,-20.345), "New York");
 
             //the route of the flight, distance is calculated with the help of the coordinates
             RouteData route = new RouteData(origin, destination,

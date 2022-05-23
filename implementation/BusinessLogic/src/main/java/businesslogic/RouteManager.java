@@ -18,6 +18,8 @@ package businesslogic;
 import datarecords.RouteData;
 import persistence.StorageService;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author daniel
@@ -32,6 +34,10 @@ public class RouteManager {
     
     public boolean add(RouteData routeData){
         return storageService.add(routeData);
+    }
+
+    public ArrayList<String> getAllRoutes(){
+        return storageService.getAllRoutes();
     }
     
     
