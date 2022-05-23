@@ -146,7 +146,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
         assert t.getClass() == PlaneData.class;
         PlaneData planeData = (PlaneData) t;
 
-        String sql = " INSERT INTO aisdb.ais.planes VALUES (?, ?) ";
+        String sql = " INSERT INTO aisdb.ais.planes (\"plane-model\", economyclass, businessclass, firstclass) VALUES (?, ?, ?, ?) ";
 
         try {
             con = connect();
