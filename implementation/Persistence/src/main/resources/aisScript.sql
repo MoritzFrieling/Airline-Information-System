@@ -167,4 +167,7 @@ Alter TABLE aisdb.ais.flights
 ADD COLUMN price int,
     ADD COLUMN duration int;
 
+Alter Table aisdb.ais.flights
+ALTER COLUMN "flight-date" TYPE timestamp;
+
 ---------------------------------------------

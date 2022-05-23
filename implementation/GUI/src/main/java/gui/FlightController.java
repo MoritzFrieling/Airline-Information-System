@@ -76,7 +76,7 @@ class FlightController implements Initializable {
             );
 
 
-            PlaneData plane = new PlaneData(new PlaneModelData("Avions de Transport Regional","42-300",50,1150,4950, 950), 30,14,6);
+            PlaneData plane = new PlaneData(new PlaneModelData("ATR","42",50,1150,4950, 491), 30,12,8);
 
             //splits the departure time into hours and minutes
             String[] splitDepartureTime = departureTime.getText().split(":");
@@ -85,15 +85,21 @@ class FlightController implements Initializable {
             LocalDateTime departureDateTime = datePickerDeparture.getValue().atTime(LocalTime.of(Integer.parseInt(splitDepartureTime[0]),Integer.parseInt(splitDepartureTime[1])));
 
             //EST. Arrival time -- Duration should be retrieved by the flight speed and distance! 
-            int duration = 120;
-            LocalDateTime arrivalDateTime = departureDateTime.plusMinutes(duration);
+            int speed = plane.getPlaneModelData().getSpeed();
+            double kilometres = route.getDistance();
+            double hours = kilometres / speed;
+            int minutes = (int) Math.round(hours * 60);
+            LocalDateTime arrivalDateTime = departureDateTime.plusMinutes(minutes);
 
             //default flight price
             int price = Integer.parseInt(defaultFlightPrice.getText());
 
+
+
+
             //returns the finished flight with:
-            //route, departure time, arrival time, plane, price
-            return new FlightData(route, departureDateTime, arrivalDateTime, plane, price);
+            //route, departure time, arrival time, plane, price, duration
+            return new FlightData(route, departureDateTime, arrivalDateTime, plane, price, minutes);
         } else {
             result.setText("Please ensure picking the first entry for plane, origin and destination!\nThe format for departure time is 'hh:mm' -> '14:30'\nPlease fill out every field.");
             return null;

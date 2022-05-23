@@ -4,10 +4,10 @@ import datarecords.*;
 
 import javax.sql.DataSource;
 import java.net.PasswordAuthentication;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.Instant;
+import java.time.OffsetTime;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,7 +63,11 @@ public class DatabaseManagerImpl implements DatabaseManager {
                 statement = preparePlaneModelInsert(t);
             }else if(t.getClass() == AccountData.class){
                 statement = prepareAccountInsert(t);
-            }else return false;
+            }else if (t.getClass() == FlightData.class){
+                statement = prepareFlightInsert(t);
+            } else {
+                return false;
+            }
             try {
                 assert statement != null;
                 statement.execute();
@@ -245,9 +249,10 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
         try {
             con = connect();
-
             PreparedStatement statement = con.prepareStatement(sql);
-            statement.setDate(1, flightData.getDeparture().toLocalDate());
+
+            Timestamp timestamp = Timestamp.valueOf(flightData.getDeparture());
+            statement.setTimestamp(1, timestamp);
             statement.setInt(2, getRouteID(flightData.getRoute()));
             statement.setInt(3, getPlaneID(flightData.getPlane()));
             statement.setFloat(4, flightData.getPrice());
