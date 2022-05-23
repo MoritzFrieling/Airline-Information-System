@@ -3,6 +3,7 @@ package persistence;
 import datarecords.*;
 
 import java.net.PasswordAuthentication;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -85,8 +86,9 @@ public class StorageServiceImpl implements StorageService{
         throw new UnsupportedOperationException("Not supported yet.");    }
 
     @Override
-    public List<RouteData> getAllRoutes() {
-        throw new UnsupportedOperationException("Not supported yet.");    }
+    public ArrayList<String> getAllRoutes() {
+        return databaseManager.getAllRoutes();
+    }
 
     @Override
     public List<PlaneModelData> getAllPlaneModels() throws Exception{
