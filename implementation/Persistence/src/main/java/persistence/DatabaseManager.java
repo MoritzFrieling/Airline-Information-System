@@ -1,5 +1,7 @@
 package persistence;
 
+import datarecords.PlaneModelData;
+
 import java.net.PasswordAuthentication;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,6 +22,8 @@ public interface DatabaseManager {
     <T> PreparedStatement preparePlaneModelInsert(T t);
 
     <T> PreparedStatement prepareRouteInsert(T t);
+
+    List<PlaneModelData> getAllPlaneModels();
 
     String getPosition(String str);
 
