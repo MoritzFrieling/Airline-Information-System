@@ -159,7 +159,36 @@ ALTER TABLE aisdb.ais.planes
     ADD COLUMN businessClass int,
     ADD COLUMN firstClass int;
 
+----------------------------------------------
+
 ALTER TABLE aisdb.ais.airports
     ADD COLUMN country string,
     ADD COLUMN city string;
-----------------------------------------------
+    
+    
+-------- Adjustments for flight -------------
+
+Alter TABLE aisdb.ais.flights
+ADD COLUMN price int,
+    ADD COLUMN duration int;
+
+Alter Table aisdb.ais.flights
+ALTER COLUMN "flight-date" TYPE timestamp;
+
+---------------------------------------------
+
+
+--------------Change reference btw. route and airport ---------------
+
+ALTER TABLE aisdb.ais.routes DROP CONSTRAINT "fk_routes-airports-origin";
+ALTER TABLE aisdb.ais.routes DROP CONSTRAINT "fk_routes-airports-destination";
+
+ALTER TABLE aisdb.ais.routes ADD CONSTRAINT "fk_routes-airports-origin" FOREIGN KEY (origin) REFERENCES airports("abbreviation");
+ALTER TABLE aisdb.ais.routes ADD CONSTRAINT "fk_routes-airports-destination" FOREIGN KEY (destination) REFERENCES  airports("abbreviation");
+
+---------------------------------------------------------------------
+create unique index "airports_airport-name_uindex"
+    on ais.airports ("airport-name");
+---------------------------------------------------------------------
+
+---------------------------------------------------------------------

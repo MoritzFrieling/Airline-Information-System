@@ -4,7 +4,6 @@ import businesslogic.AirportManager;
 import businesslogic.Coordinate;
 import businesslogic.RouteManager;
 import datarecords.AirportData;
-import datarecords.CoordinateData;
 import datarecords.RouteData;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +11,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.function.Supplier;
 
@@ -75,45 +75,41 @@ class RouteController implements Initializable {
 
     }
 
-
-    private RouteData createRoute() {
-        if (modelDropDownOrigin.getSelectionModel().isSelected(1) && modelDropDownDestination.getSelectionModel().isSelected(1)) {
-            AirportData origin = new AirportData( "Berlin Flughafen", "BRLN", "Germany", new CoordinateData(40.446,-79.982), "Berlin");
-            AirportData destination = new AirportData( "New York Airport", "NY", "USA", new CoordinateData(30.456,-20.345), "New York");
-            return new RouteData(origin, destination,
-                    new Coordinate( origin.getCoordinateData() ).rangeTo( new Coordinate( destination.getCoordinateData() ) )
-            );
-        } else {
-            return null;
-        }
-    }
-
     @FXML
     private void updateDestination(){
 
+        ArrayList<String> itms = airportManager.getAllAirports();
+
+
+        if (modelDropDownDestination.getItems().size() == airportManager.getAllAirports().size()) {
             modelDropDownDestination.getItems().remove(modelDropDownOrigin.getSelectionModel().getSelectedItem());
+        }else if (modelDropDownDestination.getItems().size() != itms.size()){
+            String str = modelDropDownDestination.getSelectionModel().getSelectedItem();
+            String rmv = modelDropDownOrigin.getSelectionModel().getSelectedItem();
+            modelDropDownDestination.getSelectionModel().clearSelection();
+            modelDropDownDestination.getItems().clear();
 
-            if (modelDropDownDestination.getItems().size() < 3){
-
-                modelDropDownDestination.getItems().clear();
-
-                modelDropDownDestination.getItems().addAll(airportManager.getAllAirports());
-
-
-            }
+            modelDropDownDestination.getItems().addAll(airportManager.getAllAirports());
+            modelDropDownDestination.getItems().remove(rmv);
+            modelDropDownOrigin.getSelectionModel().select(str);
+        }
 
     }
 
     @FXML
     private void updateOrigin(){
 
-        modelDropDownOrigin.getItems().remove(modelDropDownDestination.getSelectionModel().getSelectedItem());
-
-        if (modelDropDownOrigin.getItems().size() < 3){
-
+        if (modelDropDownOrigin.getItems().size() == airportManager.getAllAirports().size()){
+            modelDropDownOrigin.getItems().remove(modelDropDownDestination.getSelectionModel().getSelectedItem());
+        }else if (modelDropDownOrigin.getItems().size() != airportManager.getAllAirports().size()){
+            String str = modelDropDownOrigin.getSelectionModel().getSelectedItem();
+            String rmv = modelDropDownDestination.getSelectionModel().getSelectedItem();
+            modelDropDownOrigin.getSelectionModel().clearSelection();
             modelDropDownOrigin.getItems().clear();
 
             modelDropDownOrigin.getItems().addAll(airportManager.getAllAirports());
+            modelDropDownOrigin.getItems().remove(rmv);
+            modelDropDownDestination.getSelectionModel().select(str);
         }
     }
 

@@ -19,7 +19,6 @@ import datarecords.RouteData;
 import persistence.StorageService;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -38,7 +37,7 @@ public class RouteManager {
     }
 
     public ArrayList<String> getAllRoutes(){
-        return (ArrayList) storageService.getAllRoutes();
+        return (ArrayList<String>) storageService.getAllRoutes();
 
     }
     
