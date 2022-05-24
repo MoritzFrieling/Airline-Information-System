@@ -60,7 +60,10 @@ public class DatabaseManagerImpl implements DatabaseManager {
                 statement = prepareAccountInsert(t);
             }else if (t.getClass() == FlightData.class){
                 statement = prepareFlightInsert(t);
-            } else {
+            } else if(t.getClass() == RouteData.class){
+                statement = prepareRouteInsert(t);
+            }else {
+
                 return false;
             }
             try {
@@ -233,18 +236,21 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
     @Override
     public <T> PreparedStatement prepareRouteInsert(T t) {
-        String sql = "INSERT INTO aisdb.ais.routes VALUES(?, ?)";
 
-        RouteData data;
-        data = (RouteData) t;
+        assert t.getClass() == RouteData.class;
+        String sql = "INSERT INTO aisdb.ais.routes VALUES(?,?,?)";
+        RouteData data = (RouteData) t;
 
         try {
 
             con = connect();
 
             PreparedStatement statement = con.prepareStatement(sql);
-            statement.setString(1, data.getOrigin().getAbbreviation());
-            statement.setString(2, data.getDestination().getAbbreviation());
+            statement.setInt(1, (int)(Math.random()*100));
+            statement.setString(2, data.getOrigin().getAbbreviation());
+            statement.setString(3, data.getDestination().getAbbreviation());
+            System.out.println(statement);
+            return statement;
         }catch (SQLException e){
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }

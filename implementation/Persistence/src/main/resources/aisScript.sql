@@ -176,3 +176,19 @@ Alter Table aisdb.ais.flights
 ALTER COLUMN "flight-date" TYPE timestamp;
 
 ---------------------------------------------
+
+
+--------------Change reference btw. route and airport ---------------
+
+ALTER TABLE aisdb.ais.routes DROP CONSTRAINT "fk_routes-airports-origin";
+ALTER TABLE aisdb.ais.routes DROP CONSTRAINT "fk_routes-airports-destination";
+
+ALTER TABLE aisdb.ais.routes ADD CONSTRAINT "fk_routes-airports-origin" FOREIGN KEY (origin) REFERENCES airports("abbreviation");
+ALTER TABLE aisdb.ais.routes ADD CONSTRAINT "fk_routes-airports-destination" FOREIGN KEY (destination) REFERENCES  airports("abbreviation");
+
+---------------------------------------------------------------------
+create unique index "airports_airport-name_uindex"
+    on ais.airports ("airport-name");
+---------------------------------------------------------------------
+
+---------------------------------------------------------------------
