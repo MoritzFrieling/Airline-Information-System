@@ -28,9 +28,9 @@ import java.util.function.Supplier;
 class RouteController implements Initializable {
 
     @FXML
-    private ComboBox modelDropDownOrigin;
+    private ComboBox<String> modelDropDownOrigin;
     @FXML
-    private ComboBox modelDropDownDestination;
+    private ComboBox<String> modelDropDownDestination;
     @FXML
     private Label result;
     @FXML
@@ -57,9 +57,19 @@ class RouteController implements Initializable {
     @FXML
     private void storeRoute() {
 
-        RouteData routeData = createRoute();
+        String OrStr = modelDropDownOrigin.getSelectionModel().getSelectedItem();
+        String[] origin = OrStr.split(",");
+
+        String DeStr = modelDropDownDestination.getSelectionModel().getSelectedItem();
+        String[] destination = DeStr.split(",");
+
+        AirportData oData = airportManager.getAirport(origin[0]);
+
+        AirportData dData = airportManager.getAirport(destination[0]);
+
+        RouteData data = new RouteData(oData,dData,new Coordinate(oData.getCoordinateData()).rangeTo(new Coordinate(dData.getCoordinateData())));
         
-        boolean addedRoute = routeManager.add(routeData);
+        boolean addedRoute = routeManager.add(data);
 
         result.setText("Adding route worked: " + addedRoute);
 
@@ -78,18 +88,46 @@ class RouteController implements Initializable {
         }
     }
 
+    @FXML
+    private void updateDestination(){
+
+            modelDropDownDestination.getItems().remove(modelDropDownOrigin.getSelectionModel().getSelectedItem());
+
+            if (modelDropDownDestination.getItems().size() < 3){
+
+                modelDropDownDestination.getItems().clear();
+
+                modelDropDownDestination.getItems().addAll(airportManager.getAllAirports());
+
+
+            }
+
+    }
+
+    @FXML
+    private void updateOrigin(){
+
+        modelDropDownOrigin.getItems().remove(modelDropDownDestination.getSelectionModel().getSelectedItem());
+
+        if (modelDropDownOrigin.getItems().size() < 3){
+
+            modelDropDownOrigin.getItems().clear();
+
+            modelDropDownOrigin.getItems().addAll(airportManager.getAllAirports());
+        }
+    }
+
     /**
      * Initializes the controller class.
      *
-     * @param url
-     * @param rb
+     * @param url url
+     * @param rb resource bundle
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        modelDropDownOrigin.getItems().addAll();
-        modelDropDownDestination.getItems().addAll("-- select destination --","New York");
-        modelDropDownOrigin.getSelectionModel().select("-- select origin --");
-        modelDropDownDestination.getSelectionModel().select("-- select destination --");
+        modelDropDownOrigin.getItems().addAll(airportManager.getAllAirports());
+        modelDropDownDestination.getItems().addAll(airportManager.getAllAirports());
+
 
     }
 

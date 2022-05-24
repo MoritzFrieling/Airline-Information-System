@@ -77,8 +77,13 @@ public class StorageServiceImpl implements StorageService{
     }
 
     @Override
-    public List<AirportData> getAllAirports() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public ArrayList<String> getAllAirports() {
+        return databaseManager.getAirports();
+    }
+
+    @Override
+    public AirportData getAirport(String str) {
+        return databaseManager.getAirport(str);
     }
 
     @Override

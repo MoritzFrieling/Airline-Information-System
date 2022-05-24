@@ -506,7 +506,6 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
         ArrayList<String> list = new ArrayList<>();
         int i = 0;
-        int j = 0;
         try {
 
             con = connect();
@@ -516,16 +515,16 @@ public class DatabaseManagerImpl implements DatabaseManager {
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()){
-                String stringHelper= rs.getString(i+1) + ", " + rs.getString(i+2);
-                list.add(j,stringHelper);
-                j++;
-                i+=2;
+
+                String stringHelper= rs.getString("airport-name") + ", " + rs.getString("city");
+                list.add(i,stringHelper);
+                i++;
 
             }
 
 
         }catch (SQLException e){
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.err.println(e.getClass().getName() + ": " + e.getMessage() + " : in DatabaseManager.getAirports");
         }
 
         if (list.isEmpty()){
@@ -536,10 +535,31 @@ public class DatabaseManagerImpl implements DatabaseManager {
     }
 
     @Override
+    public AirportData getAirport(String str) {
+        String sql = "SELECT * FROM aisdb.ais.airports WHERE \"airport-name\"=?";
+
+        try {
+            con = connect();
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1,str);
+
+            ResultSet rs = statement.executeQuery();
+
+            if(rs.next()){
+                return new AirportData(rs.getString("airport-name"),rs.getString("abbreviation"),rs.getString("country"),new CoordinateData(rs.getDouble("latitude"), rs.getDouble("longitude") ),rs.getString("city"));
+            }
+        }catch (SQLException e){
+            System.err.println(e.getClass().getName() + ": " + e.getMessage() + " : in DatabaseManager.getAirport");
+        }
+
+        return null;
+    }
+
+    @Override
     public ArrayList<String> getAllRoutes() {
 
-        String sql = "SELECT origin FROM aisdb.ais.routes AND SELECT city from aisdb.ais.airports where abbreviation = origin ";
-        String sql2 = "SELECT destination FROM aisdb.ais.routes AND SELECT city from aisdb.ais.airports where abbreviation = destination";
+        String sql = "";
 
         ArrayList<String> list = new ArrayList<>();
         int i = 0;
@@ -549,14 +569,11 @@ public class DatabaseManagerImpl implements DatabaseManager {
             con = connect();
 
             PreparedStatement statement = con.prepareStatement(sql);
-            PreparedStatement statement2 = con.prepareStatement(sql2);
 
             ResultSet rs = statement.executeQuery();
-            ResultSet rs2 = statement2.executeQuery();
 
             while (rs.next()){
-                String stringHelper= rs.getString(i+1) + ", " + rs.getString(i+2)
-                        + " -> " +   rs2.getString(i+1) + ", " + rs2.getString(i+2);
+                String stringHelper= rs.getString(i+1) + ", " + rs.getString(i+2);
                 list.add(j,stringHelper);
                 i+=2;
                 j++;

@@ -1,8 +1,12 @@
 package persistence;
 
-import datarecords.*;
+import datarecords.AirportData;
+import datarecords.FlightData;
+import datarecords.PlaneData;
+import datarecords.PlaneModelData;
 
 import java.net.PasswordAuthentication;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface StorageService {
@@ -14,7 +18,8 @@ public interface StorageService {
     String getSalt(String str) throws Exception;
 
     List<FlightData> getAllFlights();
-    List<AirportData> getAllAirports();
+    AirportData getAirport(String str);
+    ArrayList<String> getAllAirports();
     List<PlaneData> getAllPlanes();
     List<String> getAllRoutes();
     List<PlaneModelData> getAllPlaneModels() throws Exception;

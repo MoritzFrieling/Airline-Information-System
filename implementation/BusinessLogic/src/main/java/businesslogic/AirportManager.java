@@ -3,6 +3,8 @@ package businesslogic;
 import datarecords.AirportData;
 import persistence.StorageService;
 
+import java.util.ArrayList;
+
 /**
  * Manages customers in the business logic.
  * Linking pin between GUI and persistence. Connected to customerStorageService 
@@ -21,5 +23,16 @@ public class AirportManager {
     public boolean add( AirportData airportData ) throws Exception {
         return storageService.add(airportData);
     }
-    
+
+    public ArrayList<String> getAllAirports(){
+        return storageService.getAllAirports();
+    }
+
+    /**
+     * Takes an airport-name as parameter and returns the db entry for its airport data
+     * @return airport-data of airport-name
+     */
+    public AirportData getAirport(String str){
+        return storageService.getAirport(str);
+    }
 }
