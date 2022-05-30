@@ -1,13 +1,7 @@
 # Design
 
-This directory is for all the design artefacts.  
 
-Make sure to also write documentation here.
+## Table of content
 
-## Examples of diagrams
-
-### PlantUML
-![images/class-diagram-puml.svg](images/class-diagram-puml.svg)
-
-### Diagrams.net
-![images/class-diagram.drawio.svg](images/class-diagram.drawio.svg)
+- [1 Class Diagram](/design/Class%20Diagram)
+- [1.1 Class Diagram Image](/design/Class%20Diagram/Class%20Diagram.png)
