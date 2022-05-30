@@ -4,7 +4,7 @@
 ## Table of content
 
 - [1 Analysis](/analysis)
-  - [1.1 Activity Diagram](/analysis/ActivityDiagram)
+  - [1.1 Activity Diagram](/analysis/Activity%20Diagram)
   - [1.1.1 Activity Diagram File](/analysis/Activity%20Diagram/Activity%20diagram.svg)
   - [1.2 Domain Model](/analysis/Domain%20Model)
   - [1.2.1 Domain Model File](/analysis/Domain%20Model/Domain%20model.svg)
