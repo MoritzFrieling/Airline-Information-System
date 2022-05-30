@@ -1,7 +1,7 @@
 # PRJ2 - Airline Information System
 
 
-## Table of content
+## Table Of Content
 
 - [1 Analysis](/analysis)
   - [1.1 Activity Diagram](/analysis/Activity%20Diagram)
