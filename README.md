@@ -9,7 +9,7 @@
   - [1.2 Domain Model](/analysis/Domain%20Model)
   - [1.2.1 Domain Model File](/analysis/Domain%20Model/Domain%20model.svg)
   - [1.3 Entity Relationship Model](/analysis/Entity%20Relationship%20Model)
-  - [1.3.1 Entity Relationship Model](/analysis/Entity%20Relationship%20Model/ER-Model.svg)
+  - [1.3.1 Entity Relationship Model File](/analysis/Entity%20Relationship%20Model/ER-Model.svg)
   - [1.4 Use Case Diagram](/analysis/Use%20Case%20Diagram)
   - [1.4.1 Use Case Diagram File](/analysis/Use%20Case%20Diagram/Use%20Case%20Diagram.svg)
   - [1.5 Data Dictionary](/analysis/Data%20Dictionary.md)
