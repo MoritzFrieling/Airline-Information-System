@@ -1,7 +1,7 @@
 # PRJ2 - Airline Information System
 
 
-## Table Of Content
+## Table Of Contents
 
 - [1 Analysis](/analysis)
   - [1.1 Activity Diagram](/analysis/Activity%20Diagram)
@@ -27,4 +27,4 @@
   - [3.4 Persistence](/implementation/Persistence)
   - [3.5 Business Logic Layer](/implementation/businessLogicLayer)
   - [3.6 Pom File](/implementation/airlineinformationsystem/pom.xml)
-- [4 Table Of Content](/README.md)
+- [4 Table Of Contents](/README.md)
