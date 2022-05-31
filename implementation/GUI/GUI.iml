@@ -21,11 +21,6 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:13" level="project" />
     <orderEntry type="module" module-name="BusinessLogic" />
     <orderEntry type="module" module-name="Persistence" />
-    <orderEntry type="library" name="Maven: nl.fontys.sebivenlo:AirlineProject:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: nl.fontys.sebivenlo:sebidao:0.9.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-booter:2.22.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-api:2.22.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-logger-api:2.22.1" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.2.20" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.checkerframework:checker-qual:3.5.0" level="project" />
     <orderEntry type="module" module-name="DataRecords" />
