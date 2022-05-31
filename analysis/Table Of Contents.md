@@ -1,7 +1,7 @@
 # Analysis
 
 
-## Table of content
+## Table of contents
 
 - [1 Activity Diagram](/analysis/Activity%20Diagram)
 - [1.1 Activity Diagram Image](/analysis/Activity%20Diagram/Activity%20diagram.svg)
