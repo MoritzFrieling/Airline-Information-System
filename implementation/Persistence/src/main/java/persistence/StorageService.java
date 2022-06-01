@@ -16,6 +16,7 @@ public interface StorageService {
     PasswordAuthentication getAccountData(PasswordAuthentication passwordAuthentication) throws Exception;
     String getPosition(String str);
     String getSalt(String str) throws Exception;
+    String checkZone(double d);
 
     List<FlightData> getAllFlights();
     AirportData getAirport(String str);

@@ -39,5 +39,7 @@ public interface DatabaseManager {
 
     AirportData getAirport(String str);
 
+    String checkZone(double d);
+
     ArrayList<String> getAllRoutes();
 }

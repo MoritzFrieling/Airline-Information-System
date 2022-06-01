@@ -3,6 +3,7 @@ package gui;
 import businesslogic.AirportManager;
 import businesslogic.CoordinateManager;
 import datarecords.AirportData;
+import datarecords.CoordinateData;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -61,12 +62,15 @@ class AirportController implements Initializable {
     @FXML
     private void storeAirport() throws Exception {
 
+        CoordinateData c = coordinateManager.add(coordinate.getText());
+
         AirportData airportData = new AirportData(
                 airportName.getText(),
                 abbreviationName.getText(),
                 countryName.getText(),
-                coordinateManager.add(coordinate.getText()),
-                cityName.getText());
+                c,
+                cityName.getText(),
+                airportManager.checkTimezone(c.getLongitude()));
 
         boolean addedAirport = airportManager.add(airportData);
      

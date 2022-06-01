@@ -1,6 +1,5 @@
 package gui;
 
-import businesslogic.Plane;
 import businesslogic.PlaneManager;
 import datarecords.PlaneData;
 import datarecords.PlaneModelData;
@@ -70,7 +69,11 @@ class AddPlaneController implements Initializable {
 
         PlaneData planeData = new PlaneData(setModel(), Integer.parseInt(economySeats.getText()), Integer.parseInt(businessSeats.getText()), Integer.parseInt(firstClassSeats.getText()));
 
-        PlaneData addedPlane = planeManager.add(planeData);
+        if(planeManager.add(planeData)){
+            result.setText("Plane successfully stored!");
+        }else {
+            result.setText("Couldn't store Plane!");
+        };
 
 //        result.setText("Plane added: " + addedPlane.toString() );
 

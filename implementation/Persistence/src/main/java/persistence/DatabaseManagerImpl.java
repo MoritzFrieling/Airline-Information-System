@@ -108,7 +108,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
         assert t.getClass() == AirportData.class;
         AirportData airportData = (AirportData) t;
 
-        String sql = " INSERT INTO aisdb.ais.airports VALUES (?, ?, ?, ?, ?, ?) ";
+        String sql = " INSERT INTO aisdb.ais.airports VALUES (?, ?, ?, ?, ?, ?, ?) ";
 
         try {
             con = connect();
@@ -120,6 +120,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
             statement.setString(4, airportData.getAirportName());
             statement.setString(5, airportData.getCountryName());
             statement.setString(6, airportData.getCityName());
+            statement.setString(7, airportData.getZone());
 
             return statement;
 
@@ -553,13 +554,43 @@ public class DatabaseManagerImpl implements DatabaseManager {
             ResultSet rs = statement.executeQuery();
 
             if(rs.next()){
-                return new AirportData(rs.getString("airport-name"),rs.getString("abbreviation"),rs.getString("country"),new CoordinateData(rs.getDouble("latitude"), rs.getDouble("longitude") ),rs.getString("city"));
+                return new AirportData(rs.getString("airport-name"),rs.getString("abbreviation"),rs.getString("country"),new CoordinateData(rs.getDouble("latitude"), rs.getDouble("longitude") ),rs.getString("city"), rs.getString("timezone"));
             }
         }catch (SQLException e){
             System.err.println(e.getClass().getName() + ": " + e.getMessage() + " : in DatabaseManager.getAirport");
         }
 
         return null;
+    }
+
+    @Override
+    public String checkZone(double d) {
+
+        String sql = "SELECT abbreviation FROM aisdb.ais.timezones WHERE \"startLong\"<=? AND \"endLong\">=? ";
+
+        String Zone = null;
+
+        try {
+            con = connect();
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setDouble(1, d);
+            statement.setDouble(2, d);
+
+            ResultSet rs = statement.executeQuery();
+
+            if (rs.next()){
+                Zone = rs.getString(1);
+            }
+
+
+        } catch (SQLException e) {
+
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+
+        }
+
+        return Zone;
     }
 
     @Override
