@@ -72,7 +72,7 @@
 | Description: | The Sales Manager registers new airport. |
 | Pre-condition: | The Sales Manager has logged in. |
 | Scenario: | 1. The Actor wants to register new airport. |
-| | 2. The system asks the actor to provide information (airport name, abbreviation, city, and country). |
+| | 2. The system asks the actor to provide information (airport name, abbreviation, city, country and the latitude and longitude as coordinates). |
 | | 3. The actor enters all the requested information. |
 | | 4. The system adds new airport. |
 | | 5. The system inform the actor that new airport has been added. |
@@ -114,7 +114,7 @@
 | Pre-condition: | Sales Manager is already logged in. |
 | Scenario:  | 1. The System displays the main sales manager dashboard. |
 || 2. The Actor selects the option to register a plane model. |
-|| 3. The System asks the actor for information about the model (manufacturer, max. seats, max. range, weight capactiy, speed). |
+|| 3. The System asks the actor for information about the model (manufacturer, model number, max. seats, max. range, weight capactiy, speed). |
 || 4. The Actor writes down and selects the information. |
 || 5. The System tells the actor that the registration has been successfull. |
 | Results: | A plane model has been added to the system. |
