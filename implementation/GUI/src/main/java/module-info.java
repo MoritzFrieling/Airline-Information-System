@@ -5,6 +5,7 @@ module gui_module {
     requires java.base;
     requires businesslogic_module;
     requires java.desktop;
+    requires com.esri.arcgisruntime;
 
     opens gui to javafx.fxml;
     

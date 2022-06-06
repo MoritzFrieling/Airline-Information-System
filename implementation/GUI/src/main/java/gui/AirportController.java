@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Popup;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -50,7 +49,6 @@ class AirportController implements Initializable {
     private final Supplier<SceneManager> sceneManagerSupplier;
     private final AirportManager airportManager;
     private final CoordinateManager coordinateManager;
-    Popup popup = new Popup();
 
 
     public AirportController(Supplier<SceneManager> sceneManagerSupplier, AirportManager airportManager, CoordinateManager coordinateManager) {
@@ -68,19 +66,41 @@ class AirportController implements Initializable {
     @FXML
     private void storeAirport() throws Exception {
 
-        CoordinateData c = coordinateManager.add(coordinate.getText());
+        boolean valid = true;
+        String a = airportName.getText();
+        String b = abbreviationName.getText();
+        String c = coordinate.getText();
+        String d = countryName.getText();
+        String e = cityName.getText();
 
-        AirportData airportData = new AirportData(
-                airportName.getText(),
-                abbreviationName.getText(),
-                countryName.getText(),
-                c,
-                cityName.getText(),
-                airportManager.checkTimezone(c.getLongitude()));
+        if (a.isEmpty() || b.isEmpty() || c.isEmpty() || d.isEmpty() || e.isEmpty()){
+            result.setText("Please check input!");
+            valid = false;
+        }
 
-        boolean addedAirport = airportManager.add(airportData);
-     
-        result.setText("Adding the airport worked:  \n \n" + addedAirport );
+        if (valid) {
+            CoordinateData cdata = coordinateManager.add(c);
+            String f = airportManager.checkTimezone(cdata.getLongitude());
+            AirportData airportData = new AirportData(a, b, d, cdata, e, f);
+
+            if (!coordinateManager.check(cdata)) {
+                result.setText("Coordinate out of possible range!");
+                valid = false;
+            }
+
+            if (airportManager.checkNull(airportData)) {
+                result.setText("Please check the input!");
+                valid = false;
+            }
+
+            if (valid) {
+                boolean addedAirport = airportManager.add(airportData);
+
+                if (addedAirport) {
+                    result.setText("Airport successfully added to DB!");
+                } else result.setText("Couldn't add Airport, please Check the data!");
+            }
+        }
     }
 
     @FXML

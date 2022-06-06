@@ -36,7 +36,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -44,6 +43,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
+<?import com.esri.arcgisruntime.mapping.view.MapView?>
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MapViewController">
   <children>
     <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
@@ -62,10 +62,12 @@
         </AnchorPane>
         <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
           <content>
-            <AnchorPane id="Content" fx:id="anchorPane" minHeight="-1.0" minWidth="-1.0" prefHeight="572.0" prefWidth="658.0">
-                     <children>
-                        <ImageView fx:id="mapField" fitHeight="552.0" fitWidth="638.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
+            <AnchorPane id="Content" fx:id="anchorPane" minHeight="-1.0" minWidth="-1.0" prefHeight="572.0" prefWidth="600.0">
+              <children>
+                <MapView fx:id="mapView">
+
+                </MapView>
+              </children>
             </AnchorPane>
           </content>
         </ScrollPane>

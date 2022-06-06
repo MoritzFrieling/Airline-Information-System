@@ -48,4 +48,12 @@ public class AirportManager {
     public AirportData getAirport(String str){
         return storageService.getAirport(str);
     }
+
+    /**
+     * Checks if the airport data contains a null value except for the coordinate data
+     * @return true if contains a null value
+     */
+    public boolean checkNull(AirportData data){
+        return data.getAbbreviation().isEmpty() || data.getAirportName().isEmpty() || data.getCityName().isEmpty() || data.getCountryName().isEmpty();
+    }
 }

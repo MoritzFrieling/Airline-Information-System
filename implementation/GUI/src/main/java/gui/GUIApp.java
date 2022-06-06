@@ -112,6 +112,7 @@ public class GUIApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
         stage.setTitle("Airline Information System");
         sceneManager.displayOn(stage, 640, 480);
         

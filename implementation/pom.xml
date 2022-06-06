@@ -19,10 +19,6 @@
 
   <artifactId>airlineinformationsystem</artifactId>
 
-  <dependencies>
-
-  </dependencies>
-
   <version>1.0-SNAPSHOT</version>
 
   <packaging>pom</packaging>
@@ -42,10 +38,16 @@
   <properties>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <arcgis.version>100.14.0</arcgis.version>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <maven.compiler.release>11</maven.compiler.release>
 
     <java.release>11</java.release>
+
+    <url>http://maven.apache.org</url>
 
   </properties>
 

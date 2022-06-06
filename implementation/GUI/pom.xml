@@ -6,6 +6,13 @@
     <groupId>nl.fontys.ais</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
+    <repositories>
+        <repository>
+            <id>arcgis</id>
+            <url>https://esri.jfrog.io/artifactory/arcgis</url>
+        </repository>
+    </repositories>
+
     <groupId>nl.fontys.ais</groupId>
     <artifactId>GUI</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -37,12 +44,13 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.sothawo/mapjfx -->
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-dependency-plugin -->
         <dependency>
-            <groupId>com.sothawo</groupId>
-            <artifactId>mapjfx</artifactId>
-            <version>3.1.0</version>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>3.3.0</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-web -->
         <dependency>
@@ -50,14 +58,6 @@
             <artifactId>javafx-web</artifactId>
             <version>17.0.0.1</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.31</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.testfx</groupId>
@@ -70,6 +70,30 @@
             <artifactId>testfx-core</artifactId>
             <version>4.0.15-alpha</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>11</version>
+        </dependency>
+        <!--ArcGIS dependencies -->
+        <dependency>
+            <groupId>com.esri.arcgisruntime</groupId>
+            <artifactId>arcgis-java</artifactId>
+            <version>100.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.esri.arcgisruntime</groupId>
+            <artifactId>arcgis-java-jnilibs</artifactId>
+            <version>100.14.0</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.esri.arcgisruntime</groupId>
+            <artifactId>arcgis-java-resources</artifactId>
+            <version>100.14.0</version>
+            <type>zip</type>
         </dependency>
     </dependencies>
     <build>
@@ -144,6 +168,61 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <artifactItems>
+                        <artifactItem>
+                            <groupId>com.esri.arcgisruntime</groupId>
+                            <artifactId>arcgis-java-jnilibs</artifactId>
+                            <version>100.14.0</version>
+                            <type>zip</type>
+                            <overWrite>false</overWrite>
+                            <outputDirectory>janni/.arcgis/100.14.0</outputDirectory>
+                        </artifactItem>
+                        <artifactItem>
+                            <groupId>com.esri.arcgisruntime</groupId>
+                            <artifactId>arcgis-java-resources</artifactId>
+                            <version>100.14.0</version>
+                            <type>zip</type>
+                            <overWrite>false</overWrite>
+                            <outputDirectory>janni/.arcgis/100.14.0</outputDirectory>
+                        </artifactItem>
+                    </artifactItems>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.example.app.App</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.takari</groupId>
+                <artifactId>maven</artifactId>
+                <version>0.7.4</version>
             </plugin>
         </plugins>
     </build>
