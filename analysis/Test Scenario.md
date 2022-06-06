@@ -130,15 +130,22 @@
 | Name: | Actor registers airport, works |
 |----|----|
 | Scenario: |1. Actor chooses register new airport. |
-|  | 2. System asks the Actor to provide information for airport name, abbreviation, city, and country . |
-|  | 3. Actor enters "abcde" for airport name, "ABC" for abbreviation, "Venlo" for city and "Netherlands" for Country. |
+|  | 2. System asks the Actor to provide information for airport name, abbreviation, city, country and coordinate. |
+|  | 3. Actor enters "Shiphol" for airport name, "SHP" for abbreviation, "Amsterdam" for city, "Netherlands" for Country and "52.308056,4.764167" for the Coordinates. |
+| Results: | System informs that airport has been registered. |
+
+| Name: | Actor registers airport, works |
+|----|----|
+| Scenario: |1. Actor chooses register new airport. |
+|  | 2. System asks the Actor to provide information for airport name, abbreviation, city, country and coordinate. |
+|  | 3. Actor enters "Franz Josef Strauss" for airport name, "MUC" for abbreviation, "Munich" for city, "Germany" for Country and "48°21′14″N 011°47′10″E" for the Coordinates. 
 | Results: | System informs that airport has been registered. |
 
 | Name: | Actor registers existed airport |
 |----|----|
 | Scenario: |1. Actor chooses register new airport |
 |  | 2. System asks the Actor to provide information for airport name, abbreviation, city, and country . |
-|  | 3. Actor enters "abcde" for airport name, "ABC" for abbreviation, "Venlo" for city and "Netherlands" for country. |
+|  | 3. Actor enters "Shiphol" for airport name, "SHP" for abbreviation, "Amsterdam" for city and "Netherlands" for country. |
 | Results: | System informs that the airport already exists. |
 
 
