@@ -140,7 +140,9 @@
                </children>
             </VBox>
             <Button layoutX="551.0" layoutY="122.0" mnemonicParsing="false" text="Add Ticket" />
-            <Button layoutX="544.0" layoutY="167.0" mnemonicParsing="false" text="Save Booking" />
+            <Button layoutX="536.0" layoutY="159.0" mnemonicParsing="false" text="Save Booking" />
+            <Button layoutX="15.0" layoutY="46.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="54.0" text="search" />
+            <Button layoutX="544.0" layoutY="202.0" mnemonicParsing="false" text="back" />
          </children>
     </AnchorPane>
   </children>

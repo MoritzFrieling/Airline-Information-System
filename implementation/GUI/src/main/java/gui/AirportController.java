@@ -1,5 +1,6 @@
 package gui;
 
+
 import businesslogic.AirportManager;
 import businesslogic.CoordinateManager;
 import datarecords.AirportData;
@@ -9,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Popup;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,12 +42,16 @@ class AirportController implements Initializable {
     @FXML
     private Button toSecondaryButton;
     @FXML
+    private Button checkAirports;
+    @FXML
     private Label result;
 
 
     private final Supplier<SceneManager> sceneManagerSupplier;
     private final AirportManager airportManager;
     private final CoordinateManager coordinateManager;
+    Popup popup = new Popup();
+
 
     public AirportController(Supplier<SceneManager> sceneManagerSupplier, AirportManager airportManager, CoordinateManager coordinateManager) {
         this.sceneManagerSupplier = sceneManagerSupplier;
@@ -75,6 +81,11 @@ class AirportController implements Initializable {
         boolean addedAirport = airportManager.add(airportData);
      
         result.setText("Adding the airport worked:  \n \n" + addedAirport );
+    }
+
+    @FXML
+    private void checkAirports(){
+        sceneManagerSupplier.get().changeScene("mapView");
     }
 
     /**

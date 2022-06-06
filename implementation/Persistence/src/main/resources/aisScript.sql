@@ -241,4 +241,7 @@ ALTER TABLE aisdb.ais.airports
 ALTER TABLE aisdb.ais.airports
     ADD CONSTRAINT fk_airports_timezones FOREIGN KEY (timezone) REFERENCES aisdb.ais.timezones (abbreviation);
 ---------------------------------------------------------------------
+drop table ais.test;
+
+--------------------------------------------------
 
