@@ -93,7 +93,7 @@
 | Scenario: | 1. The Actor indicates he wants to create a new account for a staff member. |
 | | 2. The System asks the actor what kind of account he wants to create. |
 | | 3. The Actor indicates that they want to register a new Sales Officer. |
-| | 4. The System offers an opportunity to enter personal information (name, password, company mail address). |
+| | 4. The System offers an opportunity to enter personal information (name, password,  confirmed password, company mail address, chose one of the three positions). |
 | | 5. The Actor enters personal information. |
 | | 6. If the Account doesn't exist yet and the password is sufficient, the system inputs the personal information of the account into the database. |
 | Results: | The Staff Member has been successfully registered. |
