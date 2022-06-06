@@ -205,6 +205,7 @@
 || 3. The System asks the actor for information about the model (manufacturer, max. seats, max. range, weight capactiy, speed). |
 || 4. The Actor does not write down anything. |
 || 5. The System tells the actor that the registration has not been successfull since all fields need to be filled out. |
+| Results: | Creation of the plane model unsuccessfull. |
 
 | Name: | Actor choses to create a plan model (sucessfull) |
 |----|----|
@@ -213,6 +214,8 @@
 || 3. The System asks the actor for information about the model (manufacturer, max. seats, max. range, weight capactiy, speed). |
 || 4. The Actor writes down "MAN" as manufacturer, "100" as max seats, "3000km" as max range, "10 kg" as max weight of luggage and "500km/h" as speed. |
 || 5. The System tells the actor that the registration has been successfull. |
+| Results: | Plane model is now in  the system. |
+
 
 | Name: | Actor choses to create a plane model which already exists |
 |----|----|
@@ -221,6 +224,8 @@
 || 3. The System asks the actor for information about the model (manufacturer, max. seats, max. range, weight capactiy, speed). |
 || 4. The Actor writes down and selects the information. |
 || 5. The System tells the actor that the plane model already exists (same data exists for the specific manufacturer). |
+| Results: | Creation of the plane model unsuccessfull. |
+
 
 
 ## Register plane
