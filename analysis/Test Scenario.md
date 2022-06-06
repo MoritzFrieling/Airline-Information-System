@@ -173,8 +173,8 @@
 | Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
 |  | 2. The System asks the actor what kind of account he wants to create. |
 |  | 3. The Actor indicates that they want to register a new Sales Officer/Sales employee. |
-|  | 4. The System offers an opportunity to enter personal information (name, password, company mail address). |
-|  | 5. The Actor enters John Doe for name, 123Password for password, john@abc.com for email |
+|  | 4. The System offers an opportunity to enter personal information (name, password,  confirmed password, company mail address, chose one of the three positions). |
+|  | 5. The Actor enters John Doe for name, 123Password for password, 123Password as confirmation,  john@abc.com for email and Sales Employee as position |
 | Results: | System informs that the staff member has been successfully registered. |
 
 
@@ -183,8 +183,8 @@
 | Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
 |  | 2. The System asks the actor what kind of account he wants to create. |
 |  | 3. The Actor indicates that they want to register a new Sales Officer/Sales employee. |
-|  | 4. The System offers an opportunity to enter personal information (name, password, company mail address). |
-|  | 5. The Actor enters John Doe for name, 123Password for password, john@abc.com for email |
+|  | 4. The System offers an opportunity to enter personal information (name, password, confirmed password, company mail address, chose one of the three positions ). |
+|  | 5. The Actor enters John Doe for name, 123Password for password, 123Password as confirmation,  john@abc.com for email and Sales Employee as position |
 | Results: | System informs that the staff member exists in the database. |
 
 | Name: | Actor registers sales officer/ sales employees with unaccepted password  |
@@ -192,8 +192,8 @@
 | Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
 |  | 2. The System asks the actor what kind of account he wants to create. |
 |  | 3. The Actor indicates that they want to register a new Sales Officer/Sales employee. |
-|  | 4. The System offers an opportunity to enter personal information (name, password, company mail address). |
-|  | 5. The Actor enters John Doe for name, Password for password, john@abc.com for email |
+|  | 4. The System offers an opportunity to enter personal information (name, password,  confirmed password, company mail address, chose one of the three positions). |
+|  | 5. The Actor enters John Doe for name, Password for password, Password again as confirmation, john@abc.com for email and Sales Officer as position |
 | Results: | System informs that the password does not fulfill the requirement. |
 
 ## Register plane model
