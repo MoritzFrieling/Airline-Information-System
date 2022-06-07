@@ -166,35 +166,57 @@
 |  | 3. System asks the Actor to choose destination and origin airports. |
 | Results: | System informs that the route already exists. |
 
-## Register sales officer or sales employee
+## Register staff member
 
-| Name: | Actor registers sales officer/ sales employees successfully |
+| Name: | Actor successfully registers sales officer |
 |----|----|
 | Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
-|  | 2. The System asks the actor what kind of account he wants to create. |
-|  | 3. The Actor indicates that they want to register a new Sales Officer/Sales employee. |
-|  | 4. The System offers an opportunity to enter personal information (name, password,  confirmed password, company mail address, chose one of the three positions). |
-|  | 5. The Actor enters John Doe for name, 123Password for password, 123Password as confirmation,  john@abc.com for email and Sales Employee as position |
-| Results: | System informs that the staff member has been successfully registered. |
+|  | 2. The System offers an opportunity to enter personal information (position, name, company mail address, password, confirmed password). |
+|  | 3. The Actor selects Sales-Officer for position and enters John Doe for name, Doe@ais.nl for email, 123Password for password, and 123Password as confirmation |
+| Results: | System informs Actor that the Data has been successfully saved to the DB. |
 
-
-| Name: | Actor registers existed sales officer/ sales employees  |
+| Name: | Actor successfully registers sales employee |
 |----|----|
 | Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
-|  | 2. The System asks the actor what kind of account he wants to create. |
-|  | 3. The Actor indicates that they want to register a new Sales Officer/Sales employee. |
-|  | 4. The System offers an opportunity to enter personal information (name, password, confirmed password, company mail address, chose one of the three positions ). |
-|  | 5. The Actor enters John Doe for name, 123Password for password, 123Password as confirmation,  john@abc.com for email and Sales Employee as position |
-| Results: | System informs that the staff member exists in the database. |
+|  | 2. The System offers an opportunity to enter personal information (position, name, company mail address, password, confirmed password). |
+|  | 3. The Actor selects Sales-Employee for position and enters John Smith for name, Smith@ais.nl for email, 123Password for password, and 123Password as confirmation |
+| Results: | System informs Actor that the Data has been successfully saved to the DB. |
 
-| Name: | Actor registers sales officer/ sales employees with unaccepted password  |
+| Name: | Actor successfully registers sales employee |
 |----|----|
 | Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
-|  | 2. The System asks the actor what kind of account he wants to create. |
-|  | 3. The Actor indicates that they want to register a new Sales Officer/Sales employee. |
-|  | 4. The System offers an opportunity to enter personal information (name, password,  confirmed password, company mail address, chose one of the three positions). |
-|  | 5. The Actor enters John Doe for name, Password for password, Password again as confirmation, john@abc.com for email and Sales Officer as position |
-| Results: | System informs that the password does not fulfill the requirement. |
+|  | 2. The System offers an opportunity to enter personal information (position, name, company mail address, password, confirmed password). |
+|  | 3. The Actor selects Sales-Manager for position and enters John Johnson for name, Johnson@ais.nl for email, 123Password for password, and 123Password as confirmation |
+| Results: | System informs Actor that the Data has been successfully saved to the DB. |
+
+
+| Name: | Actor registers existing sales officer  |
+|----|----|
+| Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
+|  | 2. The System offers an opportunity to enter personal information (position, name, company mail address, password, confirmed password). |
+|  | 3. The Actor selects Sales-Officer for position and enters John Smith for name, Smith@ais.nl for email, 123Password for password, and 123Password as confirmation |
+| Results: | System informs Actor that the Data couldn't been saved to the DB. |
+
+| Name: | Actor registers existing sales manager  |
+|----|----|
+| Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
+|  | 2. The System offers an opportunity to enter personal information (position, name, company mail address, password, confirmed password). |
+|  | 3. The Actor selects Sales-Manager for position and enters John Smith for name, Smith@ais.nl for email, 123Password for password, and 123Password as confirmation |
+| Results: | System informs Actor that the Data couldn't been saved to the DB. |
+
+| Name: | Actor registers staff member with invalid E-Mail  |
+|----|----|
+| Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
+|  | 2. The System offers an opportunity to enter personal information (position, name, company mail address, password, confirmed password). |
+|  | 3. The Actor selects Sales-Officer for position and enters Jeff Jefferson for name, JJ@ais.nl for email, ab for password, and ab as confirmation |
+| Results: | System informs that a valid E-Mail has a required minimum lenth of 3. |
+
+| Name: | Actor registers staff member with invalid Password  |
+|----|----|
+| Scenario: |1. The Actor indicates he wants to create a new account for a staff member. |
+|  | 2. The System offers an opportunity to enter personal information (position, name, company mail address, password, confirmed password). |
+|  | 3. The Actor selects Sales-Officer for position and enters Jeff Jefferson for name, Jefferson@ais.nl for email, ab for password, and ab as confirmation |
+| Results: | System informs that a valid password has a required minimum lenth of 3. |
 
 ## Register plane model
 
