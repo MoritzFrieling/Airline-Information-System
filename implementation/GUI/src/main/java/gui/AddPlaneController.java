@@ -70,9 +70,13 @@ class AddPlaneController implements Initializable {
 
         PlaneData planeData = new PlaneData(setModel(), Integer.parseInt(economySeats.getText()), Integer.parseInt(businessSeats.getText()), Integer.parseInt(firstClassSeats.getText()));
 
-        boolean planeAdded = planeManager.add(planeData);
+        if(planeManager.add(planeData)){
+            result.setText("Plane successfully stored!");
+        }else {
+            result.setText("Couldn't store Plane!");
+        };
 
-        result.setText("Adding the plane worked: " + planeAdded );
+//        result.setText("Plane added: " + addedPlane.toString() );
 
 
     }

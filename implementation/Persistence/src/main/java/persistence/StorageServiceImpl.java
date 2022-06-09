@@ -24,8 +24,9 @@ public class StorageServiceImpl implements StorageService{
         try {
             return databaseManager.executeSQLInsert(t);
         } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-        }return false;
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override
@@ -45,6 +46,11 @@ public class StorageServiceImpl implements StorageService{
         if(s != null){
             return s;
         }else return "WHYYYYYYY";
+    }
+
+    @Override
+    public String checkZone(double d) {
+        return databaseManager.checkZone(d);
     }
 
     @Override

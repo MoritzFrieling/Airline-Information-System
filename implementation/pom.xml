@@ -38,10 +38,14 @@
   <properties>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <maven.compiler.release>11</maven.compiler.release>
 
     <java.release>11</java.release>
+
 
   </properties>
 

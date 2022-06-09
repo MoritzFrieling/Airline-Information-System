@@ -21,20 +21,19 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:13" level="project" />
     <orderEntry type="module" module-name="BusinessLogic" />
     <orderEntry type="module" module-name="Persistence" />
-    <orderEntry type="library" name="Maven: nl.fontys.sebivenlo:AirlineProject:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: nl.fontys.sebivenlo:sebidao:0.9.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-booter:2.22.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-api:2.22.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven.surefire:surefire-logger-api:2.22.1" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.2.20" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.checkerframework:checker-qual:3.5.0" level="project" />
     <orderEntry type="module" module-name="DataRecords" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testfx:testfx-junit5:4.0.15-alpha" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:17.0.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-web:win:17.0.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testfx:testfx-junit:4.0.15-alpha" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testfx:testfx-core:4.0.15-alpha" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:11" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-media:win:11" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:3.19.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-core:3.5.13" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy:1.10.15" level="project" />

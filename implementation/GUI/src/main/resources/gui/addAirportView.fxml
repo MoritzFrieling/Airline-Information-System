@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/AisStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AddAirportController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="600.0" prefWidth="900.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <VBox layoutX="6.0" layoutY="5.0" prefHeight="462.0" prefWidth="254.0" spacing="50.0" AnchorPane.bottomAnchor="105.0" AnchorPane.topAnchor="32.0">
+                           <children>
+                              <VBox prefHeight="26.0" prefWidth="230.0">
+                                 <children>
+                                    <Label text="Airport Name" />
+                                    <TextField fx:id="airportName" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="26.0" prefWidth="230.0">
+                                 <children>
+                                    <Label text="Abbreviation" />
+                                    <TextField fx:id="abbreviationName" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="43.0" prefWidth="230.0">
+                                 <children>
+                                    <Label text="Country" />
+                                    <TextField fx:id="countryName" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="26.0" prefWidth="230.0">
+                                 <children>
+                                    <Label text="City" />
+                                    <TextField fx:id="cityName" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="44.0" prefWidth="230.0">
+                                 <children>
+                                    <Label text="Coordinates" />
+                                    <TextField fx:id="coordinate" prefHeight="26.0" prefWidth="170.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <Button layoutX="107.0" layoutY="482.0" mnemonicParsing="false" onAction="#storeAirport" styleClass="btn" stylesheets="@../css/AisStyle.css" text="save" />
+                        <Label fx:id="result" layoutX="6.0" layoutY="536.0" prefHeight="18.0" prefWidth="10.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane fx:id="imagePane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="imageView" fitHeight="599.0" fitWidth="627.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/World_map_nations.svg/1280px-World_map_nations.svg.png" />
+                           </image></ImageView>
+                        <Label fx:id="information" layoutX="14.0" layoutY="459.0" />
+                        <Button layoutX="572.0" layoutY="559.0" mnemonicParsing="false" onAction="#back" styleClass="btn" stylesheets="@../css/AisStyle.css" text="back" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

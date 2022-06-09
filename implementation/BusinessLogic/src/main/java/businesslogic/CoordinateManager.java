@@ -16,10 +16,16 @@ public class CoordinateManager {
         } else {
             return new CoordinateData(sexagesimalToLatitude(coordinate),sexagesimalToLongitude(coordinate));
         }
-
-
     }
 
+    /**
+     *  checks if coordinate has valid latitude and longitude values
+     * @param c coordinateData
+     * @return true if valid, false if not
+     */
+    public boolean check(CoordinateData c){
+        return !(c.getLatitude() > 90) && !(c.getLatitude() < -90) && !(c.getLongitude() > 180) && !(c.getLongitude() < -180);
+    }
 
 
     //================================================================================================================//
