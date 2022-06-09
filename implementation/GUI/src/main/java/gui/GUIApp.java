@@ -30,6 +30,8 @@ public class GUIApp extends Application {
             -> {
 
         switch (c.getName()) {
+            case "gui.AddAirportController":
+                return new AddAirportController(this::getSceneManager,businessLogicAPI.getAirportManager(), businessLogicAPI.getCoordinateManager());
             case "gui.OfficerViewController":
                 return new OfficerViewController(this::getSceneManager);
             case "gui.EmpViewController":

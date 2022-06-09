@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(#FFFAEF,#FFFFFF);" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AirportController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/AisStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AirportController">
    <children>
-      <Button fx:id="toSecondaryButton" layoutX="506.0" layoutY="360.0" mnemonicParsing="false" onAction="#toSecondary" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Home" />
+      <Button fx:id="toSecondaryButton" layoutX="506.0" layoutY="360.0" mnemonicParsing="false" onAction="#toSecondary" styleClass="btn" stylesheets="@../css/AisStyle.css" text="Home" />
       <Label fx:id="result" layoutX="38.0" layoutY="309.0" prefHeight="71.0" prefWidth="444.0" text="" wrapText="true" />
       <VBox layoutX="170.0" layoutY="37.0" prefHeight="230.0" prefWidth="260.0" spacing="10.0">
          <children>
@@ -46,8 +46,8 @@
             </HBox>
             <HBox prefHeight="26.0" prefWidth="250.0" spacing="25.0">
                <children>
-                  <Button fx:id="checkAirports" mnemonicParsing="false" onAction="#checkAirports" prefHeight="26.0" prefWidth="114.0" style="-fx-background-radius: 30; -fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-text-fill: white; -fx-background-insets: 0;" text="Check Airports" />
-                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#storeAirport" prefHeight="26.0" prefWidth="104.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Save Airport" />
+                  <Button fx:id="checkAirports" mnemonicParsing="false" onAction="#checkAirports" prefHeight="26.0" prefWidth="114.0" styleClass="btn" stylesheets="@../css/AisStyle.css" text="Check Airports" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#storeAirport" prefHeight="26.0" prefWidth="104.0" styleClass="btn" stylesheets="@../css/AisStyle.css" text="Save Airport" />
                </children>
             </HBox>
          </children>

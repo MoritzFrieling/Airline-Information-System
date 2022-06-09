@@ -10,6 +10,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.stage.Popup;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -45,7 +48,16 @@ class AirportController implements Initializable {
     @FXML
     private Label result;
 
+    // for popup
+    @FXML
+    Popup popup;
 
+    @FXML
+    Pane pane;
+
+    @FXML
+    ImageView img;
+//
     private final Supplier<SceneManager> sceneManagerSupplier;
     private final AirportManager airportManager;
     private final CoordinateManager coordinateManager;
@@ -78,6 +90,7 @@ class AirportController implements Initializable {
             valid = false;
         }
 
+        // PRC Lesson MAPS
         if (valid) {
             CoordinateData cdata = coordinateManager.add(c);
             String f = airportManager.checkTimezone(cdata.getLongitude());
@@ -105,7 +118,8 @@ class AirportController implements Initializable {
 
     @FXML
     private void checkAirports(){
-        sceneManagerSupplier.get().changeScene("mapView");
+        sceneManagerSupplier.get().changeScene("addAirportView");
+
     }
 
     /**

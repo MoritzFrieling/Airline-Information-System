@@ -39,7 +39,6 @@
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <arcgis.version>100.14.0</arcgis.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -47,7 +46,6 @@
 
     <java.release>11</java.release>
 
-    <url>http://maven.apache.org</url>
 
   </properties>
 
