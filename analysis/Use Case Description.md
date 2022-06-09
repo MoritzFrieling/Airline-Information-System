@@ -72,7 +72,7 @@
 | Description: | The Sales Manager registers new airport. |
 | Pre-condition: | The Sales Manager has logged in. |
 | Scenario: | 1. The Actor wants to register new airport. |
-| | 2. The system asks the actor to provide information (airport name, abbreviation, city, and country). |
+| | 2. The system asks the actor to provide information (airport name, abbreviation, city, country and the latitude and longitude as coordinates). |
 | | 3. The actor enters all the requested information. |
 | | 4. The system adds new airport. |
 | | 5. The system inform the actor that new airport has been added. |
@@ -93,7 +93,7 @@
 | Scenario: | 1. The Actor indicates he wants to create a new account for a staff member. |
 | | 2. The System asks the actor what kind of account he wants to create. |
 | | 3. The Actor indicates that they want to register a new Sales Officer. |
-| | 4. The System offers an opportunity to enter personal information (name, password, company mail address). |
+| | 4. The System offers an opportunity to enter personal information (name, password,  confirmed password, company mail address, chose one of the three positions). |
 | | 5. The Actor enters personal information. |
 | | 6. If the Account doesn't exist yet and the password is sufficient, the system inputs the personal information of the account into the database. |
 | Results: | The Staff Member has been successfully registered. |
@@ -114,7 +114,7 @@
 | Pre-condition: | Sales Manager is already logged in. |
 | Scenario:  | 1. The System displays the main sales manager dashboard. |
 || 2. The Actor selects the option to register a plane model. |
-|| 3. The System asks the actor for information about the model (manufacturer, max. seats, max. range, weight capactiy, speed). |
+|| 3. The System asks the actor for information about the model (manufacturer, model number, max. seats, max. range, weight capactiy, speed). |
 || 4. The Actor writes down and selects the information. |
 || 5. The System tells the actor that the registration has been successfull. |
 | Results: | A plane model has been added to the system. |

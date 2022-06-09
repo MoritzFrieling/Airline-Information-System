@@ -244,4 +244,3 @@ ALTER TABLE aisdb.ais.airports
 drop table ais.test;
 
 --------------------------------------------------
-

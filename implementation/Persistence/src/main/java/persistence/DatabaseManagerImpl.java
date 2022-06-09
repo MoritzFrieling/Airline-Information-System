@@ -108,6 +108,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
         assert t.getClass() == AirportData.class;
         AirportData airportData = (AirportData) t;
 
+
         String sql = " INSERT INTO aisdb.ais.airports VALUES (?, ?, ?, ?, ?, ?, ?) ";
 
         try {
@@ -554,7 +555,9 @@ public class DatabaseManagerImpl implements DatabaseManager {
             ResultSet rs = statement.executeQuery();
 
             if(rs.next()){
+
                 return new AirportData(rs.getString("airport-name"),rs.getString("abbreviation"),rs.getString("country"),new CoordinateData(rs.getDouble("latitude"), rs.getDouble("longitude") ),rs.getString("city"), rs.getString("timezone"));
+
             }
         }catch (SQLException e){
             System.err.println(e.getClass().getName() + ": " + e.getMessage() + " : in DatabaseManager.getAirport");

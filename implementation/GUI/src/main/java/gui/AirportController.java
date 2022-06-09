@@ -48,16 +48,6 @@ class AirportController implements Initializable {
     @FXML
     private Label result;
 
-    // for popup
-    @FXML
-    Popup popup;
-
-    @FXML
-    Pane pane;
-
-    @FXML
-    ImageView img;
-//
     private final Supplier<SceneManager> sceneManagerSupplier;
     private final AirportManager airportManager;
     private final CoordinateManager coordinateManager;

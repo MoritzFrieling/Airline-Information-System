@@ -20,6 +20,7 @@
                   <TextField fx:id="airportName" />
                </children>
             </HBox>
+
             <HBox prefHeight="30.0" prefWidth="250.0">
                <children>
                   <Label prefHeight="18.0" prefWidth="74.0" text="Abbreviation" />
@@ -44,6 +45,7 @@
                   <TextField fx:id="coordinate" />
                </children>
             </HBox>
+
             <HBox prefHeight="26.0" prefWidth="250.0" spacing="25.0">
                <children>
                   <Button fx:id="checkAirports" mnemonicParsing="false" onAction="#checkAirports" prefHeight="26.0" prefWidth="114.0" styleClass="btn" stylesheets="@../css/AisStyle.css" text="Check Airports" />
