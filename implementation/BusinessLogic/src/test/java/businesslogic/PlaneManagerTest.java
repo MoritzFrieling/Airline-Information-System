@@ -32,4 +32,8 @@ class PlaneManagerTest {
     @Test
     void getAllPlaneModels() {
     }
+    @Test
+    public void test1(){
+        assertThat(true).isEqualTo(true);
+    }
 }
