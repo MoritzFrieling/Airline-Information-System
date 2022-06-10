@@ -12,6 +12,7 @@ import persistence.StorageService;
 import persistence.StorageServiceImpl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
@@ -38,8 +39,10 @@ class PlaneManagerTest {
     }
 
     @Test
-    void getAllPlaneModels() {
-        var newPlaneModelList = new ArrayList<PlaneModelData>();
-        //       when(storageServiceImpl.getAllPlaneModels()).thenReturn(newPlaneModelList);
+    void getAllPlaneModels() throws Exception {
+        List<PlaneModelData> newPlaneModelList = new ArrayList<>();
+        when(storageServiceImpl.getAllPlaneModels()).thenReturn(newPlaneModelList);
+        manager = new PlaneManager(storageServiceImpl);
+        assertThat(manager.getAllPlaneModels()).isEqualTo(newPlaneModelList);
     }
 }
