@@ -1,8 +1,9 @@
-package PlaneManager;
+package businesslogic;
 
 import datarecords.PlaneData;
 import datarecords.PlaneModelData;
 import org.junit.jupiter.api.Test;
+
 import businesslogic.PlaneManager;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -12,13 +13,13 @@ import persistence.StorageServiceImpl;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.when;
 
-public class PlaneManagerTest {
+class PlaneManagerTest {
 
     @Mock
     StorageServiceImpl storageServiceImpl;
 
     @Test
-    public void testAdd() throws Exception {
+    void add() throws Exception {
 
         var planeModelExample = new PlaneModelData("Bob", "23", 100, 30000, 20000, 4000);
         var planeExample = new PlaneData(planeModelExample, 30, 20, 50);
@@ -29,8 +30,6 @@ public class PlaneManagerTest {
     }
 
     @Test
-    public void test1(){
-        assertThat(true).isEqualTo(true);
+    void getAllPlaneModels() {
     }
 }
-
