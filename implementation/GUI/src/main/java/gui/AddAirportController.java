@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 import java.net.URL;
@@ -21,8 +20,6 @@ public class AddAirportController implements Initializable {
 
     @FXML
     private Label result;
-    @FXML
-    private Label information;
     @FXML
     private ImageView imageView;
     @FXML
@@ -37,6 +34,8 @@ public class AddAirportController implements Initializable {
     private javafx.scene.control.TextField coordinate;
     @FXML
     private AnchorPane imagePane;
+    @FXML
+    private Label information;
 
 
     Supplier<SceneManager> supplier;
@@ -65,6 +64,7 @@ public class AddAirportController implements Initializable {
         String c = coordinate.getText();
         String d = countryName.getText();
         String e = cityName.getText();
+
 
         if (a.isEmpty() || b.isEmpty() || c.isEmpty() || d.isEmpty() || e.isEmpty()){
             result.setText("Please check input!");
@@ -96,7 +96,9 @@ public class AddAirportController implements Initializable {
                 }
 
                 if (addedAirport) {
+                    setCircle();
                     result.setText("Airport successfully added to DB!");
+                    information.setText("Last Airport Added: \n" + airportData);
                 } else result.setText("Couldn't add Airport, please Check the data!");
             }
         }
@@ -104,19 +106,47 @@ public class AddAirportController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        supplier.get().getScene().getWindow().setWidth(910);
+        supplier.get().getScene().getWindow().setHeight(625);
+       setCircle();
 
-        double modifierY = (imageView.getImage().getHeight() / 180) + imageView.getImage().getHeight() / 2;
-        double modifierX = (imageView.getImage().getWidth() / 360) + imageView.getImage().getWidth() / 2;
+    }
 
-        Circle spot = new Circle(10);
-        spot.setFill(Color.RED);
-        spot.setCenterX(10);
-        spot.setCenterY(10);
+    private void setCircle( ){
+        for (int i = 0; airportManager.getAllAirportData().size() > i; i++) {
+            Circle c = new Circle(2);
 
-        spot.setLayoutX(10*modifierX);
-        spot.setLayoutY(10*modifierY);
+            CoordinateData data = airportManager.getAllAirportData().remove(i).getCoordinateData();
 
-        imagePane.getChildren().add(spot);
+            double x = data.getLongitude();
+            double y = data.getLatitude();
+            c.setLayoutY(adaptLatitude(y));
+            c.setLayoutX(adaptLongitude(x));
+            System.out.println("Latitude:" + y + " Longitude:" + x);
+            imagePane.getChildren().add(c);
+        }
+    }
 
+
+    /**
+     * works only if preserveRatio == true
+     * @param x Longitude
+     * @return x coordinate for the placement on the image
+     */
+    private double adaptLongitude(double x){
+        double aspectRatio = imageView.getImage().getWidth() / imageView.getImage().getHeight();
+        double realWidth = Math.min(imageView.getFitWidth(), imageView.getFitHeight() * aspectRatio);
+        return (x+180) * (realWidth /360);
+    }
+
+    /**
+     * works only if preserveRatio == true
+     * @param y Longitude
+     * @return y coordinate for the placement on the image
+     */
+    private double adaptLatitude(double y){
+        double aspectRatio = imageView.getImage().getWidth() / imageView.getImage().getHeight();
+        double realHeight = Math.min(imageView.getFitHeight(), imageView.getFitWidth() / aspectRatio);
+        return (-y+90) * (realHeight / 180);
     }
 }

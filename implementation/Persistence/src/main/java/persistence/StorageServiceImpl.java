@@ -59,6 +59,11 @@ public class StorageServiceImpl implements StorageService{
     }
 
     @Override
+    public ArrayList<AirportData> getAllAirportData() {
+        return databaseManager.getAllAirports();
+    }
+
+    @Override
     public AirportData getAirport(String str) {
         return databaseManager.getAirport(str);
     }

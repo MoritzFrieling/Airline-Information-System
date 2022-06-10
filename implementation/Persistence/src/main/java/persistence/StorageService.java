@@ -18,6 +18,7 @@ public interface StorageService {
     String getSalt(String str) throws Exception;
     String checkZone(double d);
 
+    ArrayList<AirportData>getAllAirportData();
     List<FlightData> getAllFlights();
     AirportData getAirport(String str);
     ArrayList<String> getAllAirports();

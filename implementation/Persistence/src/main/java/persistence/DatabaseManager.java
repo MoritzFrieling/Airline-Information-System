@@ -35,6 +35,8 @@ public interface DatabaseManager {
 
     String getSalt(String string);
 
+    ArrayList<AirportData> getAllAirports();
+
     ArrayList<String> getAirports();
 
     AirportData getAirport(String str);

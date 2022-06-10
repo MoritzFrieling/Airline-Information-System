@@ -57,7 +57,8 @@ public class AirportData {
 
     @Override
     public String toString() {
-        return "Name: " + airportName + ", abbreviation: " + abbreviation + ", country: " + countryName + ", Coordinates: " + coordinateData.toString() + " ";
+        return "Name: " + airportName + ", abbreviation: " + abbreviation + ", country: " + countryName + ",\n" +
+                " Coordinates: " + coordinateData.toString() + ", TimeZone: " + getZone();
     }
     
 }

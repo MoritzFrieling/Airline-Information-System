@@ -39,25 +39,33 @@ public class LogInController implements Initializable {
     @FXML
     private void logIn() throws Exception {
 
+        boolean valid = true;
         PasswordAuthentication entered = new PasswordAuthentication(eMailField.getText(), passwordField.getText().toCharArray());
 
-        if (String.copyValueOf(entered.getPassword()).contentEquals("") && entered.getUserName().contentEquals("dev")){
-            sceneManagerSupplier.get().changeScene("secondary");
-        }else if (logInManager.authenticate(entered)){
+        if (entered.getUserName().isEmpty()){
+            valid = false;
+            label.setText("Please enter Information!");
 
-            String p = logInManager.identify(entered);
-
-            if (p.contentEquals("Manager")){
+        }
+        if (valid) {
+            if (String.copyValueOf(entered.getPassword()).contentEquals("") && entered.getUserName().contentEquals("dev")) {
                 sceneManagerSupplier.get().changeScene("secondary");
-            } else if (p.contentEquals("Officer")){
-                sceneManagerSupplier.get().changeScene("OfficerView");
-            } else if (p.contentEquals("Employee")){
-                sceneManagerSupplier.get().changeScene("EmpView");
-            }else {
-                label.setText("Couldn't identify Position!");
+            } else if (logInManager.authenticate(entered)) {
+
+                String p = logInManager.identify(entered);
+
+                if (p.contentEquals("Manager")) {
+                    sceneManagerSupplier.get().changeScene("secondary");
+                } else if (p.contentEquals("Officer")) {
+                    sceneManagerSupplier.get().changeScene("OfficerView");
+                } else if (p.contentEquals("Employee")) {
+                    sceneManagerSupplier.get().changeScene("EmpView");
+                } else {
+                    label.setText("Couldn't identify Position!");
+                }
+            } else {
+                label.setText("Something Went Wrong! Couldn't log in");
             }
-        }else {
-            label.setText("Something Went Wrong! Couldn't log in");
         }
     }
 }
