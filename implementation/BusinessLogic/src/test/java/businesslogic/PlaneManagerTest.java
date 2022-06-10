@@ -10,30 +10,36 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import persistence.StorageService;
 import persistence.StorageServiceImpl;
+
+import java.util.ArrayList;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.mockito.Mockito.verify;
+
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class PlaneManagerTest {
 
     @Mock
     StorageServiceImpl storageServiceImpl;
+    @Mock
+    PlaneData planeExample;
+    @Mock
+    PlaneModelData planeModelData;
+    PlaneManager manager;
 
     @Test
     void add() throws Exception {
 
-        var planeModelExample = new PlaneModelData("Bob", "23", 100, 30000, 20000, 4000);
-        var planeExample = new PlaneData(planeModelExample, 30, 20, 50);
-
         when(storageServiceImpl.add(planeExample)).thenReturn(true);
-        var manager = new PlaneManager(storageServiceImpl);
+        manager = new PlaneManager(storageServiceImpl);
         assertThat(manager.add(planeExample)).isTrue();
     }
 
     @Test
     void getAllPlaneModels() {
-    }
-    @Test
-    public void test1(){
-        assertThat(true).isEqualTo(true);
+        var newPlaneModelList = new ArrayList<PlaneModelData>();
+        //       when(storageServiceImpl.getAllPlaneModels()).thenReturn(newPlaneModelList);
     }
 }
