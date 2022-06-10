@@ -29,6 +29,7 @@ public class AirportData {
         this.coordinateData = coordinateData;
         this.cityName = cityName;
         this.zone = zone;
+
     }
 
     
@@ -50,6 +51,7 @@ public class AirportData {
     public String getCityName() {
         return cityName;
     }
+
 
     public String getZone() {
         return zone;
