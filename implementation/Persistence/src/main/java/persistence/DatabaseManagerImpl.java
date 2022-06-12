@@ -508,6 +508,36 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
 
     @Override
+    public ArrayList<AirportData> getAllAirports() {
+        String sql = "SELECT \"airport-name\", abbreviation, country, \"Latitude\", \"Longitude\", city, \"timezone\"  FROM aisdb.ais.airports";
+
+        ArrayList<AirportData> list = new ArrayList<>();
+        int i = 0;
+
+        try {
+            con = connect();
+
+            PreparedStatement statement = con.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()){
+                AirportData data = new AirportData(rs.getString("airport-name"),
+                        rs.getString("abbreviation"),
+                        rs.getString("country"),
+                        new CoordinateData(rs.getDouble("Latitude"), rs.getDouble("Longitude") ),
+                        rs.getString("city"),
+                        rs.getString("timezone"));
+                list.add(i,data);
+                i++;
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        }
+
+        return list;
+    }
+
+    @Override
     public ArrayList<String> getAirports() {
 
         String sql = "SELECT \"airport-name\",city FROM aisdb.ais.airports";
@@ -569,7 +599,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
     @Override
     public String checkZone(double d) {
 
-        String sql = "SELECT abbreviation FROM aisdb.ais.timezones WHERE \"startLong\"<=? AND \"endLong\">=? ";
+        String sql = "SELECT abbreviation FROM aisdb.ais.timezones WHERE \"startLong\"<=? AND \"endLong\">=? OR \"startLong\">=? AND \"endLong\"<=?";
 
         String Zone = null;
 
@@ -579,6 +609,8 @@ public class DatabaseManagerImpl implements DatabaseManager {
             PreparedStatement statement = con.prepareStatement(sql);
             statement.setDouble(1, d);
             statement.setDouble(2, d);
+            statement.setDouble(3, d);
+            statement.setDouble(4, d);
 
             ResultSet rs = statement.executeQuery();
 

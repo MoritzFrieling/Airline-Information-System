@@ -41,6 +41,8 @@ public class AirportManager {
         return storageService.getAllAirports();
     }
 
+    public ArrayList<AirportData> getAllAirportData(){return storageService.getAllAirportData();}
+
     /**
      * Takes an airport-name as parameter and returns the db entry for its airport data
      * @return airport-data of airport-name

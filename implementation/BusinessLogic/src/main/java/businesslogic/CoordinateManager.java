@@ -144,4 +144,5 @@ public class CoordinateManager {
         return ( degree + (minute/60) + (second/3600) );
 
     }
+
 }
