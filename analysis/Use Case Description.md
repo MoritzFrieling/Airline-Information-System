@@ -72,10 +72,11 @@
 | Description: | The Sales Manager registers new airport. |
 | Pre-condition: | The Sales Manager has logged in. |
 | Scenario: | 1. The Actor wants to register new airport. |
-| | 2. The system asks the actor to provide information (airport name, abbreviation, city, country and the latitude and longitude as coordinates). |
+| | 2. The system provides form for the actor to enter information (airport name, abbreviation, city, country and the latitude and longitude as coordinates) and a World Map with all Airports |
 | | 3. The actor enters all the requested information. |
 | | 4. The system adds new airport. |
 | | 5. The system inform the actor that new airport has been added. |
+| | 6. The system adds the new Airport to the Map |
 | Results: | The Actor has successfully registered a new airport. |
 | Exceptions: | 4.a Airport already exists. |
 | | 4.a.1 System informs User that the airport already exists. |
