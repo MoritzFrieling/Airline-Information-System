@@ -72,18 +72,20 @@
 | Description: | The Sales Manager registers new airport. |
 | Pre-condition: | The Sales Manager has logged in. |
 | Scenario: | 1. The Actor wants to register new airport. |
-| | 2. The system provides form for the actor to enter information (airport name, abbreviation, city, country and the latitude and longitude as coordinates) and a World Map with all Airports |
+| | 2. The system provides form for the actor to enter information (airport name, abbreviation, city, country and the latitude and longitude as coordinates) |
 | | 3. The actor enters all the requested information. |
 | | 4. The system adds new airport. |
 | | 5. The system inform the actor that new airport has been added. |
-| | 6. The system adds the new Airport to the Map |
 | Results: | The Actor has successfully registered a new airport. |
 | Exceptions: | 4.a Airport already exists. |
 | | 4.a.1 System informs User that the airport already exists. |
 | | 4.a.2 Use case ends here. |
 | | 4.b Field was left empty. |
 | | 4.b.1 System informs user that field can't be empty. |
-| | 4.b.2 Return to Step 2. |
+| | 4.b.2 Return to Step 3. |
+| | 4.c Field contains invalid input. |
+| | 4.c.1 System informs User about invalid input.  |
+| | 4.c.2 Return to Step 3. |
 
 ### Register sales officer or sales employee
 | Name: | _Register sales officer or sales employee_ |
