@@ -79,13 +79,19 @@
 | Results: | The Actor has successfully registered a new airport. |
 | Exceptions: | 4.a Airport already exists. |
 | | 4.a.1 System informs User that the airport already exists. |
-| | 4.a.2 Use case ends here. |
+| | 4.a.2 Return to Step 3. |
 | | 4.b Field was left empty. |
 | | 4.b.1 System informs user that field can't be empty. |
 | | 4.b.2 Return to Step 3. |
-| | 4.c Field contains invalid input. |
-| | 4.c.1 System informs User about invalid input.  |
+| | 4.c Field contains invalid coordinate input. |
+| | 4.c.1 System informs User about coordinate input.  |
 | | 4.c.2 Return to Step 3. |
+| | 4.d Field contains existing coordinate input. |
+| | 4.d.1 System informs User about existing coordinate input.  |
+| | 4.d.2 Return to Step 3. |
+| | 4.e Data could not be saved to the DB. |
+| | 4.e.1 System informs User about failed insert.  |
+| | 4.e.2 Return to Step 3. |
 
 ### Register sales officer or sales employee
 | Name: | _Register sales officer or sales employee_ |
