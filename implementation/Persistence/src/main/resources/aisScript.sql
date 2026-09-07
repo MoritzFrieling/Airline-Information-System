@@ -105,7 +105,7 @@ create table accounts(
                          "lastname" string,
                          "position" string,
                          "salt" string,
-                         "log-in" string,
+                         "e-Mail" string,
                          "password" string
 );
 
@@ -113,8 +113,8 @@ create table accounts(
 
 -- Adjustments for Plane and PlaneModel--
 
--- ALTER TABLE aisdb.ais.planes
--- DROP CONSTRAINT "fk_planes-models";
+ALTER TABLE aisdb.ais.planes
+DROP CONSTRAINT "fk_planes-models";
 
 ALTER TABLE aisdb.ais."planeModels"
 DROP CONSTRAINT "planeModels_pkey";
@@ -241,6 +241,6 @@ ALTER TABLE aisdb.ais.airports
 ALTER TABLE aisdb.ais.airports
     ADD CONSTRAINT fk_airports_timezones FOREIGN KEY (timezone) REFERENCES aisdb.ais.timezones (abbreviation);
 ---------------------------------------------------------------------
-drop table ais.test;
+-- Historical cleanup for a table that is not part of this schema.
 
 --------------------------------------------------

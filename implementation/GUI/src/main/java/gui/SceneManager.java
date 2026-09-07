@@ -32,7 +32,11 @@ class SceneManager {
     
     public SceneManager(Callback<Class<?>, Object> controllerFactory, String initialView ) {
         this.controllerFactory = controllerFactory;
-        scene = new Scene( loadScene( initialView, null) ); 
+        scene = new Scene( loadScene( initialView, null) );
+        URL stylesheet = GUIApp.class.getResource("/css/AisStyle.css");
+        if (stylesheet != null) {
+            scene.getStylesheets().add(stylesheet.toExternalForm());
+        }
     }
 
     public Scene getScene() {

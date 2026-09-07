@@ -1,17 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="backgroundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(#FFFAEF,#FFFFFF);" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.SecondaryController">
+<AnchorPane fx:id="backgroundPane" prefHeight="440.0" prefWidth="640.0" styleClass="app-shell" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="gui.SecondaryController">
     <children>
-        <Button fx:id="addAirportButton" layoutX="87.0" layoutY="95.0" mnemonicParsing="false" onAction="#goAddAirport" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Add Airport" />
-        <Button fx:id="addPlaneModelButton" layoutX="386.0" layoutY="95.0" mnemonicParsing="false" onAction="#goAddPlaneModel" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Add Plane Model" />
-        <Button fx:id="addRouteButton" layoutX="87.0" layoutY="165.0" mnemonicParsing="false" onAction="#goAddRoute" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Add Route" />
-        <Button fx:id="dashboardButton" layoutX="87.0" layoutY="249.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Dashboard" />
-        <Button fx:id="logoutButton" layoutX="502.0" layoutY="345.0" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: linear-gradient(#ff5400, #be1d00); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Log out" />
-        <Button layoutX="241.0" layoutY="95.0" mnemonicParsing="false" onAction="#goAddPlane" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: linear-gradient(#ff5400, #A90011); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Add Plane" />
-      <Button fx:id="flightOptions" layoutX="241.0" layoutY="165.0" mnemonicParsing="false" onAction="#goFlightOptions" prefHeight="26.0" prefWidth="98.0" style="-fx-background-color: linear-gradient(#ff5400, #A90011); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Flight options" />
-      <Button fx:id="registerAccount" layoutX="241.0" layoutY="249.0" mnemonicParsing="false" onAction="#toRegisterAccount" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: linear-gradient(#ff5400, #A90011); -fx-background-radius: 30; -fx-background-insets: 0; -fx-text-fill: white;" text="Register Account" />
+        <Pane prefHeight="88.0" prefWidth="640.0" styleClass="header-strip">
+           <children>
+              <Label layoutX="30.0" layoutY="18.0" styleClass="header-title" text="AIS Manager Dashboard" />
+              <Label layoutX="31.0" layoutY="50.0" styleClass="header-subtitle" text="Quick access to the project&apos;s core management workflows" />
+           </children>
+        </Pane>
+        <Label layoutX="32.0" layoutY="112.0" styleClass="section-title" text="Operations" />
+        <HBox layoutX="32.0" layoutY="140.0" spacing="14.0">
+           <children>
+              <VBox prefHeight="185.0" prefWidth="178.0" spacing="10.0" styleClass="card">
+                 <children>
+                    <Label styleClass="section-title" text="Airport network" />
+                    <Label styleClass="muted-label" text="Maintain airports and routes." wrapText="true" />
+                    <Button fx:id="addAirportButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goAddAirport" text="Add airport" />
+                    <Button fx:id="addRouteButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goAddRoute" styleClass="secondary-button" text="Add route" />
+                 </children>
+              </VBox>
+              <VBox prefHeight="185.0" prefWidth="178.0" spacing="10.0" styleClass="card">
+                 <children>
+                    <Label styleClass="section-title" text="Fleet" />
+                    <Label styleClass="muted-label" text="Store airplane models and individual planes." wrapText="true" />
+                    <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goAddPlane" text="Add plane" />
+                    <Button fx:id="addPlaneModelButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goAddPlaneModel" styleClass="secondary-button" text="Add model" />
+                 </children>
+              </VBox>
+              <VBox prefHeight="185.0" prefWidth="178.0" spacing="10.0" styleClass="card">
+                 <children>
+                    <Label styleClass="section-title" text="Flight desk" />
+                    <Label styleClass="muted-label" text="Create flights and manage demonstration accounts." wrapText="true" />
+                    <Button fx:id="flightOptions" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#goFlightOptions" text="Flight options" />
+                    <Button fx:id="registerAccount" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toRegisterAccount" styleClass="secondary-button" text="Register account" />
+                 </children>
+              </VBox>
+           </children>
+        </HBox>
+        <Button fx:id="dashboardButton" layoutX="32.0" layoutY="362.0" mnemonicParsing="false" styleClass="secondary-button" text="Dashboard" />
+        <Button fx:id="logoutButton" layoutX="535.0" layoutY="362.0" mnemonicParsing="false" onAction="#logOut" styleClass="danger-button" text="Log out" />
     </children>
 </AnchorPane>

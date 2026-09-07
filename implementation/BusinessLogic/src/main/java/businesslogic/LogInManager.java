@@ -19,9 +19,12 @@ public class LogInManager {
 
     public boolean authenticate(PasswordAuthentication passwordAuthentication ) throws Exception {
 
+        PasswordAuthentication data = storageService.getAccountData(passwordAuthentication);
+        if (data == null) {
+            return false;
+        }
         String salt = storageService.getSalt(passwordAuthentication.getUserName());
         String passwordHash = AccountManager.hashString(String.copyValueOf(passwordAuthentication.getPassword()),salt);
-        PasswordAuthentication data = storageService.getAccountData(passwordAuthentication);
         String should = String.copyValueOf(data.getPassword());
         return passwordHash.contentEquals(should);
     }

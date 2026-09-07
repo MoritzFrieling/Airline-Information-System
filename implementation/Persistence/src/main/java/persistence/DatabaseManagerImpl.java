@@ -183,7 +183,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
             assert t.getClass() == AccountData.class;
             AccountData accountData = (AccountData) t;
-            String sql = " INSERT INTO aisdb.ais.accounts VALUES(?, ?, ?, ?, ?, ?) ";
+            String sql = " INSERT INTO aisdb.ais.accounts (firstname, lastname, position, salt, \"e-Mail\", password) VALUES(?, ?, ?, ?, ?, ?) ";
 
             try {
                 con = connect();
@@ -212,7 +212,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
         assert t.getClass() == PlaneModelData.class;
         PlaneModelData planeModelData = (PlaneModelData) t;
 
-        String sql = " INSERT INTO aisdb.ais.\"planeModels\" VALUES(?, ?, ?, ?, ?, ?) ";
+        String sql = " INSERT INTO aisdb.ais.\"planeModels\" (\"model-number\", manufacturer, seats, \"range\", speed, \"weight-capacity\") VALUES (?, ?, ?, ?, ?, ?) ";
 
         try {
             con = connect();
@@ -240,7 +240,7 @@ public class DatabaseManagerImpl implements DatabaseManager {
     public <T> PreparedStatement prepareRouteInsert(T t) {
 
         assert t.getClass() == RouteData.class;
-        String sql = "INSERT INTO aisdb.ais.routes VALUES(?,?,?)";
+        String sql = "INSERT INTO aisdb.ais.routes (origin, destination) VALUES (?, ?)";
         RouteData data = (RouteData) t;
 
         try {
@@ -248,9 +248,8 @@ public class DatabaseManagerImpl implements DatabaseManager {
             con = connect();
 
             PreparedStatement statement = con.prepareStatement(sql);
-            statement.setInt(1, (int)(Math.random()*100));
-            statement.setString(2, data.getOrigin().getAbbreviation());
-            statement.setString(3, data.getDestination().getAbbreviation());
+            statement.setString(1, data.getOrigin().getAbbreviation());
+            statement.setString(2, data.getDestination().getAbbreviation());
             System.out.println(statement);
             return statement;
         }catch (SQLException e){
@@ -314,7 +313,9 @@ public class DatabaseManagerImpl implements DatabaseManager {
 
             }
 
-            assert pw != null;
+            if (user == null || pw == null) {
+                return null;
+            }
             return new PasswordAuthentication(user,pw.toCharArray());
 
 

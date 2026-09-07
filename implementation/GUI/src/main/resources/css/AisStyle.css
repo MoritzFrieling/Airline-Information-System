@@ -1,17 +1,143 @@
-.btn{
-    -fx-background-radius: 30;
-    -fx-background-color: linear-gradient(#FF5400,#BE1D00);
-    -fx-background-insets: 0;
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #f4f7fa;
+}
+
+.app-shell {
+    -fx-background-color: linear-gradient(to bottom right, #f5f8fb, #e8f0f5);
+}
+
+.header-strip {
+    -fx-background-color: linear-gradient(to right, #163a55, #245d7c);
+}
+
+.card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #dce5eb;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(25, 56, 76, 0.16), 14, 0.18, 0, 4);
+}
+
+.page-title {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #173d58;
+}
+
+.page-subtitle, .muted-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #60798a;
+}
+
+.eyebrow {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3c7795;
+}
+
+.header-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
     -fx-text-fill: white;
 }
 
-.background{
-    -fx-background-color: linear-gradient(#FFFAEF,#FFFFFF);
+.header-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #d6e5ee;
 }
 
-.text-field{
-    -fx-background-radius: 30;
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #244b63;
 }
-.anchor{
--fx-background-image: url("http://airplanes.itsabouttravelling.com/wp-content/uploads/2018/04/d-abvz-lufthansa-boeing-747-400-03-1024x683.jpg");
+
+.label {
+    -fx-text-fill: #294657;
+}
+
+.button {
+    -fx-background-color: #2f7192;
+    -fx-background-radius: 6;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 8 14 8 14;
+}
+
+.button:hover {
+    -fx-background-color: #255e7d;
+}
+
+.button:pressed {
+    -fx-background-color: #1e4d67;
+}
+
+.btn, .primary-button {
+    -fx-background-color: #e06b3b;
+}
+
+.btn:hover, .primary-button:hover {
+    -fx-background-color: #c9592d;
+}
+
+.secondary-button {
+    -fx-background-color: #e8f0f5;
+    -fx-text-fill: #28526b;
+    -fx-border-color: #b8cad5;
+    -fx-border-radius: 6;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #d9e7ef;
+}
+
+.danger-button {
+    -fx-background-color: #a84c4c;
+}
+
+.text-field, .password-field, .combo-box-base, .date-picker {
+    -fx-background-color: white;
+    -fx-background-radius: 6;
+    -fx-border-color: #b9cad5;
+    -fx-border-radius: 6;
+    -fx-padding: 6 9 6 9;
+}
+
+.text-field:focused, .password-field:focused, .combo-box-base:focused, .date-picker:focused {
+    -fx-border-color: #3c84a7;
+    -fx-effect: dropshadow(gaussian, rgba(60, 132, 167, 0.22), 6, 0.1, 0, 0);
+}
+
+.combo-box-base > .arrow-button, .date-picker > .arrow-button {
+    -fx-background-color: #e6eff4;
+    -fx-background-radius: 0 5 5 0;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #cfdae1;
+    -fx-border-radius: 6;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #e8f0f4;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 30;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #274b62;
+}
+
+.status-label {
+    -fx-text-fill: #496d80;
+    -fx-wrap-text: true;
 }
