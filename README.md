@@ -1,33 +1,12 @@
 # PRJ2 - Airline Information System
 
-## Local development database
+![Airline Information System GUI](Project_Stuff/AIS_1.png)
 
-This project was prepared with a local PostgreSQL 16 development instance.
-It is bound to `localhost:5432` only.
+The Airline Information System is a desktop application that brings the day-to-day parts of an airline together in one place. We implemented role-based access for managers, officers, and employees, along with workflows for managing airports, routes, aircraft, flights, customers, bookings, and tickets. The application is supported by a relational database and a GUI for working with the data.
 
-- PostgreSQL administrator: `admin` / `password`
-- Application user: `aisdemouser` / `ais`
-- Database: `aisdb`
-- Schema: `ais`
-- Windows service: `postgresql-ais16`
-- Data directory: `C:\Program Files\PostgreSQL\16\data`
-- GUI evaluation login: username `dev`, leave the password empty
+## Setup and demo access
 
-These credentials are for the local development environment only.
-
-## Demo data
-
-The local `aisdb` instance contains a small, repeatable showcase data set: eight
-airports, five routes, four aircraft models, four aircraft, four upcoming flights,
-four customers, three bookings and three tickets. It is also stored in
-[`implementation/Persistence/src/main/resources/demo-data.sql`](implementation/Persistence/src/main/resources/demo-data.sql).
-
-All demo user accounts use the password `demo123`:
-
-- `manager@ais.local` — Manager
-- `officer@ais.local` — Officer
-- `employee@ais.local` — Employee
-
+Local database setup details and demo accounts are available in [Setup Information](Setup%20Information.md).
 
 ## Table Of Contents
 
